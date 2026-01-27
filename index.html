@@ -1,0 +1,2750 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Từ vựng Level B- Lớp Anh thầy Kết</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fff8f0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+ header {
+  background-color: #ffd6ba;
+  padding: 15px 20px;
+  font-weight: bold;
+  color: #7a4e3e;
+  display: flex;
+  flex-wrap: wrap;       
+  align-items: center;
+  justify-content: space-between;  /* Left luôn bên trái, center căn giữa */
+  gap: 15px;
+}
+
+/* Left: icon + home text */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;          /* không bị co lại */
+}
+
+.header-left a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  color: #7a4e3e;
+  text-decoration: none;
+}
+
+.header-left a i {
+  font-size: 28px;
+}
+
+/* Center title */
+header {
+  position: relative;
+}
+
+.header-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 32px;
+  margin: 0;
+  white-space: nowrap;
+}
+/* ===== TOP SELECT ===== */
+.top-select {
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px 40px;
+}
+
+select {
+  padding: 8px 14px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 2px solid #a0e7e5;
+  background-color: #e3fdfd;
+}
+
+
+
+/* MEDIA QUERY cho điện thoại */
+@media (max-width: 480px) {
+
+    .header-center {
+    flex-basis: 100%;
+    order: 2;
+    text-align: center;
+    position: static;
+    transform: none;
+    margin-top: 8px;
+  }
+
+  .header-left {
+    order: 1;
+  }
+}
+
+  header {
+    padding: 10px 15px;
+  }
+  .header-left a {
+    font-size: 18px;
+  }
+  .header-left a i {
+    font-size: 20px;
+  }
+  .header-center {
+    font-size: 22px;
+  }
+}
+
+
+  .top-select {
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 40px;
+  }
+
+  select {
+    padding: 8px 14px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 2px solid #a0e7e5;
+    background-color: #e3fdfd;
+  }
+
+  /* Word list */
+  .word-list {
+    width: 85%;
+    margin: 20px auto;
+    background-color: #E0FBE2;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
+    font-size: 22px;
+  }
+
+.word-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-bottom: 1px dashed #ffb3ba;
+  transition: background-color .15s ease-in-out;
+}
+.word-row:last-child { border-bottom: none; }
+
+/* Hover đổi màu */
+.word-row:hover {
+  background-color: #fffacd; /* xanh nhạt dễ thấy */
+  cursor: pointer;
+}
+
+  /* Ôn tập */
+  .review-box {
+    margin: 40px auto;
+    width: 70%;
+    background-color: #ffe5ec;
+    padding: 25px;
+    font-weight: bold;
+    color: #607274;
+    font-size: 26px;
+    border-radius: 12px;
+    position: relative;
+  }
+  .review-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 15px;
+}
+.review-buttons button {
+  background-color: #a0e7e5;
+  border: none;
+  padding: 12px 20px;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.review-buttons button:hover {
+  background-color: #ffb3ba;
+}
+
+
+  /* Bài tập */
+  .exercise {
+    width: 80%;
+    margin: 0 auto 30px auto;
+    font-size: 22px;
+    text-align: left;
+  }
+
+  .exercise input {
+    width: 220px;
+    font-size: 20px;
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: 6px;
+  }
+
+  .exercise button {
+    margin-left: 10px;
+    padding: 6px 12px;
+    font-size: 18px;
+    background-color: #a0e7e5;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .exercise button:hover {
+    background-color: #ffb3ba;
+  }
+
+  .result {
+    font-weight: bold;
+    color: #C5705D;
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  footer {
+    font-size: 22px;
+    margin-top: 40px;
+    padding: 20px;
+    color: #7a4e3e;
+    background-color: #fff0e1;
+  }
+
+  .confetti {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: red;
+    opacity: .9;
+    animation: pop .9s ease-out forwards;
+  }
+  @keyframes pop {
+    0% { transform: translate(0,0) scale(1); opacity:1;}
+    50% {transform: translate(calc(var(--x)*.5),calc(var(--y)*.4)) scale(1.1);opacity:1;}
+    100% {transform: translate(var(--x),var(--y)) scale(.5);opacity:0;}
+  }
+
+
+.mcq-buttons {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.mcq-option {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.mcq-option input {
+  transform: scale(1.2);
+  margin-right: 8px;
+}
+
+.explain-box {
+  margin-top: 8px;
+  background: #fffacd;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 18px;
+  color: #7a4e3e;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-left">
+    <a href="ttps://lopanhthayket-site.github.io/lopanhthayket_thcs-botuvung/">
+      <i class="fa-solid fa-house"></i> Lớp Anh thầy Kết
+    </a>
+  </div>
+  <div class="header-center">
+    Từ vựng Level B
+  </div>
+</header>
+
+<!-- Bộ chọn -->
+<div class="top-select">
+  <select id="wordList">
+    <option value="1">Từ vựng Level B - 1</option>
+    <option value="2">Từ vựng Level B - 2</option>
+    <option value="3">Từ vựng Level B - 3</option>
+    <option value="4">Từ vựng Level B - 4</option>
+    <option value="5">Từ vựng Level B - 5</option>
+    <option value="6">Từ vựng Level B - 6</option>
+    <option value="7">Từ vựng Level B - 7</option>
+    <option value="8">Từ vựng Level B - 8</option>
+    <option value="9">Từ vựng Level B - 9</option>
+    <option value="10">Từ vựng Level B - 10</option>
+    <option value="11">Từ vựng Level B - 11</option>
+    <option value="12">Từ vựng Level B - 12</option>
+    <option value="13">Từ vựng Level B - 13</option>
+    <option value="14">Từ vựng Level B - 14</option>
+    <option value="15">Từ vựng Level B - 15</option>
+    <option value="16">Từ vựng Level B - 16</option>
+    <option value="17">Từ vựng Level B - 17</option>
+    <option value="18">Từ vựng Level B - 18</option>
+    <option value="19">Từ vựng Level B - 19</option>
+    <option value="20">Từ vựng Level B - 20</option>
+
+
+  </select>
+</div>
+
+
+
+<script>
+// Bắt sự kiện Enter cho tất cả các ô input trong bài tập
+document.addEventListener("DOMContentLoaded", function() {
+  const exerciseInputs = document.querySelectorAll(".exercise input");
+
+  exerciseInputs.forEach(input => {
+    input.addEventListener("keydown", function(e) {
+      if (e.key === "Enter") {      // Kiểm tra nếu nhấn Enter
+        e.preventDefault();          // Ngăn việc xuống dòng mặc định
+        const checkBtn = this.nextElementSibling; // giả định nút Check ngay sau input
+        if (checkBtn && checkBtn.tagName === "BUTTON") {
+          checkBtn.click();         // kích hoạt nút Check
+        }
+      }
+    });
+  });
+});
+</script>
+
+
+
+<!-- Danh sách từ vựng -->
+<div class="word-list" id="wordContainer"></div>
+
+<!-- Ôn tập -->
+<div class="review-box">
+<div id="progressCounter"
+     style="position:absolute; top:12px; right:18px;
+            font-size:18px; color:#7a4e3e;">
+  Đã biết 0 / 0
+</div>
+
+
+  <div id="vietWord">Chọn Bộ từ vựng để bắt đầu</div>
+    
+  <!-- Hiển thị đáp án -->
+<div id="answer" style="font-size:22px;color:#7a4e3e; margin-top:15px; text-align:center; min-height:40px;"></div>
+   
+  <!-- Nút bấm -->
+  <div class="review-buttons" style="margin-top:20px;">
+    <button onclick="know()">Đã biết</button>
+    <button onclick="dontKnow()">Chưa biết</button>
+    <button onclick="nextWord()">Tiếp theo</button>
+  </div>
+
+</div>
+
+<!-- Bài tập -->
+<div class="exercise" id="exercise"></div>
+
+<footer>Chúc mừng bạn đã hoàn thành bài học!</footer>
+<script>
+const selectEl = document.getElementById("wordList");
+
+function sortOptionsByNumber() {
+  const opts = Array.from(selectEl.options);
+
+  opts.sort((a, b) => {
+    return Number(a.value) - Number(b.value);
+  });
+
+  selectEl.innerHTML = "";
+  opts.forEach(o => selectEl.appendChild(o));
+}
+
+// sort ngay khi load
+sortOptionsByNumber();
+
+// sort lại khi mở dropdown
+selectEl.addEventListener("mousedown", sortOptionsByNumber);
+selectEl.addEventListener("touchstart", sortOptionsByNumber);
+</script>
+
+<script>
+/********** DATA **********/
+const data = {
+  1: [
+  { en: "academic /ˌækəˈdɛmɪk/", vn: "thuộc học thuật / viện hàn lâm", tick: false },
+  { en: "average /ˈævərɪdʒ/", vn: "trung bình", tick: false },
+  { en: "blind /blaɪnd/", vn: "mù / không thấy đường", tick: false },
+  { en: "casual /ˈkæʒuəl/", vn: "bình thường / không chính thức", tick: false },
+  { en: "aerial /ˈɛriəl/", vn: "trên không / từ trên cao", tick: false },
+  { en: "unmanned /ʌnˈmænd/", vn: "không người lái", tick: false },
+  { en: "cheerful /ˈtʃɪrfəl/", vn: "vui vẻ / hớn hở", tick: false },
+  { en: "civil /ˈsɪvəl/", vn: "thuộc dân sự / lễ phép", tick: false },
+  { en: "coloured /ˈkʌlərd/", vn: "có màu sắc / da màu", tick: false },
+  { en: "commercial /kəˈmɜːrʃəl/", vn: "thuộc thương mại / quảng cáo", tick: false },
+  { en: "competitive /kəmˈpɛtətɪv/", vn: "có tính cạnh tranh", tick: false },
+  { en: "complicated /ˈkɑːmplɪkeɪtəd/", vn: "phức tạp", tick: false },
+  { en: "minor /ˈmaɪnər/", vn: "nhỏ / thứ yếu / không quan trọng", tick: false },
+  { en: "concerned /kənˈsɜːrnd/", vn: "lo lắng / có liên quan", tick: false },
+  { en: "automotive /ˌɔːtəˈmoʊtɪv/", vn: "thuộc ô tô / tự động", tick: false },
+  { en: "confident /ˈkɑːnfɪdənt/", vn: "tự tin", tick: false },
+  { en: "conscious /ˈkɑːnʃəs/", vn: "có ý thức / tỉnh táo", tick: false },
+  { en: "conservative /kənˈsɜːrvətɪv/", vn: "bảo thủ", tick: false },
+  { en: "consistent /kənˈsɪstənt/", vn: "nhất quán / kiên định", tick: false },
+  { en: "contemporary /kənˈtɛmpəˌrɛri/", vn: "đương đại / cùng thời", tick: false },
+  { en: "continuous /kənˈtɪnjuəs/", vn: "liên tục / không ngừng", tick: false },
+  { en: "convenient /kənˈvinjənt/", vn: "tiện lợi", tick: false },
+  { en: "convinced /kənˈvɪnst/", vn: "bị thuyết phục / tin chắc", tick: false },
+  { en: "corporate /ˈkɔːrpərət/", vn: "thuộc doanh nghiệp / đoàn thể", tick: false },
+  { en: "critical /ˈkrɪtɪkəl/", vn: "nguy cấp / chỉ trích / phê bình", tick: false },
+  { en: "crucial /ˈkruːʃəl/", vn: "cốt yếu / quyết định", tick: false },
+  { en: "cruel /ˈkruːəl/", vn: "độc ác", tick: false },
+  { en: "cultural /ˈkʌltʃərəl/", vn: "thuộc văn hóa", tick: false },
+  { en: "curved /kɜːrvd/", vn: "cong", tick: false },
+  { en: "actual /ˈæktʃuəl/", vn: "thực sự / thực tế", tick: false },
+  { en: "brief /brif/", vn: "ngắn gọn", tick: false },
+  { en: "complex /kəmˈplɛks/", vn: "phức tạp", tick: false },
+  { en: "definite /ˈdɛfənət/", vn: "xác định / rõ ràng", tick: false },
+  { en: "determined /dɪˈtɜːrmɪnd/", vn: "quyết tâm", tick: false },
+  { en: "disappointed /ˌdɪsəˈpɔɪntəd/", vn: "thất vọng (về cảm xúc)", tick: false },
+  { en: "disappointing /ˌdɪsəˈpɔɪntɪŋ/", vn: "gây thất vọng (tính chất)", tick: false },
+  { en: "eastern /ˈistərn/", vn: "thuộc phương Đông", tick: false },
+  { en: "economic /ˌɛkəˈnɑːmɪk/", vn: "thuộc kinh tế", tick: false },
+  { en: "educated /ˈɛdʒəkeɪtəd/", vn: "có giáo dục / được đào tạo", tick: false },
+  { en: "educational /ˌɛdʒəˈkeɪʃənəl/", vn: "thuộc giáo dục", tick: false },
+  { en: "effective /ɪˈfɛktɪv/", vn: "hiệu quả", tick: false },
+  { en: "sticky /ˈstɪki/", vn: "dính / nhớp nháp", tick: false },
+  { en: "embarrassed /ɪmˈbærəst/", vn: "ngượng ngùng / xấu hổ", tick: false },
+  { en: "embarrassing /ɪmˈbærəsɪŋ/", vn: "gây lúng túng", tick: false },
+  { en: "engaged /ɪnˈɡeɪdʒd/", vn: "đã đính hôn / bận rộn", tick: false },
+  { en: "entertaining /ˌɛntərˈteɪnɪŋ/", vn: "thú vị / mang tính giải trí", tick: false },
+  { en: "essential /ɪˈsɛnʃəl/", vn: "thiết yếu", tick: false },
+  { en: "frightened /ˈfraɪtənd/", vn: "hoảng sợ", tick: false },
+  { en: "fundamental /ˌfʌndəˈmɛntəl/", vn: "cơ bản / chủ yếu", tick: false },
+  { en: "generous /ˈdʒɛnərəs/", vn: "hào phóng", tick: false },
+  { en: "grateful /ˈɡreɪtfəl/", vn: "biết ơn", tick: false },
+  { en: "historic /hɪˈstɔːrɪk/", vn: "có tính lịch sử (quan trọng)", tick: false },
+  { en: "historical /hɪˈstɔːrɪkəl/", vn: "thuộc về lịch sử", tick: false },
+  { en: "honest /ˈɑːnəst/", vn: "trung thực", tick: false },
+  { en: "horrible /ˈhɔːrəbəl/", vn: "kinh khủng", tick: false },
+  { en: "illegal /ɪˈliːɡəl/", vn: "bất hợp pháp", tick: false },
+  { en: "imaginary /ɪˈmædʒɪˌnɛri/", vn: "tưởng tượng / ảo", tick: false },
+  { en: "immediate /ɪˈmidiət/", vn: "lập tức", tick: false },
+  { en: "impressive /ɪmˈprɛsɪv/", vn: "ấn tượng", tick: false },
+  { en: "injured /ˈɪndʒərd/", vn: "bị thương", tick: false },
+  { en: "innocent /ˈɪnəsənt/", vn: "vô tội / ngây thơ", tick: false },
+  { en: "involved /ɪnˈvɑːlvd/", vn: "có liên quan / dính líu", tick: false },
+  { en: "leading /ˈlidɪŋ/", vn: "hàng đầu / dẫn đầu", tick: false },
+  { en: "warm-blooded /ˌwɔːrmˈblʌdəd/", vn: "động vật máu nóng", tick: false },
+  { en: "legal /ˈliːɡəl/", vn: "thuộc pháp luật / hợp pháp", tick: false },
+  { en: "located /ˈloʊkeɪtəd/", vn: "nằm ở / xác định vị trí", tick: false },
+  { en: "long-term /ˌlɔːŋˈtɜːrm/", vn: "dài hạn", tick: false },
+  { en: "mental /ˈmɛntəl/", vn: "thuộc tinh thần / trí óc", tick: false },
+  { en: "mild /maɪld/", vn: "nhẹ / dịu / ôn hòa", tick: false },
+  { en: "multiple /ˈmʌltəpəl/", vn: "nhiều / phức hợp", tick: false },
+  { en: "mysterious /mɪˈstɪriəs/", vn: "bí ẩn", tick: false },
+  { en: "native /ˈneɪtɪv/", vn: "bản ngữ / tự nhiên", tick: false },
+  { en: "negative /ˈnɛɡətɪv/", vn: "tiêu cực / phủ định", tick: false },
+  { en: "nuclear /ˈnuːkliər/", vn: "thuộc hạt nhân", tick: false },
+  { en: "odd /ɑːd/", vn: "kỳ quặc / số lẻ", tick: false },
+  { en: "old-fashioned /ˌoʊldˈfæʃənd/", vn: "lỗi thời / cổ hủ", tick: false },
+  { en: "organised /ˈɔːrɡənaɪzd/", vn: "có tổ chức / ngăn nắp", tick: false },
+  { en: "original /əˈrɪdʒənəl/", vn: "nguyên bản / gốc", tick: false },
+  { en: "painful /ˈpeɪnfəl/", vn: "đau đớn", tick: false },
+  { en: "pale /peɪl/", vn: "nhợt nhạt / tái", tick: false },
+  { en: "passionate /ˈpæʃənət/", vn: "đam mê / nồng nhiệt", tick: false },
+  { en: "poisonous /ˈpɔɪzənəs/", vn: "độc / có độc", tick: false },
+  { en: "political /pəˈlɪtɪkəl/", vn: "thuộc chính trị", tick: false },
+  { en: "positive /ˈpɑːzətɪv/", vn: "tích cực / khẳng định", tick: false },
+  { en: "powerful /ˈpaʊərfəl/", vn: "mạnh mẽ / quyền năng", tick: false },
+  { en: "practical /ˈpræktɪkəl/", vn: "thực tế / thực tiễn", tick: false },
+  { en: "primary /ˈpraɪˌmɛri/", vn: "tiểu học / cơ bản / hàng đầu", tick: false },
+  { en: "private /ˈpraɪvət/", vn: "riêng tư / cá nhân", tick: false },
+  { en: "qualified /ˈkwɑːləˌfaɪd/", vn: "đủ điều kiện / năng lực", tick: false },
+  { en: "random /ˈrændəm/", vn: "ngẫu nhiên", tick: false },
+  { en: "related /rɪˈleɪtəd/", vn: "có liên quan", tick: false },
+  { en: "relevant /ˈrɛləvənt/", vn: "có liên quan / thích hợp", tick: false },
+  { en: "reliable /rɪˈlaɪəbəl/", vn: "đáng tin cậy", tick: false },
+  { en: "religious /rɪˈlɪdʒəs/", vn: "thuộc tôn giáo / sùng đạo", tick: false },
+  { en: "remote /rɪˈmoʊt/", vn: "xa xôi / hẻo lánh", tick: false },
+  { en: "repeated /rɪˈpitəd/", vn: "lặp đi lặp lại", tick: false },
+  { en: "repetitive /rɪˈpɛtətɪv/", vn: "có tính lặp lại (nhàm chán)", tick: false },
+  { en: "responsible /rɪˈspɑːnsəbəl/", vn: "có trách nhiệm", tick: false },
+  { en: "retired /rɪˈtaɪərd/", vn: "đã nghỉ hưu", tick: false },
+  { en: "romantic /roʊˈmæntɪk/", vn: "lãng mạn", tick: false }
+  ],
+  2: [
+  { en: "rural /ˈrʊrəl/", vn: "thuộc nông thôn", tick: false },
+  { en: "scientific /ˌsaɪənˈtɪfɪk/", vn: "thuộc khoa học", tick: false },
+  { en: "secondary /ˈsɛkənˌdɛri/", vn: "trung học / phụ / thứ yếu", tick: false },
+  { en: "sensible /ˈsɛnsəbəl/", vn: "khôn ngoan / hợp lý", tick: false },
+  { en: "severe /səˈvɪr/", vn: "nghiêm trọng / khắt khe", tick: false },
+  { en: "shiny /ˈʃaɪni/", vn: "sáng bóng", tick: false },
+  { en: "slight /slaɪt/", vn: "nhẹ / không đáng kể", tick: false },
+  { en: "smart /smɑːrt/", vn: "thông minh / bảnh bao", tick: false },
+  { en: "smooth /smuːð/", vn: "mượt mà / trôi chảy", tick: false },
+  { en: "solid /ˈsɑːlɪd/", vn: "rắn / chắc chắn", tick: false },
+  { en: "stable /ˈsteɪbəl/", vn: "ổn định", tick: false },
+  { en: "sudden /ˈsʌdən/", vn: "đột ngột", tick: false },
+  { en: "suitable /ˈsuːtəbəl/", vn: "phù hợp", tick: false },
+  { en: "inexperienced /ˌɪnɪkˈspɪriənst/", vn: "thiếu kinh nghiệm", tick: false },
+  { en: "atypical /eɪˈtɪpɪkəl/", vn: "không điển hình / khác thường", tick: false },
+  { en: "technical /ˈtɛknɪkəl/", vn: "thuộc kỹ thuật", tick: false },
+  { en: "uncomfortable /ʌnˈkʌmftərbəl/", vn: "khó chịu / không thoải mái", tick: false },
+  { en: "unemployed /ˌʌnɪmˈplɔɪd/", vn: "thất nghiệp", tick: false },
+  { en: "unexpected /ˌʌnɪkˈspɛktəd/", vn: "bất ngờ / ngoài dự kiến", tick: false },
+  { en: "universal /ˌjuːnɪˈvɜːrsəl/", vn: "phổ quát / toàn cầu", tick: false },
+  { en: "unnecessary /ʌnˈnɛsəˌsɛri/", vn: "không cần thiết", tick: false },
+  { en: "unpleasant /ʌnˈplɛzənt/", vn: "khó chịu / không tử tế", tick: false },
+  { en: "urban /ˈɜːrbən/", vn: "thuộc thành thị", tick: false },
+  { en: "urgent /ˈɜːrdʒənt/", vn: "khẩn cấp", tick: false },
+  { en: "valuable /ˈvæljuəbəl/", vn: "có giá trị", tick: false },
+  { en: "various /ˈvɛriəs/", vn: "đa dạng / khác nhau", tick: false },
+  { en: "violent /ˈvaɪələnt/", vn: "bạo lực", tick: false },
+  { en: "visual /ˈvɪʒuəl/", vn: "thuộc thị giác / hình ảnh", tick: false },
+  { en: "wealthy /ˈwɛlθi/", vn: "giàu có", tick: false },
+  { en: "willing /ˈwɪlɪŋ/", vn: "sẵn lòng", tick: false },
+  { en: "absolute /ˈæbsəˌluːt/", vn: "tuyệt đối", tick: false },
+  { en: "abstract /ˈæbstrækt/", vn: "trừu tượng", tick: false },
+  { en: "accurate /ˈækjərət/", vn: "chính xác", tick: false },
+  { en: "additional /əˈdɪʃənəl/", vn: "thêm vào / bổ sung", tick: false },
+  { en: "adequate /ˈædəkwət/", vn: "đầy đủ / thỏa đáng", tick: false },
+  { en: "advanced /ədˈvænst/", vn: "tiên tiến / nâng cao", tick: false },
+  { en: "affordable /əˈfɔːrdəbəl/", vn: "giá cả phải chăng", tick: false },
+  { en: "talkative /ˈtɔːkətɪv/", vn: "hay nói / nói nhiều", tick: false },
+  { en: "aggressive /əˈɡrɛsɪv/", vn: "hung hăng / quyết đoán", tick: false },
+  { en: "airy /ˈɛri/", vn: "thoáng đãng", tick: false },
+  { en: "alert /əˈlɜːrt/", vn: "cảnh giác / lanh lợi", tick: false },
+  { en: "alien /ˈeɪliən/", vn: "xa lạ / thuộc ngoài hành tinh", tick: false },
+  { en: "ambitious /æmˈbɪʃəs/", vn: "có tham vọng", tick: false },
+  { en: "amusing /əˈmjuːzɪŋ/", vn: "vui nhộn / làm cho cười", tick: false },
+  { en: "ancient /ˈeɪnʃənt/", vn: "cổ xưa", tick: false },
+  { en: "annoyed /əˈnɔɪd/", vn: "bị làm phiền / bực mình", tick: false },
+  { en: "annoying /əˈnɔɪɪŋ/", vn: "gây khó chịu", tick: false },
+  { en: "annual /ˈænjuəl/", vn: "hàng năm", tick: false },
+  { en: "antisocial /ˌæntiˈsoʊʃəl/", vn: "phản xã hội / khó gần", tick: false },
+  { en: "anxious /ˈæŋkʃəs/", vn: "lo âu / nóng lòng", tick: false },
+  { en: "apparent /əˈpærənt/", vn: "rõ ràng / bề ngoài", tick: false },
+  { en: "appropriate /əˈproʊpriət/", vn: "thích hợp", tick: false },
+  { en: "armed /ɑːrmd/", vn: "có vũ trang", tick: false },
+  { en: "artificial /ˌɑːrtəˈfɪʃəl/", vn: "nhân tạo", tick: false },
+  { en: "artistic /ɑːrˈtɪstɪk/", vn: "thuộc nghệ thuật / có khiếu", tick: false },
+  { en: "ashamed /əˈʃeɪmd/", vn: "hổ thẹn", tick: false },
+  { en: "astonishing /əˈstɑːnɪʃɪŋ/", vn: "kinh ngạc", tick: false },
+  { en: "aware /əˈwɛr/", vn: "có nhận thức / biết về", tick: false },
+  { en: "awkward /ˈɔːkwərd/", vn: "vụng về / lúng túng", tick: false },
+  { en: "unrealistic /ˌʌnriəˈlɪstɪk/", vn: "không thực tế", tick: false },
+  { en: "up-to-date /ˌʌp tə ˈdeɪt/", vn: "cập nhật / hợp thời", tick: false },
+  { en: "bent /bɛnt/", vn: "bị cong / khiếu (năng khiếu)", tick: false },
+  { en: "biological /ˌbaɪəˈlɑːdʒɪkəl/", vn: "thuộc sinh học", tick: false },
+  { en: "bitter /ˈbɪtər/", vn: "đắng / cay cú", tick: false },
+  { en: "bold /boʊld/", vn: "táo bạo / in đậm", tick: false },
+  { en: "bound /baʊnd/", vn: "chắc chắn / bị ràng buộc", tick: false },
+  { en: "controversial /ˌkɑːntrəˈvɜːrʃəl/", vn: "gây tranh cãi", tick: false },
+  { en: "conventional /kənˈvɛnʃənəl/", vn: "truyền thống / thông thường", tick: false },
+  { en: "convincing /kənˈvɪnsɪŋ/", vn: "có sức thuyết phục", tick: false },
+  { en: "crowded /ˈkraʊdəd/", vn: "đông đúc", tick: false },
+  { en: "curious /ˈkjʊriəs/", vn: "tò mò", tick: false },
+  { en: "deadly /ˈdɛdli/", vn: "chết người", tick: false },
+  { en: "decent /ˈdisənt/", vn: "tử tế / đứng đắn", tick: false },
+  { en: "deliberate /dɪˈlɪbərət/", vn: "cố ý / thận trọng", tick: false },
+  { en: "delicious /dɪˈlɪʃəs/", vn: "ngon miệng", tick: false },
+  { en: "delighted /dɪˈlaɪtəd/", vn: "vui mừng / hân hoan", tick: false },
+  { en: "democratic /ˌdɛməˈkrætɪk/", vn: "dân chủ", tick: false },
+  { en: "dependent /dɪˈpɛndənt/", vn: "phụ thuộc", tick: false },
+  { en: "depressed /dɪˈprɛst/", vn: "phiền muộn / thất vọng", tick: false },
+  { en: "depressing /dɪˈprɛsɪŋ/", vn: "gây nản lòng / buồn phiền", tick: false },
+  { en: "desperate /ˈdɛspərət/", vn: "tuyệt vọng / liều lĩnh", tick: false },
+  { en: "detailed /dɪˈteɪld/", vn: "chi tiết", tick: false },
+  { en: "digital /ˈdɪdʒɪtəl/", vn: "thuộc kỹ thuật số", tick: false },
+  { en: "disabled /dɪsˈeɪbəld/", vn: "khuyết tật", tick: false },
+  { en: "disastrous /dɪˈzæstrəs/", vn: "tai hại / thảm khốc", tick: false },
+  { en: "dishonest /dɪsˈɑːnəst/", vn: "không trung thực", tick: false },
+  { en: "dissatisfied /dɪˈsætɪsˌfaɪd/", vn: "không hài lòng", tick: false },
+  { en: "distant /ˈdɪstənt/", vn: "xa cách", tick: false },
+  { en: "distinct /dɪˈstɪŋkt/", vn: "khác biệt / dễ nhận thấy", tick: false },
+  { en: "diverse /daɪˈvɜːrs/", vn: "đa dạng", tick: false },
+  { en: "domestic /dəˈmɛstɪk/", vn: "trong nước / nội trợ", tick: false },
+  { en: "dominant /ˈdɑːmɪnənt/", vn: "ưu thế / thống trị", tick: false },
+  { en: "complimentary /ˌkɑːmplɪˈmɛntəri/", vn: "miễn phí / ca ngợi", tick: false },
+  { en: "dull /dʌl/", vn: "xỉn màu / đần độn / tẻ nhạt", tick: false },
+  { en: "dynamic /daɪˈnæmɪk/", vn: "năng động / động lực", tick: false },
+  { en: "economical /ˌɛkəˈnɑːmɪkəl/", vn: "tiết kiệm", tick: false },
+  { en: "efficient /ɪˈfɪʃənt/", vn: "có hiệu suất / hiệu quả", tick: false },
+  { en: "elegant /ˈɛləɡənt/", vn: "thanh lịch / nhã nhặn", tick: false },
+  { en: "elementary /ˌɛləˈmɛntəri/", vn: "sơ đẳng / cơ bản", tick: false },
+  { en: "emotional /ɪˈmoʊʃənəl/", vn: "thuộc cảm xúc / dễ xúc động", tick: false }
+  ],
+
+  3: [
+  { en: "overdue /ˌoʊvərˈduː/", vn: "quá hạn", tick: false },
+  { en: "precise /prɪˈsaɪs/", vn: "chính xác / tỉ mỉ", tick: false },
+  { en: "enjoyable /ɪnˈdʒɔɪəbəl/", vn: "thú vị", tick: false },
+  { en: "entire /ɪnˈtaɪər/", vn: "toàn bộ", tick: false },
+  { en: "environmental /ɪnˌvaɪrənˈmɛntəl/", vn: "thuộc môi trường", tick: false },
+  { en: "equal /ˈikwəl/", vn: "ngang bằng / bình đẳng", tick: false },
+  { en: "equivalent /ɪˈkwɪvələnt/", vn: "tương đương", tick: false },
+  { en: "ethnic /ˈɛθnɪk/", vn: "thuộc sắc tộc", tick: false },
+  { en: "evident /ˈɛvɪdənt/", vn: "hiển nhiên / rõ rệt", tick: false },
+  { en: "excessive /ɪkˈsɛsɪv/", vn: "quá mức / thừa thãi", tick: false },
+  { en: "exotic /ɪɡˈzɑːtɪk/", vn: "ngoại lai / kỳ lạ", tick: false },
+  { en: "expected /ɪkˈspɛktəd/", vn: "được kỳ vọng", tick: false },
+  { en: "experienced /ɪkˈspɪriənst/", vn: "có kinh nghiệm", tick: false },
+  { en: "extensive /ɪkˈstɛnsɪv/", vn: "sâu rộng / bao quát", tick: false },
+  { en: "extreme /ɪkˈstrim/", vn: "vô cùng / cực độ", tick: false },
+  { en: "fabulous /ˈfæbjələs/", vn: "tuyệt vời / thần thoại", tick: false },
+  { en: "face-to-face /ˌfeɪs tə ˈfeɪs/", vn: "trực diện", tick: false },
+  { en: "failed /feɪld/", vn: "thất bại / bị hỏng", tick: false },
+  { en: "fake /feɪk/", vn: "giả mạo", tick: false },
+  { en: "familiar /fəˈmɪljər/", vn: "quen thuộc", tick: false },
+  { en: "fascinating /ˈfæsəˌneɪtɪŋ/", vn: "hấp dẫn / lôi cuốn", tick: false },
+  { en: "fashionable /ˈfæʃənəbəl/", vn: "thời thượng", tick: false },
+  { en: "federal /ˈfɛdərəl/", vn: "thuộc liên bang", tick: false },
+  { en: "financial /faɪˈnænʃəl/", vn: "thuộc tài chính", tick: false },
+  { en: "firm /fɜːrm/", vn: "vững chắc / kiên quyết", tick: false },
+  { en: "fixed /fɪkst/", vn: "cố định / đã sửa", tick: false },
+  { en: "flexible /ˈflɛksəbəl/", vn: "linh hoạt", tick: false },
+  { en: "folk /foʊk/", vn: "thuộc dân gian", tick: false },
+  { en: "following /ˈfɑːloʊɪŋ/", vn: "theo sau / kế tiếp", tick: false },
+  { en: "fond /fɑːnd/", vn: "thích / yêu mến", tick: false },
+  { en: "foreign /ˈfɔːrən/", vn: "thuộc nước ngoài", tick: false },
+  { en: "furious /ˈfjʊriəs/", vn: "giận dữ", tick: false },
+  { en: "genetic /dʒəˈnɛtɪk/", vn: "thuộc di truyền", tick: false },
+  { en: "independent /ˌɪndɪˈpɛndənt/", vn: "độc lập", tick: false },
+  { en: "acceptable /ækˈsɛptəbəl/", vn: "có thể chấp nhận", tick: false },
+  { en: "genuine /ˈdʒɛnjuən/", vn: "thật / chân thành", tick: false },
+  { en: "optional /ˈɑːpʃənəl/", vn: "không bắt buộc / tùy chọn", tick: false },
+  { en: "tight /taɪt/", vn: "chặt / khít", tick: false },
+  { en: "missing /ˈmɪsɪŋ/", vn: "thất lạc / thiếu", tick: false },
+  { en: "single-storey /ˌsɪŋɡəl ˈstɔːri/", vn: "nhà một tầng", tick: false },
+  { en: "gorgeous /ˈɡɔːrdʒəs/", vn: "tuyệt đẹp / rực rỡ", tick: false },
+  { en: "unfamiliar /ˌʌnfəˈmɪljər/", vn: "lạ lẫm", tick: false },
+  { en: "grand /ɡrænd/", vn: "vĩ đại / tráng lệ", tick: false },
+  { en: "harmful /ˈhɑːrmfəl/", vn: "có hại", tick: false },
+  { en: "endless /ˈɛndləs/", vn: "vô tận", tick: false },
+  { en: "hidden /ˈhɪdən/", vn: "bị che khuất / ẩn giấu", tick: false },
+  { en: "hilarious /hɪˈlɛriəs/", vn: "vui nhộn / hài hước", tick: false },
+  { en: "hollow /ˈhɑːloʊ/", vn: "rỗng / hõm", tick: false },
+  { en: "holy /ˈhoʊli/", vn: "linh thiêng / thánh thiện", tick: false },
+  { en: "homeless /ˈhoʊmləs/", vn: "vô gia cư", tick: false },
+  { en: "hopeful /ˈhoʊpfəl/", vn: "hy vọng / đầy triển vọng", tick: false },
+  { en: "humorous /ˈhjuːmərəs/", vn: "hài hước", tick: false },
+  { en: "iconic /aɪˈkɑːnɪk/", vn: "mang tính biểu tượng", tick: false },
+  { en: "ideal /aɪˈdil/", vn: "lý tưởng", tick: false },
+  { en: "identical /aɪˈdɛntɪkəl/", vn: "giống hệt nhau", tick: false },
+  { en: "selfish /ˈsɛlfɪʃ/", vn: "ích kỷ", tick: false },
+  { en: "imaginative /ɪˈmædʒənətɪv/", vn: "giàu tưởng tượng", tick: false },
+  { en: "immune /ɪˈmjuːn/", vn: "miễn dịch", tick: false },
+  { en: "impatient /ɪmˈpeɪʃənt/", vn: "mất kiên nhẫn", tick: false },
+  { en: "impressed /ɪmˈprɛst/", vn: "bị ấn tượng", tick: false },
+  { en: "incorrect /ˌɪnkəˈrɛkt/", vn: "không đúng", tick: false },
+  { en: "industrial /ɪnˈdʌstriəl/", vn: "thuộc công nghiệp", tick: false },
+  { en: "informative /ɪnˈfɔːrmətɪv/", vn: "nhiều thông tin / có ích", tick: false },
+  { en: "inner /ˈɪnər/", vn: "bên trong / nội tâm", tick: false },
+  { en: "innovative /ˈɪnəveɪtɪv/", vn: "có tính đổi mới / sáng kiến", tick: false },
+  { en: "instant /ˈɪnstənt/", vn: "tức thì / ngay lập tức", tick: false },
+  { en: "intellectual /ˌɪntəlˈɛktʃuəl/", vn: "thuộc trí tuệ / học giả", tick: false },
+  { en: "intended /ɪnˈtɛndəd/", vn: "có ý định / dành cho", tick: false },
+  { en: "intense /ɪnˈtɛns/", vn: "mãnh liệt / cường độ cao", tick: false },
+  { en: "internal /ɪnˈtɜːrnəl/", vn: "nội bộ / bên trong", tick: false },
+  { en: "joint /dʒɔɪnt/", vn: "chung / khớp", tick: false },
+  { en: "junior /ˈdʒuːnjər/", vn: "cấp dưới / ít tuổi hơn", tick: false },
+  { en: "lean /lin/", vn: "gầy / không mỡ", tick: false },
+  { en: "lengthy /ˈlɛŋθi/", vn: "dài dòng / kéo dài", tick: false },
+  { en: "literary /ˈlɪtəˌrɛri/", vn: "thuộc văn chương", tick: false },
+  { en: "logical /ˈlɑːdʒɪkəl/", vn: "hợp logic", tick: false },
+  { en: "loose /luːs/", vn: "lỏng / rộng", tick: false },
+  { en: "magnificent /mæɡˈnɪfɪsənt/", vn: "tráng lệ / lộng lẫy", tick: false },
+  { en: "martial /ˈmɑːrʃəl/", vn: "thuộc võ thuật / quân sự", tick: false },
+  { en: "massive /ˈmæsɪv/", vn: "to lớn / đồ sộ", tick: false },
+  { en: "matching /ˈmætʃɪŋ/", vn: "phù hợp / ăn khớp", tick: false },
+  { en: "maximum /ˈmæksəməm/", vn: "tối đa", tick: false },
+  { en: "mechanical /məˈkænɪkəl/", vn: "thuộc cơ khí / máy móc", tick: false },
+  { en: "medium /ˈmidiəm/", vn: "trung bình / vừa", tick: false },
+  { en: "memorable /ˈmɛmərəbəl/", vn: "đáng nhớ", tick: false },
+  { en: "mid-term /ˌmɪdˈtɜːrm/", vn: "giữa kỳ", tick: false },
+  { en: "minimum /ˈmɪnəməm/", vn: "tối thiểu", tick: false },
+  { en: "minor /ˈmaɪnər/", vn: "nhỏ / trẻ vị thành niên", tick: false },
+  { en: "miserable /ˈmɪzərəbəl/", vn: "khốn khổ / đáng thương", tick: false },
+  { en: "mixed /mɪkst/", vn: "hỗn hợp / lẫn lộn", tick: false },
+  { en: "modest /ˈmɑːdəst/", vn: "khiêm tốn", tick: false },
+  { en: "monthly /ˈmʌnθli/", vn: "hàng tháng", tick: false },
+  { en: "moving /ˈmuːvɪŋ/", vn: "cảm động / đang di chuyển", tick: false },
+  { en: "nasty /ˈnæsti/", vn: "xấu xa / khó chịu", tick: false },
+  { en: "national /ˈnæʃənəl/", vn: "thuộc quốc gia", tick: false },
+  { en: "nearby /ˌnɪrˈbaɪ/", vn: "gần đây / lân cận", tick: false },
+  { en: "neat /nit/", vn: "ngăn nắp / gọn gàng", tick: false },
+  { en: "neutral /ˈnuːtrəl/", vn: "trung lập", tick: false },
+  { en: "non-profit /ˌnɑːnˈprɑːfət/", vn: "phi lợi nhuận", tick: false },
+  { en: "offensive /əˈfɛnsɪv/", vn: "xúc phạm / tấn công", tick: false }
+  ],
+
+  4: [
+  { en: "official /əˈfɪʃəl/", vn: "chính thức / thuộc công sở", tick: false },
+  { en: "ongoing /ˈɑːnˌɡoʊɪŋ/", vn: "đang diễn ra", tick: false },
+  { en: "opposed /əˈpoʊzd/", vn: "đối lập / phản đối", tick: false },
+  { en: "optimistic /ˌɑːptɪˈmɪstɪk/", vn: "lạc quan", tick: false },
+  { en: "organic /ɔːrˈɡænɪk/", vn: "hữu cơ", tick: false },
+  { en: "outer /ˈaʊtər/", vn: "bên ngoài", tick: false },
+  { en: "outstanding /aʊtˈstændɪŋ/", vn: "nổi bật / xuất sắc", tick: false },
+  { en: "overall /ˌoʊvərˈɔːl/", vn: "tổng thể", tick: false },
+  { en: "parallel /ˈpærəˌlɛl/", vn: "song song", tick: false },
+  { en: "permanent /ˈpɜːrmənənt/", vn: "vĩnh cửu / lâu dài", tick: false },
+  { en: "pointed /ˈpɔɪntəd/", vn: "nhọn / có chóp", tick: false },
+  { en: "postgraduate /ˌpoʊstˈɡrædʒuət/", vn: "sau đại học", tick: false },
+  { en: "potential /pəˈtɛnʃəl/", vn: "tiềm năng", tick: false },
+  { en: "precious /ˈprɛʃəs/", vn: "quý giá", tick: false },
+  { en: "precise /prɪˈsaɪs/", vn: "chính xác", tick: false },
+  { en: "predictable /prɪˈdɪktəbəl/", vn: "có thể dự đoán", tick: false },
+  { en: "pregnant /ˈprɛɡnənt/", vn: "mang thai", tick: false },
+  { en: "prime /praɪm/", vn: "chính / chủ yếu / hàng đầu", tick: false },
+  { en: "probable /ˈprɑːbəbəl/", vn: "có khả năng xảy ra", tick: false },
+  { en: "professional /prəˈfɛʃənəl/", vn: "chuyên nghiệp", tick: false },
+  { en: "progressive /prəˈɡrɛsɪv/", vn: "tiến bộ", tick: false },
+  { en: "promising /ˈprɑːməsɪŋ/", vn: "đầy hứa hẹn", tick: false },
+  { en: "prompt /prɑːmpt/", vn: "nhanh chóng / tức thì", tick: false },
+  { en: "psychological /ˌsaɪkəˈlɑːdʒɪkəl/", vn: "thuộc tâm lý", tick: false },
+  { en: "pure /pjʊr/", vn: "tinh khiết / thuần khiết", tick: false },
+  { en: "racial /ˈreɪʃəl/", vn: "thuộc chủng tộc", tick: false },
+  { en: "realistic /ˌriːəˈlɪstɪk/", vn: "thực tế", tick: false },
+  { en: "rapid /ˈræpɪd/", vn: "nhanh chóng", tick: false },
+  { en: "raw /rɔː/", vn: "sống / thô", tick: false },
+  { en: "real-life /ˌrɪəl ˈlaɪf/", vn: "đời thực", tick: false },
+  { en: "reasonable /ˈrizənəbəl/", vn: "hợp lý / giá cả phải chăng", tick: false },
+  { en: "recent /ˈrisənt/", vn: "gần đây", tick: false },
+  { en: "regional /ˈridʒənəl/", vn: "thuộc vùng / miền", tick: false },
+  { en: "relieved /rɪˈlivd/", vn: "nhẹ nhõm", tick: false },
+  { en: "ridiculous /rɪˈdɪkjələs/", vn: "nực cười / ngớ ngẩn", tick: false },
+  { en: "risky /ˈrɪski/", vn: "rủi ro", tick: false },
+  { en: "satisfied /ˈsætɪsˌfaɪd/", vn: "hài lòng", tick: false },
+  { en: "scenic /ˈsinɪk/", vn: "có cảnh đẹp", tick: false },
+  { en: "polar /ˈpoʊlər/", vn: "thuộc vùng cực", tick: false },
+  { en: "secure /sɪˈkjʊr/", vn: "an toàn / chắc chắn", tick: false },
+  { en: "initial /ɪˈnɪʃəl/", vn: "ban đầu", tick: false },
+  { en: "senior /ˈsinjər/", vn: "cao cấp / lâu năm / người già", tick: false },
+  { en: "sensitive /ˈsɛnsətɪv/", vn: "nhạy cảm", tick: false },
+  { en: "shallow /ˈʃæloʊ/", vn: "nông / cạn", tick: false },
+  { en: "shaped /ʃeɪpt/", vn: "có hình dạng", tick: false },
+  { en: "overworked /ˌoʊvərˈwɜːrkt/", vn: "làm việc quá sức", tick: false },
+  { en: "time-consuming /ˈtaɪm kənˌsuːmɪŋ/", vn: "tốn thời gian", tick: false },
+  { en: "shocked /ʃɑːkt/", vn: "bị sốc", tick: false },
+  { en: "significant /sɪɡˈnɪfɪkənt/", vn: "quan trọng / đáng kể", tick: false },
+  { en: "insignificant /ˌɪnsɪɡˈnɪfɪkənt/", vn: "không đáng kể", tick: false },
+  { en: "sincere /sɪnˈsɪr/", vn: "chân thành", tick: false },
+  { en: "skilled /skɪld/", vn: "có kỹ năng / lành nghề", tick: false },
+  { en: "so-called /ˌsoʊ ˈkɔːld/", vn: "cái gọi là", tick: false },
+  { en: "sociable /ˈsoʊʃəbəl/", vn: "hòa đồng", tick: false },
+  { en: "solar /ˈsoʊlər/", vn: "thuộc mặt trời", tick: false },
+  { en: "sophisticated /səˈfɪstɪˌkeɪtəd/", vn: "tinh vi / phức tạp", tick: false },
+  { en: "spare /spɛr/", vn: "thừa / dự phòng", tick: false },
+  { en: "spectacular /spɛkˈtækjələr/", vn: "hùng vĩ / ngoạn mục", tick: false },
+  { en: "spiritual /ˈspɪrɪtʃuəl/", vn: "thuộc tâm linh / tinh thần", tick: false },
+  { en: "steep /stip/", vn: "dốc", tick: false },
+  { en: "stiff /stɪf/", vn: "cứng / đơ", tick: false },
+  { en: "stunning /ˈstʌnɪŋ/", vn: "tuyệt đẹp / gây kinh ngạc", tick: false },
+  { en: "successful /səkˈsɛsfəl/", vn: "thành công", tick: false },
+  { en: "sufficient /səˈfɪʃənt/", vn: "đủ", tick: false },
+  { en: "super /ˈsupər/", vn: "tuyệt vời / siêu", tick: false },
+  { en: "surrounding /səˈraʊndɪŋ/", vn: "bao quanh", tick: false },
+  { en: "sustainable /səˈsteɪnəbəl/", vn: "bền vững", tick: false },
+  { en: "technological /ˌtɛknəˈlɑːdʒɪkəl/", vn: "thuộc công nghệ", tick: false },
+  { en: "temporary /ˈtɛmpəˌrɛri/", vn: "tạm thời", tick: false },
+  { en: "terrible /ˈtɛrəbəl/", vn: "khủng khiếp", tick: false },
+  { en: "terrific /təˈrɪfɪk/", vn: "tuyệt vời", tick: false },
+  { en: "thorough /ˈθɜːroʊ/", vn: "tỉ mỉ / cẩn thận", tick: false },
+  { en: "timely /ˈtaɪmli/", vn: "kịp thời", tick: false },
+  { en: "informal /ɪnˈfɔːrməl/", vn: "không trang trọng", tick: false },
+  { en: "victimless /ˈvɪktəmləs/", vn: "không có nạn nhân", tick: false },
+  { en: "tough /tʌf/", vn: "cứng rắn / khó khăn", tick: false },
+  { en: "tragic /ˈtrædʒɪk/", vn: "bi kịch", tick: false },
+  { en: "ultimate /ˈʌltəmət/", vn: "cuối cùng / cơ bản", tick: false },
+  { en: "unacceptable /ˌʌnækˈsɛptəbəl/", vn: "không thể chấp nhận", tick: false },
+  { en: "unconscious /ʌnˈkɑːnʃəs/", vn: "bất tỉnh", tick: false },
+  { en: "unfortunate /ʌnˈfɔːrtʃənət/", vn: "không may", tick: false },
+  { en: "unique /juˈnik/", vn: "duy nhất / độc đáo", tick: false },
+  { en: "unknown /ʌnˈnoʊn/", vn: "không xác định / vô danh", tick: false },
+  { en: "unskilled /ʌnˈskɪld/", vn: "không có tay nghề", tick: false },
+  { en: "unsociable /ʌnˈsoʊʃəbəl/", vn: "khó gần / không hòa đồng", tick: false },
+  { en: "used /juzd/", vn: "đã qua sử dụng", tick: false },
+  { en: "user-friendly /ˌjuzər ˈfrɛndli/", vn: "thân thiện với người dùng", tick: false },
+  { en: "valid /ˈvælɪd/", vn: "có hiệu lực", tick: false },
+  { en: "vast /væst/", vn: "bao la", tick: false },
+  { en: "vertical /ˈvɜːrtɪkəl/", vn: "thẳng đứng", tick: false },
+  { en: "viral /ˈvaɪrəl/", vn: "lan truyền nhanh", tick: false },
+  { en: "virtual /ˈvɜːrtʃuəl/", vn: "ảo", tick: false },
+  { en: "visible /ˈvɪzəbəl/", vn: "có thể nhìn thấy", tick: false },
+  { en: "guilty /ˈɡɪlti/", vn: "có tội / tội lỗi", tick: false },
+  { en: "classical /ˈklæsɪkəl/", vn: "cổ điển", tick: false },
+  { en: "numerous /ˈnuːmərəs/", vn: "nhiều", tick: false },
+  { en: "hybrid /ˈhaɪbrɪd/", vn: "hỗn hợp / lai", tick: false },
+  { en: "vital /ˈvaɪtəl/", vn: "quan trọng / sống còn", tick: false },
+  { en: "voluntary /ˈvɑːlənˌtɛri/", vn: "tự nguyện", tick: false },
+  { en: "cosmic /ˈkɑːzmɪk/", vn: "thuộc vũ trụ", tick: false },
+  ],
+
+  5: [
+  { en: "artistic /ɑːrˈtɪstɪk/", vn: "thuộc nghệ thuật", tick: false },
+  { en: "rare /rɛr/", vn: "hiếm", tick: false },
+  { en: "spacious /ˈspeɪʃəs/", vn: "rộng rãi", tick: false },
+  { en: "weird /wɪrd/", vn: "kỳ quặc", tick: false },
+  { en: "well-known /ˌwɛl ˈnoʊn/", vn: "nổi tiếng", tick: false },
+  { en: "widespread /ˈwaɪdˌsprɛd/", vn: "lan rộng", tick: false },
+  { en: "wild /waɪld/", vn: "hoang dã", tick: false },
+  { en: "stationary /ˈsteɪʃəˌnɛri/", vn: "đứng yên", tick: false },
+  { en: "worth /wɜːrθ/", vn: "đáng giá", tick: false },
+  { en: "dramatic /drəˈmætɪk/", vn: "kịch tính / đáng kể", tick: false },
+  { en: "ethical /ˈɛθɪkəl/", vn: "thuộc đạo đức", tick: false },
+  { en: "external /ɪkˈstɜːrnəl/", vn: "bên ngoài", tick: false },
+  { en: "former /ˈfɔːrmər/", vn: "cựu / trước đây", tick: false },
+  { en: "narrow /ˈnæroʊ/", vn: "hẹp", tick: false },
+  { en: "considerable /kənˈsɪdərəbəl/", vn: "đáng kể", tick: false },
+  { en: "tropical /ˈtrɑːpɪkəl/", vn: "nhiệt đới", tick: false },
+  { en: "wise /waɪz/", vn: "khôn ngoan", tick: false },
+  { en: "challenging /ˈtʃælɪndʒɪŋ/", vn: "đầy thách thức", tick: false },
+  { en: "charming /ˈtʃɑːrmɪŋ/", vn: "quyến rũ", tick: false },
+  { en: "comprehensive /ˌkɑːmprɪˈhɛnsɪv/", vn: "toàn diện", tick: false },
+  { en: "compulsory /kəmˈpʌlsəri/", vn: "bắt buộc", tick: false },
+  { en: "capable /ˈkeɪpəbəl/", vn: "có khả năng", tick: false },
+  { en: "advantageous /ˌædvənˈteɪdʒəs/", vn: "có lợi", tick: false },
+  { en: "beneficial /ˌbɛnəˈfɪʃəl/", vn: "có ích", tick: false },
+  { en: "elderly /ˈɛldərli/", vn: "người già", tick: false },
+  { en: "giant /ˈdʒaɪənt/", vn: "khổng lồ", tick: false },
+  { en: "retail /ˈriteɪl/", vn: "bán lẻ", tick: false },
+  { en: "fed up /fɛd ʌp/", vn: "chán ngấy", tick: false },
+  { en: "separate /ˈsɛpərət/", vn: "tách biệt", tick: false },
+  { en: "slow /sloʊ/", vn: "chậm", tick: false },
+  { en: "fancy /ˈfænsi/", vn: "sang trọng / thích", tick: false },
+  { en: "prior /ˈpraɪər/", vn: "trước", tick: false },
+  { en: "racist /ˈreɪsɪst/", vn: "phân biệt chủng tộc", tick: false },
+  { en: "enthusiastic /ɪnˌθuziˈæstɪk/", vn: "nhiệt tình", tick: false },
+  { en: "strict /strɪkt/", vn: "nghiêm khắc", tick: false },
+  { en: "remarkable /rɪˈmɑːrkəbəl/", vn: "đáng chú ý", tick: false },
+  { en: "confusing /kənˈfjuːzɪŋ/", vn: "gây bối rối", tick: false },
+  { en: "loyal /ˈlɔɪəl/", vn: "trung thành", tick: false },
+  { en: "associated /əˈsoʊʃiˌeɪtəd/", vn: "liên kết", tick: false },
+
+  // ADVERBS (Trạng từ)
+  { en: "absolutely /ˌæbsəˈluːtli/", vn: "tuyệt đối", tick: false },
+  { en: "commonly /ˈkɑːmənli/", vn: "phổ biến", tick: false },
+  { en: "constantly /ˈkɑːnstəntli/", vn: "liên tục", tick: false },
+  { en: "currently /ˈkɜːrəntli/", vn: "hiện tại", tick: false },
+  { en: "basically /ˈbeɪsɪkli/", vn: "về cơ bản", tick: false },
+  { en: "formerly /ˈfɔːrmərli/", vn: "trước đây", tick: false },
+  { en: "generally /ˈdʒɛnərəli/", vn: "nói chung", tick: false },
+  { en: "heavily /ˈhɛvəli/", vn: "nặng nề", tick: false },
+  { en: "incredibly /ɪnˈkrɛdəbli/", vn: "đáng kinh ngạc", tick: false },
+  { en: "indeed /ɪnˈdid/", vn: "thực sự", tick: false },
+  { en: "mainly /ˈmeɪnli/", vn: "chủ yếu", tick: false },
+  { en: "naturally /ˈnætʃərəli/", vn: "tự nhiên", tick: false },
+  { en: "necessarily /ˌnɛsəˈsɛrəli/", vn: "nhất thiết", tick: false },
+  { en: "obviously /ˈɑːbviəsli/", vn: "rõ ràng", tick: false },
+  { en: "originally /əˈrɪdʒənəli/", vn: "ban đầu", tick: false },
+  { en: "particularly /pərˈtɪkjələrli/", vn: "đặc biệt", tick: false },
+  { en: "possibly /ˈpɑːsəbli/", vn: "có khả năng", tick: false },
+  { en: "previously /ˈpriviəsli/", vn: "trước đó", tick: false },
+  { en: "properly /ˈprɑːpərli/", vn: "đúng cách", tick: false },
+  { en: "regularly /ˈrɛɡjələrli/", vn: "thường xuyên", tick: false },
+  { en: "seriously /ˈsɪriəsli/", vn: "nghiêm túc", tick: false },
+  { en: "specifically /spəˈsɪfɪkli/", vn: "cụ thể", tick: false },
+  { en: "strongly /ˈstrɔːŋli/", vn: "mạnh mẽ", tick: false },
+  { en: "successfully /səkˈsɛsfəli/", vn: "thành công", tick: false },
+  { en: "accidentally /ˌæksɪˈdɛntəli/", vn: "vô tình", tick: false },
+  { en: "afterwards /ˈæftərwərdz/", vn: "sau đó", tick: false },
+  { en: "approximately /əˈprɑːksɪmətli/", vn: "xấp xỉ", tick: false },
+  { en: "automatically /ˌɔːtəˈmætɪkli/", vn: "tự động", tick: false },
+  { en: "barely /ˈbɛrli/", vn: "vừa đủ / hầu như không", tick: false },
+  { en: "broadly /ˈbrɔːdli/", vn: "rộng rãi", tick: false },
+  { en: "critically /ˈkrɪtɪkli/", vn: "nghiêm trọng", tick: false },
+  { en: "deeply /ˈdipli/", vn: "sâu sắc", tick: false },
+  { en: "dramatically /drəˈmætɪkli/", vn: "đáng kể", tick: false },
+  { en: "elsewhere /ˈɛlsˌwɛr/", vn: "nơi khác", tick: false },
+  { en: "essentially /ɪˈsɛnʃəli/", vn: "về bản chất", tick: false },
+  { en: "eventually /ɪˈvɛntʃuəli/", vn: "cuối cùng", tick: false },
+  { en: "fairly /ˈfɛrli/", vn: "khá", tick: false },
+  { en: "forever /fərˈɛvər/", vn: "mãi mãi", tick: false },
+  { en: "frequently /ˈfrikwəntli/", vn: "thường xuyên", tick: false },
+  { en: "fundamentally /ˌfʌndəˈmɛntəli/", vn: "về cơ bản", tick: false },
+  { en: "furthermore /ˌfɜːrðərˈmɔːr/", vn: "hơn nữa", tick: false },
+  { en: "gradually /ˈɡrædʒuəli/", vn: "dần dần", tick: false },
+  { en: "regardless /rɪˈɡɑːrdləs/", vn: "bất chấp", tick: false },
+  { en: "immediately /ɪˈmidiətli/", vn: "ngay lập tức", tick: false },
+  { en: "increasingly /ɪnˈkrisiŋli/", vn: "ngày càng", tick: false },
+  { en: "literally /ˈlɪtərəli/", vn: "theo nghĩa đen", tick: false },
+  { en: "nevertheless /ˌnɛvərðəˈlɛs/", vn: "tuy nhiên", tick: false },
+  { en: "openly /ˈoʊpənli/", vn: "công khai", tick: false },
+  { en: "otherwise /ˈʌðərˌwaɪz/", vn: "nếu không thì", tick: false },
+  { en: "partly /ˈpɑːrtli/", vn: "một phần", tick: false },
+  { en: "primarily /praɪˈmɛrəli/", vn: "chủ yếu", tick: false },
+  { en: "rapidly /ˈræpɪdli/", vn: "nhanh chóng", tick: false },
+  { en: "relatively /ˈrɛlətɪvli/", vn: "tương đối", tick: false },
+  { en: "roughly /ˈrʌfli/", vn: "xấp xỉ", tick: false },
+  { en: "shortly /ˈʃɔːrtli/", vn: "sớm / chẳng bao lâu", tick: false },
+  { en: "somewhat /ˈsʌmwʌt/", vn: "hơi hơi", tick: false },
+  { en: "steadily /ˈstɛdəli/", vn: "đều đặn", tick: false },
+  { en: "subsequently /ˈsʌbsɪkwəntli/", vn: "sau đó", tick: false },
+  { en: "suddenly /ˈsʌdənli/", vn: "đột ngột", tick: false },
+  { en: "truly /ˈtruːli/", vn: "thực sự", tick: false },
+  { en: "typically /ˈtɪpɪkli/", vn: "điển hình", tick: false },
+  ],
+
+  6: [
+  { en: "entirely /ɪnˈtaɪərli/", vn: "toàn bộ", tick: false },
+  { en: "widely /ˈwaɪdli/", vn: "rộng rãi", tick: false },
+  { en: "occasionally /əˈkeɪʒənəli/", vn: "thỉnh thoảng", tick: false },
+  { en: "consequently /ˈkɑːnsəkwəntli/", vn: "hậu quả là", tick: false },
+  { en: "likewise /ˈlaɪkˌwaɪz/", vn: "tương tự", tick: false },
+  { en: "whereas /ˌwɛrˈæz/", vn: "trong khi đó", tick: false },
+  { en: "access /ˈækˌsɛs/", vn: "lối vào / quyền truy cập", tick: false },
+  { en: "administration /ədˌmɪnɪˈstreɪʃən/", vn: "sự quản trị / chính quyền", tick: false },
+  { en: "agenda /əˈdʒɛndə/", vn: "chương trình nghị sự", tick: false },
+  { en: "apology /əˈpɑːlədʒi/", vn: "lời xin lỗi", tick: false },
+  { en: "approval /əˈpruvəl/", vn: "sự chấp thuận", tick: false },
+  { en: "artwork /ˈɑːrtˌwɜːrk/", vn: "tác phẩm nghệ thuật", tick: false },
+  { en: "assignment /əˈsaɪnmənt/", vn: "nhiệm vụ / bài tập", tick: false },
+  { en: "attachment /əˈtætʃmənt/", vn: "tập tin đính kèm", tick: false },
+  { en: "attitude /ˈætɪˌtud/", vn: "thái độ", tick: false },
+  { en: "authority /əˈθɔːrəti/", vn: "quyền lực / chính quyền", tick: false },
+  { en: "balance /ˈbæləns/", vn: "sự cân bằng / số dư", tick: false },
+  { en: "battery /ˈbætəri/", vn: "pin", tick: false },
+  { en: "battle /ˈbætəl/", vn: "trận chiến", tick: false },
+  { en: "benefit /ˈbɛnəfɪt/", vn: "lợi ích", tick: false },
+  { en: "branch /bræntʃ/", vn: "chi nhánh / cành cây", tick: false },
+  { en: "breath /brɛθ/", vn: "hơi thở", tick: false },
+  { en: "budget /ˈbʌdʒɪt/", vn: "ngân sách", tick: false },
+  { en: "campaign /kæmˈpeɪn/", vn: "chiến dịch", tick: false },
+  { en: "candidate /ˈkændɪˌdeɪt/", vn: "ứng cử viên", tick: false },
+  { en: "chairman /ˈtʃɛrmən/", vn: "chủ tịch", tick: false },
+  { en: "childhood /ˈtʃaɪldˌhʊd/", vn: "tuổi thơ", tick: false },
+  { en: "citizen /ˈsɪtɪzən/", vn: "công dân", tick: false },
+  { en: "collection /kəˈlɛkʃən/", vn: "bộ sưu tập", tick: false },
+  { en: "combination /ˌkɑːmbɪˈneɪʃən/", vn: "sự kết hợp", tick: false },
+  { en: "comfort /ˈkʌmfərt/", vn: "sự thoải mái / an ủi", tick: false },
+  { en: "commission /kəˈmɪʃən/", vn: "ủy ban / tiền hoa hồng", tick: false },
+  { en: "commitment /kəˈmɪtmənt/", vn: "lời cam kết", tick: false },
+  { en: "committee /kəˈmɪti/", vn: "ủy ban", tick: false },
+  { en: "communication /kəˌmjunɪˈkeɪʃən/", vn: "giao tiếp", tick: false },
+  { en: "comparison /kəmˈpɛrəsən/", vn: "sự so sánh", tick: false },
+  { en: "competitor /kəmˈpɛtətər/", vn: "đối thủ cạnh tranh", tick: false },
+  { en: "complaint /kəmˈpleɪnt/", vn: "lời phàn nàn", tick: false },
+  { en: "component /kəmˈpoʊnənt/", vn: "thành phần", tick: false },
+  { en: "syntax /ˈsɪntæks/", vn: "cú pháp", tick: false },
+  { en: "concentration /ˌkɑːnsənˈtreɪʃən/", vn: "sự tập trung", tick: false },
+  { en: "concept /ˈkɑːnsɛpt/", vn: "khái niệm", tick: false },
+  { en: "conclusion /kənˈkluʒən/", vn: "kết luận", tick: false },
+  { en: "confidence /ˈkɑːnfədəns/", vn: "sự tự tin", tick: false },
+  { en: "connection /kəˈnɛkʃən/", vn: "kết nối", tick: false },
+  { en: "consequence /ˈkɑːnsəˌkwɛns/", vn: "hậu quả", tick: false },
+  { en: "consideration /kənˌsɪdəˈreɪʃən/", vn: "sự xem xét", tick: false },
+  { en: "consumer /kənˈsumər/", vn: "người tiêu dùng", tick: false },
+  { en: "container /kənˈteɪnər/", vn: "thùng chứa", tick: false },
+  { en: "contest /ˈkɑːntɛst/", vn: "cuộc thi", tick: false },
+  { en: "contribution /ˌkɑːntrəˈbjuʃən/", vn: "sự đóng góp", tick: false },
+  { en: "glacier /ˈɡleɪʃər/", vn: "sông băng", tick: false },
+  { en: "costume /ˈkɑːstum/", vn: "trang phục", tick: false },
+  { en: "cottage /ˈkɑːtɪdʒ/", vn: "nhà tranh", tick: false },
+  { en: "council /ˈkaʊnsəl/", vn: "hội đồng", tick: false },
+  { en: "countryside /ˈkʌntriˌsaɪd/", vn: "nông thôn", tick: false },
+  { en: "county /ˈkaʊnti/", vn: "huyện / hạt", tick: false },
+  { en: "courage /ˈkɜːrɪdʒ/", vn: "lòng can đảm", tick: false },
+  { en: "creativity /ˌkrieɪˈtɪvəti/", vn: "sự sáng tạo", tick: false },
+  { en: "creature /ˈkritʃər/", vn: "sinh vật", tick: false },
+  { en: "crisis /ˈkraɪsɪs/", vn: "cuộc khủng hoảng", tick: false },
+  { en: "criterion /kraɪˈtɪriən/", vn: "tiêu chí", tick: false },
+  { en: "critic /ˈkrɪtɪk/", vn: "nhà phê bình", tick: false },
+  { en: "criticism /ˈkrɪtɪˌsɪzəm/", vn: "sự phê bình", tick: false },
+  { en: "crop /krɑːp/", vn: "vụ mùa", tick: false },
+  { en: "currency /ˈkɜːrənsi/", vn: "tiền tệ", tick: false },
+  { en: "curriculum /kəˈrɪkjələm/", vn: "chương trình học", tick: false },
+  { en: "curtain /ˈkɜːrtən/", vn: "rèm cửa", tick: false },
+  { en: "curve /kɜːrv/", vn: "đường cong", tick: false },
+  { en: "aircraft /ˈɛrˌkræft/", vn: "máy bay", tick: false },
+  { en: "alarm /əˈlɑːrm/", vn: "báo động", tick: false },
+  { en: "anger /ˈæŋɡər/", vn: "sự tức giận", tick: false },
+  { en: "angle /ˈæŋɡəl/", vn: "góc", tick: false },
+  { en: "aspect /ˈæspɛkt/", vn: "khía cạnh", tick: false },
+  { en: "cable /ˈkeɪbəl/", vn: "dây cáp", tick: false },
+  { en: "capacity /kəˈpæsəti/", vn: "sức chứa / năng lực", tick: false },
+  { en: "circumstance /ˈsɜːrkəmˌstæns/", vn: "hoàn cảnh", tick: false },
+  { en: "custom /ˈkʌstəm/", vn: "phong tục", tick: false },
+  { en: "definition /ˌdɛfəˈnɪʃən/", vn: "định nghĩa", tick: false },
+  { en: "departure /dɪˈpɑːrtʃər/", vn: "sự khởi hành", tick: false },
+  { en: "destination /ˌdɛstəˈneɪʃən/", vn: "điểm đến", tick: false },
+  { en: "development /dɪˈvɛləpmənt/", vn: "sự phát triển", tick: false },
+  { en: "diagram /ˈdaɪəˌɡræm/", vn: "biểu đồ / sơ đồ", tick: false },
+  { en: "dirt /dɜːrt/", vn: "bụi bẩn", tick: false },
+  { en: "disadvantage /ˌdɪsədˈvæntɪdʒ/", vn: "nhược điểm", tick: false },
+  { en: "disappointment /ˌdɪsəˈpɔɪntmənt/", vn: "sự thất vọng", tick: false },
+  { en: "diversity /daɪˈvɜːrsəti/", vn: "sự đa dạng", tick: false },
+  { en: "documentary /ˌdɑːkjəˈmɛntəri/", vn: "phim tài liệu", tick: false },
+  { en: "duty /ˈduti/", vn: "nhiệm vụ / thuế", tick: false },
+  { en: "earthquake /ˈɜːrθˌkweɪk/", vn: "động đất", tick: false },
+  { en: "economy /ɪˈkɑːnəmi/", vn: "nền kinh tế", tick: false },
+  { en: "edge /ɛdʒ/", vn: "cạnh / rìa", tick: false },
+  { en: "editor /ˈɛdɪtər/", vn: "biên tập viên", tick: false },
+  { en: "existence /ɪɡˈzɪstəns/", vn: "sự tồn tại", tick: false },
+  { en: "tomb /tum/", vn: "ngôi mộ", tick: false },
+  { en: "shell /ʃɛl/", vn: "vỏ", tick: false },
+  { en: "effort /ˈɛfərt/", vn: "nỗ lực", tick: false },
+  { en: "election /ɪˈlɛkʃən/", vn: "cuộc bầu cử", tick: false },
+  { en: "element /ˈɛləmənt/", vn: "yếu tố", tick: false },
+  { en: "acid rain /ˈæsɪd reɪn/", vn: "mưa axit", tick: false }
+  ],
+
+  7: [
+  { en: "emergency /ɪˈmɜːrdʒənsi/", vn: "tình trạng khẩn cấp", tick: false },
+  { en: "emotion /ɪˈmoʊʃən/", vn: "cảm xúc", tick: false },
+  { en: "employment /ɪmˈplɔɪmənt/", vn: "việc làm / sự thuê mướn", tick: false },
+  { en: "engineering /ˌɛndʒɪˈnɪrɪŋ/", vn: "ngành kỹ thuật", tick: false },
+  { en: "entertainment /ˌɛntərˈteɪnmənt/", vn: "sự giải trí", tick: false },
+  { en: "era /ˈɪrə/", vn: "kỷ nguyên / thời đại", tick: false },
+  { en: "exhibition /ˌɛksɪˈbɪʃən/", vn: "cuộc triển lãm", tick: false },
+  { en: "exit /ˈɛɡzɪt/", vn: "lối thoát / sự đi ra", tick: false },
+  { en: "expedition /ˌɛkspəˈdɪʃən/", vn: "cuộc thám hiểm", tick: false },
+  { en: "exposure /ɪkˈspoʊʒər/", vn: "sự phơi bày / tiếp xúc", tick: false },
+  { en: "fabric /ˈfæbrɪk/", vn: "vải / cấu trúc", tick: false },
+  { en: "fame /feɪm/", vn: "danh tiếng", tick: false },
+  { en: "flavour /ˈfleɪvər/", vn: "hương vị", tick: false },
+  { en: "garage /ɡəˈrɑːʒ/", vn: "nhà để xe / xưởng sửa xe", tick: false },
+  { en: "generation /ˌdʒɛnəˈreɪʃən/", vn: "thế hệ", tick: false },
+  { en: "goods /ɡʊdz/", vn: "hàng hóa", tick: false },
+  { en: "grain /ɡreɪn/", vn: "ngũ cốc / hạt", tick: false },
+  { en: "headline /ˈhɛdˌlaɪn/", vn: "tiêu đề / hàng đầu", tick: false },
+  { en: "heating /ˈhitɪŋ/", vn: "hệ thống sưởi", tick: false },
+  { en: "helicopter /ˈhɛlɪˌkɑːptər/", vn: "máy bay trực thăng", tick: false },
+  { en: "horror /ˈhɔːrər/", vn: "sự kinh dị / khiếp sợ", tick: false },
+  { en: "household /ˈhaʊsˌhoʊld/", vn: "hộ gia đình", tick: false },
+  { en: "hurricane /ˈhɜːrəˌkeɪn/", vn: "bão lớn / cuồng phong", tick: false },
+  { en: "icon /ˈaɪkɑːn/", vn: "biểu tượng", tick: false },
+  { en: "identity /aɪˈdɛntəti/", vn: "danh tính / bản sắc", tick: false },
+  { en: "imagination /ɪˌmædʒəˈneɪʃən/", vn: "sự tưởng tượng", tick: false },
+  { en: "immigrant /ˈɪməɡrənt/", vn: "người nhập cư", tick: false },
+  { en: "importance /ɪmˈpɔːrtəns/", vn: "tầm quan trọng", tick: false },
+  { en: "impression /ɪmˈprɛʃən/", vn: "ấn tượng", tick: false },
+  { en: "improvement /ɪmˈpruːvmənt/", vn: "sự cải thiện", tick: false },
+  { en: "income /ˈɪnˌkʌm/", vn: "thu nhập", tick: false },
+  { en: "index /ˈɪndɛks/", vn: "chỉ số / mục lục", tick: false },
+  { en: "ingredient /ɪnˈɡridiənt/", vn: "thành phần (nguyên liệu)", tick: false },
+  { en: "innovation /ˌɪnəˈveɪʃən/", vn: "sự đổi mới / sáng kiến", tick: false },
+  { en: "intelligence /ɪnˈtɛlɪdʒəns/", vn: "trí thông minh", tick: false },
+  { en: "intention /ɪnˈtɛnʃən/", vn: "ý định", tick: false },
+  { en: "interaction /ˌɪntərˈækʃən/", vn: "sự tương tác", tick: false },
+  { en: "investigation /ɪnˌvɛstəˈɡeɪʃən/", vn: "cuộc điều tra", tick: false },
+  { en: "journal /ˈdʒɜːrnəl/", vn: "tạp chí chuyên ngành / nhật ký", tick: false },
+  { en: "journalism /ˈdʒɜːrnəˌlɪzəm/", vn: "ngành báo chí", tick: false },
+  { en: "jury /ˈdʒʊri/", vn: "ban bồi thẩm", tick: false },
+  { en: "laboratory /ˈlæbrəˌtɔːri/", vn: "phòng thí nghiệm", tick: false },
+  { en: "typeface /ˈtaɪpˌfeɪs/", vn: "kiểu chữ", tick: false },
+  { en: "landscape /ˈlændˌskeɪp/", vn: "phong cảnh", tick: false },
+  { en: "literature /ˈlɪtərətʃər/", vn: "văn học", tick: false },
+  { en: "loss /lɔːs/", vn: "sự mất mát / thua lỗ", tick: false },
+  { en: "lung /lʌŋ/", vn: "phổi", tick: false },
+  { en: "management /ˈmænɪdʒmənt/", vn: "sự quản lý / ban quản trị", tick: false },
+  { en: "marketing /ˈmɑːrkətɪŋ/", vn: "tiếp thị", tick: false },
+  { en: "marriage /ˈmærɪdʒ/", vn: "hôn nhân", tick: false },
+  { en: "mood /muːd/", vn: "tâm trạng", tick: false },
+  { en: "mud /mʌd/", vn: "bùn", tick: false },
+  { en: "wildfire /ˈwaɪldˌfaɪər/", vn: "cháy rừng", tick: false },
+  { en: "farewell /ˌfɛrˈwɛl/", vn: "lời tạm biệt", tick: false },
+  { en: "mystery /ˈmɪstəri/", vn: "bí ẩn", tick: false },
+  { en: "needle /ˈnidəl/", vn: "cây kim", tick: false },
+  { en: "occupation /ˌɑːkjəˈpeɪʃən/", vn: "nghề nghiệp", tick: false },
+  { en: "operation /ˌɑːpəˈreɪʃən/", vn: "ca phẫu thuật / sự vận hành", tick: false },
+  { en: "organizer /ˈɔːrɡəˌnaɪzər/", vn: "người tổ chức", tick: false },
+  { en: "participation /pɑːrˌtɪsəˈpeɪʃən/", vn: "sự tham gia", tick: false },
+  { en: "passion /ˈpæʃən/", vn: "đam mê", tick: false },
+  { en: "percentage /pərˈsɛntɪdʒ/", vn: "tỷ lệ phần trăm", tick: false },
+  { en: "performance /pərˈfɔːrməns/", vn: "buổi biểu diễn / hiệu suất", tick: false },
+  { en: "phase /feɪz/", vn: "giai đoạn", tick: false },
+  { en: "poison /ˈpɔɪzən/", vn: "chất độc", tick: false },
+  { en: "policy /ˈpɑːləsi/", vn: "chính sách", tick: false },
+  { en: "politician /ˌpɑːləˈtɪʃən/", vn: "chính trị gia", tick: false },
+  { en: "politics /ˈpɑːləˌtɪks/", vn: "chính trị", tick: false },
+  { en: "portrait /ˈpɔːrtrət/", vn: "chân dung", tick: false },
+  { en: "poverty /ˈpɑːvərti/", vn: "sự nghèo đói", tick: false },
+  { en: "prayer /prɛr/", vn: "lời cầu nguyện", tick: false },
+  { en: "prediction /prɪˈdɪkʃən/", vn: "sự dự đoán", tick: false },
+  { en: "presentation /ˌprizɛnˈteɪʃən/", vn: "bài thuyết trình", tick: false },
+  { en: "pressure /ˈprɛʃər/", vn: "áp lực / huyết áp", tick: false },
+  { en: "priest /prist/", vn: "linh mục", tick: false },
+  { en: "prisoner /ˈprɪzənər/", vn: "tù nhân", tick: false },
+  { en: "privacy /ˈpraɪvəsi/", vn: "sự riêng tư", tick: false },
+  { en: "process /ˈprɑːsɛs/", vn: "quá trình", tick: false },
+  { en: "producer /prəˈdusər/", vn: "nhà sản xuất", tick: false },
+  { en: "production /prəˈdʌkʃən/", vn: "sự sản xuất", tick: false },
+  { en: "profession /prəˈfɛʃən/", vn: "nghề nghiệp (chuyên môn)", tick: false },
+  { en: "program /ˈproʊɡræm/", vn: "chương trình", tick: false },
+  { en: "property /ˈprɑːpərti/", vn: "tài sản / bất động sản", tick: false },
+  { en: "protection /prəˈtɛkʃən/", vn: "sự bảo vệ", tick: false },
+  { en: "publication /ˌpʌblɪˈkeɪʃən/", vn: "ấn phẩm / sự xuất bản", tick: false },
+  { en: "punishment /ˈpʌnɪʃmənt/", vn: "hình phạt", tick: false },
+  { en: "quotation /kwoʊˈteɪʃən/", vn: "lời trích dẫn / báo giá", tick: false },
+  { en: "racing /ˈreɪsɪŋ/", vn: "cuộc đua / môn đua xe", tick: false },
+  { en: "range /reɪndʒ/", vn: "phạm vi / dãy", tick: false },
+  { en: "reaction /riˈækʃən/", vn: "phản ứng", tick: false },
+  { en: "reality /riˈæləti/", vn: "thực tế", tick: false },
+  { en: "receipt /rɪˈsit/", vn: "hóa đơn / biên lai", tick: false },
+  { en: "recommendation /ˌrɛkəmɛnˈdeɪʃən/", vn: "lời giới thiệu / tiến cử", tick: false },
+  { en: "relation /rɪˈleɪʃən/", vn: "mối quan hệ / liên hệ", tick: false },
+  { en: "religion /rɪˈlɪdʒən/", vn: "tôn giáo", tick: false },
+  { en: "reservation /ˌrɛzərˈveɪʃən/", vn: "sự đặt chỗ trước", tick: false },
+  { en: "resident /ˈrɛzədənt/", vn: "cư dân", tick: false },
+  { en: "resource /ˈrisɔːrs/", vn: "nguồn lực / tài nguyên", tick: false },
+  { en: "responsibility /rɪˌspɑːnsəˈbɪləti/", vn: "trách nhiệm", tick: false },
+  { en: "rhythm /ˈrɪðəm/", vn: "nhịp điệu", tick: false },
+  ],
+
+  8: [
+  { en: "rocket /ˈrɑːkət/", vn: "tên lửa", tick: false },
+  { en: "root /rut/", vn: "rễ cây / cội nguồn", tick: false },
+  { en: "satellite /ˈsætəˌlaɪt/", vn: "vệ tinh", tick: false },
+  { en: "scholar /ˈskɑːlər/", vn: "học giả", tick: false },
+  { en: "scholarship /ˈskɑːlərˌʃɪp/", vn: "học bổng", tick: false },
+  { en: "script /skrɪpt/", vn: "kịch bản / chữ viết", tick: false },
+  { en: "sculpture /ˈskʌlptʃər/", vn: "tác phẩm điêu khắc", tick: false },
+  { en: "security /sɪˈkjʊrəti/", vn: "an ninh / bảo mật", tick: false },
+  { en: "seed /sid/", vn: "hạt giống", tick: false },
+  { en: "servant /ˈsɜːrvənt/", vn: "người hầu", tick: false },
+  { en: "session /ˈsɛʃən/", vn: "phiên / buổi / kỳ họp", tick: false },
+  { en: "setting /ˈsɛtɪŋ/", vn: "bối cảnh / sự cài đặt", tick: false },
+  { en: "sibling /ˈsɪblɪŋ/", vn: "anh chị em ruột", tick: false },
+  { en: "sight /saɪt/", vn: "thị giác / cảnh đẹp", tick: false },
+  { en: "specialist /ˈspɛʃəlɪst/", vn: "chuyên gia", tick: false },
+  { en: "species /ˈspiːʃiz/", vn: "loài / chủng loại", tick: false },
+  { en: "spending /ˈspɛndɪŋ/", vn: "chi tiêu", tick: false },
+  { en: "spirit /ˈspɪrɪt/", vn: "tinh thần / linh hồn", tick: false },
+  { en: "state /steɪt/", vn: "trạng thái / tiểu bang / quốc gia", tick: false },
+  { en: "statistic /stəˈtɪstɪk/", vn: "số liệu thống kê", tick: false },
+  { en: "stream /strim/", vn: "dòng suối / dòng chảy", tick: false },
+  { en: "string /strɪŋ/", vn: "sợi dây / chuỗi", tick: false },
+  { en: "substance /ˈsʌbstəns/", vn: "chất / bản chất", tick: false },
+  { en: "summary /ˈsʌməri/", vn: "bản tóm tắt", tick: false },
+  { en: "surgery /ˈsɜːrdʒəri/", vn: "phẫu thuật / phòng khám", tick: false },
+  { en: "sympathy /ˈsɪmpəθi/", vn: "sự thông cảm", tick: false },
+  { en: "symptom /ˈsɪmptəm/", vn: "triệu chứng", tick: false },
+  { en: "tax /tæks/", vn: "thuế", tick: false },
+  { en: "technique /tɛkˈnik/", vn: "kỹ thuật / phương pháp", tick: false },
+  { en: "theory /ˈθɪəri/", vn: "lý thuyết", tick: false },
+  { en: "threat /θrɛt/", vn: "mối đe dọa", tick: false },
+  { en: "trade /treɪd/", vn: "thương mại / sự mua bán", tick: false },
+  { en: "translation /trænsˈleɪʃən/", vn: "bản dịch / sự dịch thuật", tick: false },
+  { en: "treatment /ˈtritmənt/", vn: "sự điều trị / đối xử", tick: false },
+  { en: "trouble /ˈtrʌbəl/", vn: "rắc rối / lo lắng", tick: false },
+  { en: "unemployment /ˌʌnɪmˈplɔɪmənt/", vn: "sự thất nghiệp", tick: false },
+  { en: "union /ˈjunjən/", vn: "liên minh / công đoàn", tick: false },
+  { en: "universe /ˈjunəˌvɜːrs/", vn: "vũ trụ", tick: false },
+  { en: "venue /ˈvɛnju/", vn: "địa điểm tổ chức", tick: false },
+  { en: "version /ˈvɜːrʒən/", vn: "phiên bản", tick: false },
+  { en: "victory /ˈvɪktəri/", vn: "chiến thắng", tick: false },
+  { en: "wage /weɪdʒ/", vn: "tiền công (trả theo giờ/ngày)", tick: false },
+  { en: "warning /ˈwɔːrnɪŋ/", vn: "lời cảnh báo", tick: false },
+  { en: "weakness /ˈwiknəs/", vn: "điểm yếu", tick: false },
+  { en: "will /wɪl/", vn: "ý chí / di chúc", tick: false },
+  { en: "workforce /ˈwɜːrkˌfɔːrs/", vn: "lực lượng lao động", tick: false },
+  { en: "ability /əˈbɪləti/", vn: "khả năng / năng lực", tick: false },
+  { en: "academy /əˈkædəmi/", vn: "học viện", tick: false },
+  { en: "accent /ˈæksɛnt/", vn: "giọng điệu (vùng miền)", tick: false },
+  { en: "acceptance /ækˈsɛptəns/", vn: "sự chấp nhận", tick: false },
+  { en: "accommodation /əˌkɑːməˈdeɪʃən/", vn: "chỗ ở", tick: false },
+  { en: "account /əˈkaʊnt/", vn: "tài khoản / bản báo cáo", tick: false },
+  { en: "accountant /əˈkaʊntənt/", vn: "kế toán viên", tick: false },
+  { en: "accuracy /ˈækjərəsi/", vn: "độ chính xác", tick: false },
+  { en: "achievement /əˈtʃivmənt/", vn: "thành tựu", tick: false },
+  { en: "acid /ˈæsɪd/", vn: "a-xít", tick: false },
+  { en: "advertisement /ˌædvərˈtaɪzmənt/", vn: "mục quảng cáo", tick: false },
+  { en: "addiction /əˈdɪkʃən/", vn: "sự nghiện / thói quen khó bỏ", tick: false },
+  { en: "addition /əˈdɪʃən/", vn: "phép cộng / sự thêm vào", tick: false },
+  { en: "advantage /ədˈvæntɪdʒ/", vn: "lợi thế", tick: false },
+  { en: "advice /ədˈvaɪs/", vn: "lời khuyên", tick: false },
+  { en: "affair /əˈfɛr/", vn: "vụ việc / chuyện yêu đương", tick: false },
+  { en: "ageing /ˈeɪdʒɪŋ/", vn: "sự lão hóa / già đi", tick: false },
+  { en: "agency /ˈeɪdʒənsi/", vn: "đại lý / cơ quan", tick: false },
+  { en: "agreement /əˈɡrimənt/", vn: "sự đồng ý / hợp đồng", tick: false },
+  { en: "agriculture /ˈæɡrɪˌkʌltʃər/", vn: "nông nghiệp", tick: false },
+  { en: "alcoholic /ˌælkəˈhɑːlɪk/", vn: "người nghiện rượu", tick: false },
+  { en: "alley /ˈæli/", vn: "ngõ nhỏ / hẻm", tick: false },
+  { en: "alternative /ɔːlˈtɜːrnətɪv/", vn: "sự lựa chọn thay thế", tick: false },
+  { en: "aluminium /ˌæljəˈmɪniəm/", vn: "nhôm", tick: false },
+  { en: "ambition /æmˈbɪʃən/", vn: "tham vọng", tick: false },
+  { en: "amusement /əˈmjuzmənt/", vn: "sự giải trí / thích thú", tick: false },
+  { en: "analysis /əˈnæləsɪs/", vn: "sự phân tích", tick: false },
+  { en: "analyst /ˈænəlɪst/", vn: "nhà phân tích", tick: false },
+  { en: "ancestor /ˈænsɛstər/", vn: "tổ tiên", tick: false },
+  { en: "announcement /əˈnaʊnsmənt/", vn: "thông báo", tick: false },
+  { en: "anxiety /æŋˈzaɪəti/", vn: "mối lo âu", tick: false },
+  { en: "appearance /əˈpɪrəns/", vn: "ngoại hình / sự xuất hiện", tick: false },
+  { en: "applicant /ˈæplɪkənt/", vn: "người nộp đơn ứng tuyển", tick: false },
+  { en: "application /ˌæplɪˈkeɪʃən/", vn: "đơn ứng tuyển / ứng dụng", tick: false },
+  { en: "appointment /əˈpɔɪntmənt/", vn: "cuộc hẹn", tick: false },
+  { en: "approach /əˈproʊtʃ/", vn: "cách tiếp cận / sự đến gần", tick: false },
+  { en: "apricot blossom /ˈeɪprɪˌkɑːt ˈblɑːsəm/", vn: "hoa mai", tick: false },
+  { en: "architecture /ˈɑːrkəˌtɛktʃər/", vn: "kiến trúc", tick: false },
+  { en: "arms /ɑːrmz/", vn: "vũ khí", tick: false },
+  { en: "arrival /əˈraɪvəl/", vn: "sự đến nơi", tick: false },
+  { en: "arrow /ˈæroʊ/", vn: "mũi tên", tick: false },
+  { en: "artist /ˈɑːrtɪst/", vn: "nghệ sĩ", tick: false },
+  { en: "assessment /əˈsɛsmənt/", vn: "sự đánh giá", tick: false },
+  { en: "asset /ˈæsɛt/", vn: "tài sản / vốn quý", tick: false },
+  { en: "assistance /əˈsɪstəns/", vn: "sự giúp đỡ", tick: false },
+  { en: "assumption /əˈsʌmpʃən/", vn: "giả định", tick: false },
+  { en: "astronaut /ˈæstrəˌnɔːt/", vn: "phi hành gia", tick: false },
+  { en: "athlete /ˈæθˌlit/", vn: "vận động viên", tick: false },
+  { en: "atmosphere /ˈætməˌsfɪr/", vn: "bầu không khí", tick: false },
+  { en: "attacker /əˈtækər/", vn: "kẻ tấn công", tick: false },
+  { en: "attraction /əˈtrækʃən/", vn: "sự thu hút / điểm tham quan", tick: false },
+  { en: "auction /ˈɑːkʃən/", vn: "cuộc đấu giá", tick: false },
+  { en: "audience /ˈɑːdiəns/", vn: "khán giả", tick: false },
+  { en: "avalanche /ˈævəˌlæntʃ/", vn: "tuyết lở", tick: false },
+  ],
+
+  9: [
+  { en: "awareness /əˈwɛrnəs/", vn: "nhận thức", tick: false },
+  { en: "awe /ɔː/", vn: "sự kinh ngạc / nể sợ", tick: false },
+  { en: "bacteria /bækˈtɪriə/", vn: "vi khuẩn", tick: false },
+  { en: "badge /bædʒ/", vn: "huy hiệu / phù hiệu", tick: false },
+  { en: "bargain /ˈbɑːrɡən/", vn: "món hời / sự mặc cả", tick: false },
+  { en: "barrier /ˈbæriər/", vn: "rào cản", tick: false },
+  { en: "fishing vessel /ˈfɪʃɪŋ ˈvɛsəl/", vn: "tàu đánh cá", tick: false },
+  { en: "beak /bik/", vn: "mỏ chim", tick: false },
+  { en: "behavior /bɪˈheɪvjər/", vn: "hành vi / cách cư xử", tick: false },
+  { en: "priority /praɪˈɔːrəti/", vn: "sự ưu tiên", tick: false },
+  { en: "bias /ˈbaɪəs/", vn: "định kiến / sự thiên vị", tick: false },
+  { en: "bishop /ˈbɪʃəp/", vn: "giám mục", tick: false },
+  { en: "personality /ˌpɜːrsəˈnæləti/", vn: "nhân cách / tính cách", tick: false },
+  { en: "blackboard /ˈblækˌbɔːrd/", vn: "bảng đen", tick: false },
+  { en: "blade /bleɪd/", vn: "lưỡi dao / cánh quạt", tick: false },
+  { en: "blizzard /ˈblɪzərd/", vn: "bão tuyết", tick: false },
+  { en: "blossom /ˈblɑːsəm/", vn: "hoa (của cây ăn quả)", tick: false },
+  { en: "board /bɔːrd/", vn: "hội đồng / bảng / tấm ván", tick: false },
+  { en: "bond /bɑːnd/", vn: "mối liên kết / trái phiếu", tick: false },
+  { en: "border /ˈbɔːrdər/", vn: "biên giới / ranh giới", tick: false },
+  { en: "boredom /ˈbɔːrdəm/", vn: "sự nhàm chán", tick: false },
+  { en: "boulevard /ˈbʊləˌvɑːrd/", vn: "đại lộ", tick: false },
+  { en: "bouquet /buˈkeɪ/", vn: "bó hoa", tick: false },
+  { en: "breathing /ˈbriðɪŋ/", vn: "sự hô hấp", tick: false },
+  { en: "broadcaster /ˈbrɔːdˌkæstər/", vn: "phát thanh viên", tick: false },
+  { en: "bush /bʊʃ/", vn: "bụi cây", tick: false },
+  { en: "consultant /kənˈsʌltənt/", vn: "người tư vấn", tick: false },
+  { en: "consumption /kənˈsʌmpʃən/", vn: "sự tiêu thụ", tick: false },
+  { en: "continent /ˈkɑːntənənt/", vn: "lục địa", tick: false },
+  { en: "controversy /ˈkɑːntrəˌvɜːrsi/", vn: "sự tranh luận / tranh cãi", tick: false },
+  { en: "convenience /kənˈvinjəns/", vn: "sự thuận tiện", tick: false },
+  { en: "convention /kənˈvɛnʃən/", vn: "hội nghị / quy ước", tick: false },
+  { en: "coral reef /ˈkɔːrəl rif/", vn: "rạn san hô", tick: false },
+  { en: "corporation /ˌkɔːrpəˈreɪʃən/", vn: "tập đoàn", tick: false },
+  { en: "corridor /ˈkɔːrədər/", vn: "hành lang", tick: false },
+  { en: "coverage /ˈkʌvərɪdʒ/", vn: "độ bao phủ / tin tức tường thuật", tick: false },
+  { en: "crack /kræk/", vn: "vết nứt", tick: false },
+  { en: "crude oil /krud ɔɪl/", vn: "dầu thô", tick: false },
+  { en: "cruise /kruz/", vn: "chuyến du hành bằng tàu thủy", tick: false },
+  { en: "customer /ˈkʌstəmər/", vn: "khách hàng", tick: false },
+  { en: "dairy /ˈdɛri/", vn: "sản phẩm từ sữa", tick: false },
+  { en: "darkness /ˈdɑːrknəs/", vn: "bóng tối", tick: false },
+  { en: "database /ˈdeɪtəˌbeɪs/", vn: "cơ sở dữ liệu", tick: false },
+  { en: "date /deɪt/", vn: "ngày tháng / sự hẹn hò", tick: false },
+  { en: "deadline /ˈdɛdˌlaɪn/", vn: "hạn chót", tick: false },
+  { en: "dealer /ˈdilər/", vn: "người đại lý / người buôn bán", tick: false },
+  { en: "debate /dɪˈbeɪt/", vn: "cuộc tranh luận", tick: false },
+  { en: "debt /dɛt/", vn: "món nợ", tick: false },
+  { en: "deck /dɛk/", vn: "boong tàu", tick: false },
+  { en: "decoration /ˌdɛkəˈreɪʃən/", vn: "sự trang trí", tick: false },
+  { en: "caution /ˈkɔːʃən/", vn: "sự thận trọng / cảnh báo", tick: false },
+  { en: "cell /sɛl/", vn: "tế bào / phòng giam / ô", tick: false },
+  { en: "chamber /ˈtʃeɪmbər/", vn: "buồng / phòng", tick: false },
+  { en: "defence /dɪˈfɛns/", vn: "sự phòng thủ", tick: false },
+  { en: "voyage /ˈvɔɪɪdʒ/", vn: "chuyến du hành xa (đường biển/vũ trụ)", tick: false },
+  { en: "youth /juθ/", vn: "thanh xuân / giới trẻ", tick: false },
+  { en: "defender /dɪˈfɛndər/", vn: "người phòng thủ / hậu vệ", tick: false },
+  { en: "degree /dɪˈɡri/", vn: "mức độ / bằng cấp / độ", tick: false },
+  { en: "delight /dɪˈlaɪt/", vn: "sự vui sướng", tick: false },
+  { en: "delivery /dɪˈlɪvəri/", vn: "sự giao hàng", tick: false },
+  { en: "democracy /dɪˈmɑːkrəsi/", vn: "nền dân chủ", tick: false },
+  { en: "demonstration /ˌdɛmənˈstreɪʃən/", vn: "sự chứng minh / biểu tình", tick: false },
+  { en: "depression /dɪˈprɛʃən/", vn: "sự trầm cảm / sự suy thoái", tick: false },
+  { en: "detail /ˈdiˌteɪl/", vn: "chi tiết", tick: false },
+  { en: "detective /dɪˈtɛktɪv/", vn: "thám tử", tick: false },
+  { en: "device /dɪˈvaɪs/", vn: "thiết bị", tick: false },
+  { en: "diet /ˈdaɪət/", vn: "chế độ ăn uống", tick: false },
+  { en: "dinosaur /ˈdaɪnəˌsɔːr/", vn: "khủng long", tick: false },
+  { en: "disability /ˌdɪsəˈbɪləti/", vn: "sự khuyết tật", tick: false },
+  { en: "disagreement /ˌdɪsəˈɡrimənt/", vn: "sự bất đồng", tick: false },
+  { en: "disaster /dɪˈzæstər/", vn: "thảm họa", tick: false },
+  { en: "disc /dɪsk/", vn: "đĩa (hình tròn)", tick: false },
+  { en: "discount /ˈdɪsˌkaʊnt/", vn: "sự giảm giá", tick: false },
+  { en: "discovery /dɪˈskʌvəri/", vn: "sự khám phá", tick: false },
+  { en: "distribution /ˌdɪstrəˈbjuʃən/", vn: "sự phân phối", tick: false },
+  { en: "division /dɪˈvɪʒən/", vn: "sự phân chia / bộ phận", tick: false },
+  { en: "donation /doʊˈneɪʃən/", vn: "sự quyên góp", tick: false },
+  { en: "draft /dræft/", vn: "bản phác thảo / bản nháp", tick: false },
+  { en: "drought /draʊt/", vn: "hạn hán", tick: false },
+  { en: "duration /dʊˈreɪʃən/", vn: "khoảng thời gian / thời lượng", tick: false },
+  { en: "dwarf /dwɔːrf/", vn: "người lùn / vật lùn", tick: false },
+  { en: "economics /ˌɛkəˈnɑːmɪks/", vn: "kinh tế học", tick: false },
+  { en: "economist /ɪˈkɑːnəmɪst/", vn: "nhà kinh tế học", tick: false },
+  { en: "editorial /ˌɛdəˈtɔːriəl/", vn: "bài xã luận", tick: false },
+  { en: "electricity /ɪˌlɛkˈtrɪsəti/", vn: "điện", tick: false },
+  { en: "electronics /ɪˌlɛkˈtrɑːnɪks/", vn: "ngành điện tử", tick: false },
+  { en: "elevator /ˈɛləˌveɪtər/", vn: "thang máy", tick: false },
+  { en: "emergency call /ɪˈmɜːrdʒənsi kɔːl/", vn: "cuộc gọi khẩn cấp", tick: false },
+  { en: "emission /ɪˈmɪʃən/", vn: "khí thải / sự phát xạ", tick: false },
+  { en: "emphasis /ˈɛmfəsɪs/", vn: "sự nhấn mạnh", tick: false },
+  { en: "empire /ˈɛmpaɪər/", vn: "đế chế", tick: false },
+  { en: "employee /ɪmˈplɔɪi/", vn: "nhân viên", tick: false },
+  { en: "employer /ɪmˈplɔɪər/", vn: "chủ lao động", tick: false },
+  { en: "enquiry /ɪnˈkwaɪri/", vn: "sự thẩm vấn / yêu cầu thông tin", tick: false },
+  { en: "entrance /ˈɛntrəns/", vn: "lối vào / cổng", tick: false },
+  { en: "entrepreneur /ˌɑːntrəprəˈnɜːr/", vn: "doanh nhân / người khởi nghiệp", tick: false },
+  { en: "entry /ˈɛntri/", vn: "lối đi vào / mục đăng ký", tick: false },
+  { en: "envelope /ˈɛnvəˌloʊp/", vn: "phong bì", tick: false },
+  { en: "episode /ˈɛpəˌsoʊd/", vn: "tập phim / tình tiết", tick: false },
+  { en: "equation /ɪˈkweɪʒən/", vn: "phương trình", tick: false }
+  ],
+
+  10: [
+  { en: "error /ˈɛrər/", vn: "lỗi / sai sót", tick: false },
+  { en: "ethic /ˈɛθɪk/", vn: "đạo đức / luân thường đạo lý", tick: false },
+  { en: "evaluation /ɪˌvæljuˈeɪʃən/", vn: "sự đánh giá", tick: false },
+  { en: "evidence /ˈɛvɪdəns/", vn: "bằng chứng / chứng cứ", tick: false },
+  { en: "evolution /ˌɛvəˈluːʃən/", vn: "sự tiến hóa", tick: false },
+  { en: "exception /ɪkˈsɛpʃən/", vn: "ngoại lệ", tick: false },
+  { en: "excitement /ɪkˈsaɪtmənt/", vn: "sự phấn khích / hào hứng", tick: false },
+  { en: "executive /ɪɡˈzɛkjətɪv/", vn: "người điều hành / quản trị", tick: false },
+  { en: "expansion /ɪkˈspænʃən/", vn: "sự mở rộng", tick: false },
+  { en: "expectation /ˌɛkspɛkˈteɪʃən/", vn: "sự kỳ vọng", tick: false },
+  { en: "expertise /ˌɛkspərˈtiːz/", vn: "chuyên môn / sự tinh thông", tick: false },
+  { en: "explanation /ˌɛkspləˈneɪʃən/", vn: "lời giải thích", tick: false },
+  { en: "expression /ɪkˈsprɛʃən/", vn: "sự biểu đạt / thành ngữ", tick: false },
+  { en: "extension /ɪkˈstɛnʃən/", vn: "sự mở rộng / số máy lẻ", tick: false },
+  { en: "factor /ˈfæktər/", vn: "nhân tố / yếu tố", tick: false },
+  { en: "failure /ˈfeɪljər/", vn: "sự thất bại", tick: false },
+  { en: "fairy tale /ˈfɛri teɪl/", vn: "truyện cổ tích", tick: false },
+  { en: "family gathering /ˈfæmɪli ˈɡæðərɪŋ/", vn: "sum họp gia đình", tick: false },
+  { en: "fantasy /ˈfæntəsi/", vn: "sự tưởng tượng / kỳ ảo", tick: false },
+  { en: "fare /fɛr/", vn: "giá vé (xe, tàu, máy bay)", tick: false },
+  { en: "fast food /fæst fud/", vn: "đồ ăn nhanh", tick: false },
+  { en: "favour /ˈfeɪvər/", vn: "sự giúp đỡ / ưu ái", tick: false },
+  { en: "fear /fɪr/", vn: "nỗi sợ hãi", tick: false },
+  { en: "feather /ˈfɛðər/", vn: "lông vũ", tick: false },
+  { en: "feature /ˈfitʃər/", vn: "đặc điểm / tính năng", tick: false },
+  { en: "festival /ˈfɛstəvəl/", vn: "lễ hội", tick: false },
+  { en: "fever /ˈfivər/", vn: "cơn sốt", tick: false },
+  { en: "field /fild/", vn: "cánh đồng / lĩnh vực", tick: false },
+  { en: "fighting /ˈfaɪtɪŋ/", vn: "sự chiến đấu / đánh nhau", tick: false },
+  { en: "fisherman /ˈfɪʃərmən/", vn: "ngư dân", tick: false },
+  { en: "fitness /ˈfɪtnəs/", vn: "sự cân đối / thể hình", tick: false },
+  { en: "flag /flæɡ/", vn: "lá cờ", tick: false },
+  { en: "flour /ˈflaʊər/", vn: "bột mì", tick: false },
+  { en: "flow /floʊ/", vn: "dòng chảy", tick: false },
+  { en: "fool /ful/", vn: "kẻ ngốc", tick: false },
+  { en: "formation /fɔːrˈmeɪʃən/", vn: "sự hình thành / đội hình", tick: false },
+  { en: "forum /ˈfɔːrəm/", vn: "diễn đàn", tick: false },
+  { en: "fossil /ˈfɑːsəl/", vn: "hóa thạch", tick: false },
+  { en: "foundation /faʊnˈdeɪʃən/", vn: "nền móng / quỹ cứu trợ", tick: false },
+  { en: "founder /ˈfaʊndər/", vn: "người sáng lập", tick: false },
+  { en: "fraction /ˈfrækʃən/", vn: "phân số / phần nhỏ", tick: false },
+  { en: "fragment /ˈfræɡmənt/", vn: "mảnh vỡ / đoạn nhỏ", tick: false },
+  { en: "framework /ˈfreɪmwɜːrk/", vn: "khuôn khổ / khung sườn", tick: false },
+  { en: "fraud /frɔːd/", vn: "sự gian lận / lừa đảo", tick: false },
+  { en: "free press /friː prɛs/", vn: "tự do báo chí", tick: false },
+  { en: "frequency /ˈfrikwənsi/", vn: "tần suất", tick: false },
+  { en: "fuel /ˈfjuːəl/", vn: "nhiên liệu", tick: false },
+  { en: "function /ˈfʌŋkʃən/", vn: "chức năng / hàm số", tick: false },
+  { en: "galaxy /ˈɡæləksi/", vn: "thiên hà", tick: false },
+  { en: "gallery /ˈɡæləri/", vn: "phòng trưng bày nghệ thuật", tick: false },
+  { en: "gang /ɡæŋ/", vn: "băng nhóm / đảng phái", tick: false },
+  { en: "gas /ɡæs/", vn: "khí / xăng (US)", tick: false },
+  { en: "gene /dʒiːn/", vn: "gen di truyền", tick: false },
+  { en: "genius /ˈdʒiːnjəs/", vn: "thiên tài", tick: false },
+  { en: "excursion /ɪkˈskɜːrʒən/", vn: "chuyến tham quan ngắn", tick: false },
+  { en: "genre /ˈʒɑːnrə/", vn: "thể loại", tick: false },
+  { en: "exploration /ˌɛkspləˈreɪʃən/", vn: "sự thám hiểm / thăm dò", tick: false },
+  { en: "octopus /ˈɑːktəpəs/", vn: "con bạch tuộc", tick: false },
+  { en: "squid /skwɪd/", vn: "con mực", tick: false },
+  { en: "germ /dʒɜːrm/", vn: "mầm bệnh / vi khuẩn", tick: false },
+  { en: "trick /trɪk/", vn: "mẹo / trò lừa", tick: false },
+  { en: "peak season /piːk ˈsiːzən/", vn: "mùa cao điểm", tick: false },
+  { en: "therapy /ˈθɛrəpi/", vn: "trị liệu / liệu pháp", tick: false },
+  { en: "theft /θɛft/", vn: "vụ trộm cắp", tick: false },
+  { en: "therapist /ˈθɛrəpɪst/", vn: "bác sĩ trị liệu", tick: false },
+  { en: "gesture /ˈdʒɛstʃər/", vn: "cử chỉ / điệu bộ", tick: false },
+  { en: "globalisation /ˌɡloʊbələˈzeɪʃən/", vn: "toàn cầu hóa", tick: false },
+  { en: "goodness /ˈɡʊdnəs/", vn: "sự tốt lành / lòng tốt", tick: false },
+  { en: "governor /ˈɡʌvərnər/", vn: "thống đốc / người cai trị", tick: false },
+  { en: "graphic /ˈɡræfɪk/", vn: "đồ họa / hình ảnh", tick: false },
+  { en: "grocery /ˈɡroʊsəri/", vn: "tiệm tạp hóa / thực phẩm", tick: false },
+  { en: "guideline /ˈɡaɪdlaɪn/", vn: "hướng dẫn / nguyên tắc chỉ đạo", tick: false },
+  { en: "hail /heɪl/", vn: "mưa đá", tick: false },
+  { en: "harbour /ˈhɑːrbər/", vn: "bến cảng", tick: false },
+  { en: "determination /dɪˌtɜːrmɪˈneɪʃən/", vn: "sự quyết tâm / xác định", tick: false },
+  { en: "headquarters /ˈhɛdˌkwɔːrtərz/", vn: "trụ sở chính", tick: false },
+  { en: "hearing /ˈhɪrɪŋ/", vn: "thính giác / phiên điều trần", tick: false },
+  { en: "heart attack /hɑːrt əˈtæk/", vn: "cơn đau tim", tick: false },
+  { en: "herb /ɜːrb/", vn: "thảo mộc", tick: false },
+  { en: "cue /kjuː/", vn: "gợi ý / tín hiệu", tick: false },
+  { en: "highway /ˈhaɪweɪ/", vn: "xa lộ / đường cao tốc", tick: false },
+  { en: "hip /hɪp/", vn: "hông", tick: false },
+  { en: "historian /hɪˈstɔːriən/", vn: "nhà sử học", tick: false },
+  { en: "honesty /ˈɑːnəsti/", vn: "sự trung thực", tick: false },
+  { en: "honor /ˈɑːnər/", vn: "danh dự / vinh dự", tick: false },
+  { en: "hook /hʊk/", vn: "cái móc", tick: false },
+  { en: "host /hoʊst/", vn: "chủ nhà / người dẫn chương trình", tick: false },
+  { en: "human rights /ˈhjuːmən raɪts/", vn: "nhân quyền", tick: false },
+  { en: "humankind /ˌhjuːmənˈkaɪnd/", vn: "loài người", tick: false },
+  { en: "humour /ˈhjuːmər/", vn: "sự hài hước", tick: false },
+  { en: "hunger /ˈhʌŋɡər/", vn: "sự đói khát", tick: false },
+  { en: "hunting /ˈhʌntɪŋ/", vn: "việc săn bắn", tick: false },
+  { en: "hypothesis /haɪˈpɑːθəsɪs/", vn: "giả thuyết", tick: false },
+  { en: "identification card /aɪˌdɛntəfɪˈkeɪʃən kɑːrd/", vn: "thẻ căn cước", tick: false },
+  { en: "illusion /ɪˈluːʒən/", vn: "ảo giác / ảo tưởng", tick: false },
+  { en: "illustration /ˌɪləˈstreɪʃən/", vn: "hình minh họa", tick: false },
+  { en: "immigration /ˌɪməˈɡreɪʃən/", vn: "sự nhập cư", tick: false },
+  { en: "implication /ˌɪmplɪˈkeɪʃən/", vn: "ẩn ý / hệ quả", tick: false },
+  { en: "incentive /ɪnˈsɛntɪv/", vn: "sự khích lệ / ưu đãi", tick: false },
+  { en: "incident /ˈɪnsɪdənt/", vn: "sự cố / vụ việc", tick: false },
+  ],
+
+  11: [
+  { en: "independence /ˌɪndɪˈpɛndəns/", vn: "sự độc lập", tick: false },
+  { en: "indication /ˌɪndɪˈkeɪʃən/", vn: "dấu hiệu / sự biểu thị", tick: false },
+  { en: "individual /ˌɪndɪˈvɪdʒuəl/", vn: "cá nhân", tick: false },
+  { en: "industry /ˈɪndəstri/", vn: "ngành công nghiệp", tick: false },
+  { en: "infection /ɪnˈfɛkʃən/", vn: "sự lây nhiễm / nhiễm trùng", tick: false },
+  { en: "inflation /ɪnˈfleɪʃən/", vn: "lạm phát", tick: false },
+  { en: "information /ˌɪnfərˈmeɪʃən/", vn: "thông tin", tick: false },
+  { en: "infrastructure /ˈɪnfrəˌstrʌktʃər/", vn: "cơ sở hạ tầng", tick: false },
+  { en: "inhabitant /ɪnˈhæbɪtənt/", vn: "cư dân", tick: false },
+  { en: "initiative /ɪˈnɪʃətɪv/", vn: "sáng kiến", tick: false },
+  { en: "injury /ˈɪndʒəri/", vn: "chấn thương", tick: false },
+  { en: "input /ˈɪnpʊt/", vn: "đầu vào / dữ liệu nhập", tick: false },
+  { en: "insight /ˈɪnsaɪt/", vn: "sự thấu hiểu / cái nhìn sâu sắc", tick: false },
+  { en: "inspector /ɪnˈspɛktər/", vn: "thanh tra viên", tick: false },
+  { en: "inspiration /ˌɪnspəˈreɪʃən/", vn: "nguồn cảm hứng", tick: false },
+  { en: "installation /ˌɪnstəˈleɪʃən/", vn: "sự lắp đặt / bản cài đặt", tick: false },
+  { en: "instance /ˈɪnstəns/", vn: "trường hợp / ví dụ", tick: false },
+  { en: "institute /ˈɪnstɪtuːt/", vn: "viện nghiên cứu / học viện", tick: false },
+  { en: "institution /ˌɪnstɪˈtuːʃən/", vn: "tổ chức / thể chế", tick: false },
+  { en: "insurance /ɪnˈʃʊrəns/", vn: "bảo hiểm", tick: false },
+  { en: "interpretation /ɪnˌtɜːrprəˈteɪʃən/", vn: "sự thông dịch / cách hiểu", tick: false },
+  { en: "interval /ˈɪntərvəl/", vn: "khoảng thời gian / giờ giải lao", tick: false },
+  { en: "invasion /ɪnˈveɪʒən/", vn: "sự xâm lược", tick: false },
+  { en: "investment /ɪnˈvɛstmənt/", vn: "sự đầu tư", tick: false },
+  { en: "investor /ɪnˈvɛstər/", vn: "nhà đầu tư", tick: false },
+  { en: "issue /ˈɪʃuː/", vn: "vấn đề / số báo", tick: false },
+  { en: "itinerary /aɪˈtɪnəˌrɛri/", vn: "lịch trình chuyến đi", tick: false },
+  { en: "jail /dʒeɪl/", vn: "nhà tù", tick: false },
+  { en: "jasmine /ˈdʒæzmɪn/", vn: "hoa nhài", tick: false },
+  { en: "jet /dʒɛt/", vn: "máy bay phản lực", tick: false },
+  { en: "jewelry /ˈdʒuːəlri/", vn: "trang sức", tick: false },
+  { en: "journalist /ˈdʒɜːrnəlɪst/", vn: "nhà báo", tick: false },
+  { en: "journey /ˈdʒɜːrni/", vn: "hành trình / chuyến đi", tick: false },
+  { en: "joy /dʒɔɪ/", vn: "niềm vui", tick: false },
+  { en: "judgement /ˈdʒʌdʒmənt/", vn: "sự phán xét / thẩm định", tick: false },
+  { en: "justice /ˈdʒʌstɪs/", vn: "công lý / sự công bằng", tick: false },
+  { en: "kindergarten /ˈkɪndərˌɡɑːrtən/", vn: "trường mầm non", tick: false },
+  { en: "kit /kɪt/", vn: "bộ dụng cụ", tick: false },
+  { en: "laborer /ˈleɪbərər/", vn: "người lao động chân tay", tick: false },
+  { en: "labour /ˈleɪbər/", vn: "nhân công / sức lao động", tick: false },
+  { en: "landing /ˈlændɪŋ/", vn: "sự hạ cánh", tick: false },
+  { en: "landmark /ˈlændmɑːrk/", vn: "mốc ranh giới / thắng cảnh", tick: false },
+  { en: "leadership /ˈlidərˌʃɪp/", vn: "khả năng lãnh đạo", tick: false },
+  { en: "leaflet /ˈliflət/", vn: "tờ rơi", tick: false },
+  { en: "league /liːɡ/", vn: "liên minh / giải đấu", tick: false },
+  { en: "legend /ˈlɛdʒənd/", vn: "huyền thoại / truyền thuyết", tick: false },
+  { en: "lens /lɛnz/", vn: "thấu kính / ống kính", tick: false },
+  { en: "licence /ˈlaɪsəns/", vn: "giấy phép / bằng lái", tick: false },
+  { en: "lifetime /ˈlaɪftaɪm/", vn: "cả cuộc đời", tick: false },
+  { en: "lighthouse /ˈlaɪthaʊs/", vn: "ngọn hải đăng", tick: false },
+  { en: "lighting /ˈlaɪtɪŋ/", vn: "hệ thống chiếu sáng", tick: false },
+  { en: "lightning /ˈlaɪtnɪŋ/", vn: "tia chớp / sét", tick: false },
+  { en: "limitation /ˌlɪmɪˈteɪʃən/", vn: "sự hạn chế", tick: false },
+  { en: "loan /loʊn/", vn: "khoản vay", tick: false },
+  { en: "lord /lɔːrd/", vn: "chúa tể / quý tộc", tick: false },
+  { en: "lottery /ˈlɑːtəri/", vn: "xổ số", tick: false },
+  { en: "majority /məˈdʒɔːrəti/", vn: "đa số", tick: false },
+  { en: "margin /ˈmɑːrdʒən/", vn: "lề / số dư", tick: false },
+  { en: "mass /mæs/", vn: "khối lượng / quần chúng", tick: false },
+  { en: "mass media /mæs ˈmidiə/", vn: "truyền thông đại chúng", tick: false },
+  { en: "master /ˈmæstər/", vn: "thạc sĩ / bậc thầy", tick: false },
+  { en: "masterpiece /ˈmæstərˌpis/", vn: "kiệt tác", tick: false },
+  { en: "mate /meɪt/", vn: "bạn bè / bạn đời", tick: false },
+  { en: "material /məˈtɪriəl/", vn: "vật liệu / tài liệu", tick: false },
+  { en: "mayor /ˈmeɪər/", vn: "thị trưởng", tick: false },
+  { en: "means /miːnz/", vn: "phương tiện / cách thức", tick: false },
+  { en: "measurement /ˈmɛʒərmənt/", vn: "phép đo lường", tick: false },
+  { en: "mechanic /məˈkænɪk/", vn: "thợ cơ khí / thợ sửa máy", tick: false },
+  { en: "mechanism /ˈmɛkəˌnɪzəm/", vn: "cơ chế", tick: false },
+  { en: "media /ˈmidiə/", vn: "phương tiện truyền thông", tick: false },
+  { en: "medication /ˌmɛdɪˈkeɪʃən/", vn: "thuốc chữa bệnh", tick: false },
+  { en: "membership /ˈmɛmbərˌʃɪp/", vn: "tư cách thành viên", tick: false },
+  { en: "memory /ˈmɛməri/", vn: "trí nhớ / bộ nhớ", tick: false },
+  { en: "metaphor /ˈmɛtəˌfɔːr/", vn: "phép ẩn dụ", tick: false },
+  { en: "microscope /ˈmaɪkrəˌskoʊp/", vn: "kính hiển vi", tick: false },
+  { en: "military /ˈmɪlɪˌtɛri/", vn: "quân đội", tick: false },
+  { en: "mindset /ˈmaɪndsɛt/", vn: "tư duy / quan điểm", tick: false },
+  { en: "miner /ˈmaɪnər/", vn: "thợ mỏ", tick: false },
+  { en: "minister /ˈmɪnɪstər/", vn: "bộ trưởng", tick: false },
+  { en: "minority /maɪˈnɔːrəti/", vn: "thiểu số", tick: false },
+  { en: "mission /ˈmɪʃən/", vn: "nhiệm vụ / sứ mệnh", tick: false },
+  { en: "misunderstanding /ˌmɪsʌndərˈstændɪŋ/", vn: "sự hiểu lầm", tick: false },
+  { en: "monk /mʌŋk/", vn: "nhà sư / tu sĩ", tick: false },
+  { en: "monster /ˈmɑːnstər/", vn: "quái vật", tick: false },
+  { en: "monument /ˈmɑːnjumənt/", vn: "đài tưởng niệm", tick: false },
+  { en: "moral /ˈmɔːrəl/", vn: "đạo đức / bài học luân lý", tick: false },
+  { en: "mortgage /ˈmɔːrɡɪdʒ/", vn: "khoản vay thế chấp", tick: false },
+  { en: "mosque /mɑːsk/", vn: "nhà thờ Hồi giáo", tick: false },
+  { en: "motion /ˈmoʊʃən/", vn: "sự chuyển động", tick: false },
+  { en: "motivation /ˌmoʊtɪˈveɪʃən/", vn: "động lực", tick: false },
+  { en: "myth /mɪθ/", vn: "thần thoại", tick: false },
+  { en: "nature /ˈneɪtʃər/", vn: "thiên nhiên / bản chất", tick: false },
+  { en: "navigation /ˌnævɪˈɡeɪʃən/", vn: "sự điều hướng / hàng hải", tick: false },
+  { en: "necessity /nəˈsɛsəti/", vn: "sự cần thiết / nhu yếu phẩm", tick: false },
+  { en: "nectar /ˈnɛktər/", vn: "mật hoa", tick: false },
+  { en: "negotiation /nəˌɡoʊʃiˈeɪʃən/", vn: "sự đàm phán", tick: false },
+  { en: "nerve /nɜːrv/", vn: "dây thần kinh", tick: false },
+  { en: "nest /nɛst/", vn: "tổ chim", tick: false },
+  { en: "network /ˈnɛtwɜːrk/", vn: "mạng lưới", tick: false },
+  { en: "norm /nɔːrm/", vn: "chuẩn mực / định mức", tick: false },
+  ],
+  12: [
+  { en: "notion /ˈnoʊʃən/", vn: "khái niệm / quan điểm", tick: false },
+  { en: "nutrition /nuˈtrɪʃən/", vn: "dinh dưỡng", tick: false },
+  { en: "obesity /oʊˈbisəti/", vn: "bệnh béo phì", tick: false },
+  { en: "objective /əbˈdʒɛktɪv/", vn: "mục tiêu", tick: false },
+  { en: "obligation /ˌɑːblɪˈɡeɪʃən/", vn: "nghĩa vụ / bổn phận", tick: false },
+  { en: "observation /ˌɑːbzərˈveɪʃən/", vn: "sự quan sát", tick: false },
+  { en: "observer /əbˈzɜːrvər/", vn: "người quan sát", tick: false },
+  { en: "obstacle /ˈɑːbstəkəl/", vn: "trở ngại", tick: false },
+  { en: "offence /əˈfɛns/", vn: "sự xúc phạm / hành vi vi phạm", tick: false },
+  { en: "offender /əˈfɛndər/", vn: "người phạm tội", tick: false },
+  { en: "opening /ˈoʊpənɪŋ/", vn: "lễ khai trương / vị trí trống", tick: false },
+  { en: "opera /ˈɑːpərə/", vn: "vở nhạc kịch", tick: false },
+  { en: "operator /ˈɑːpəˌreɪtər/", vn: "người điều hành / vận hành máy", tick: false },
+  { en: "opponent /əˈpoʊnənt/", vn: "đối thủ", tick: false },
+  { en: "opposition /ˌɑːpəˈzɪʃən/", vn: "sự phản đối / phe đối lập", tick: false },
+  { en: "orbit /ˈɔːrbɪt/", vn: "quỹ đạo", tick: false },
+  { en: "orchid /ˈɔːrkɪd/", vn: "hoa lan", tick: false },
+  { en: "origin /ˈɔːrɪdʒɪn/", vn: "nguồn gốc", tick: false },
+  { en: "outcome /ˈaʊtkʌm/", vn: "kết quả", tick: false },
+  { en: "outer space /ˈaʊtər speɪs/", vn: "không gian vũ trụ", tick: false },
+  { en: "outfit /ˈaʊtfɪt/", vn: "trang phục / bộ đồ", tick: false },
+  { en: "outline /ˈaʊtˌlaɪn/", vn: "dàn ý / bản phác thảo", tick: false },
+  { en: "output /ˈaʊtpʊt/", vn: "sản lượng / đầu ra", tick: false },
+  { en: "ownership /ˈoʊnərˌʃɪp/", vn: "quyền sở hữu", tick: false },
+  { en: "oyster /ˈɔɪstər/", vn: "con hàu", tick: false },
+  { en: "pace /peɪs/", vn: "nhịp độ / tốc độ", tick: false },
+  { en: "packet /ˈpækət/", vn: "gói nhỏ", tick: false },
+  { en: "panel /ˈpænəl/", vn: "ban hội thẩm / bảng điều khiển", tick: false },
+  { en: "panic /ˈpænɪk/", vn: "sự hoảng loạn", tick: false },
+  { en: "parade /pəˈreɪd/", vn: "cuộc diễu hành", tick: false },
+  { en: "parent /ˈpɛrənt/", vn: "cha hoặc mẹ", tick: false },
+  { en: "parliament /ˈpɑːrləmənt/", vn: "nghị viện / quốc hội", tick: false },
+  { en: "participant /pɑːrˈtɪsəpənt/", vn: "người tham gia", tick: false },
+  { en: "partnership /ˈpɑːrtnərˌʃɪp/", vn: "sự cộng tác / đối tác", tick: false },
+  { en: "pearl /pɜːrl/", vn: "ngọc trai", tick: false },
+  { en: "peers /pɪrz/", vn: "bạn đồng lứa", tick: false },
+  { en: "penalty /ˈpɛnəlti/", vn: "hình phạt", tick: false },
+  { en: "pension /ˈpɛnʃən/", vn: "lương hưu", tick: false },
+  { en: "perception /pərˈsɛpʃən/", vn: "sự nhận thức", tick: false },
+  { en: "permission /pərˈmɪʃən/", vn: "sự cho phép", tick: false },
+  { en: "perspective /pərˈspɛktɪv/", vn: "góc nhìn / quan điểm", tick: false },
+  { en: "petal /ˈpɛtəl/", vn: "cánh hoa", tick: false },
+  { en: "phenomenon /fəˈnɑːmɪnən/", vn: "hiện tượng", tick: false },
+  { en: "philosophy /fəˈlɑːsəfi/", vn: "triết học", tick: false },
+  { en: "pity /ˈpɪti/", vn: "sự đáng tiếc / lòng trắc ẩn", tick: false },
+  { en: "placement /ˈpleɪsmənt/", vn: "sự sắp đặt / nơi thực tập", tick: false },
+  { en: "platform /ˈplætfɔːrm/", vn: "nền tảng / sân ga", tick: false },
+  { en: "plot /plɑːt/", vn: "cốt truyện / mảnh đất / âm mưu", tick: false },
+  { en: "pollen /ˈpɑːlən/", vn: "phấn hoa", tick: false },
+  { en: "popularity /ˌpɑːpjuˈlærəti/", vn: "sự phổ biến", tick: false },
+  { en: "population /ˌpɑːpjuˈleɪʃən/", vn: "dân số", tick: false },
+  { en: "portion /ˈpɔːrʃən/", vn: "phần / khẩu phần", tick: false },
+  { en: "position /pəˈzɪʃən/", vn: "vị trí", tick: false },
+  { en: "power /ˈpaʊər/", vn: "năng lượng / quyền lực", tick: false },
+  { en: "preference /ˈprɛfərəns/", vn: "sự ưu tiên / sở thích", tick: false },
+  { en: "preparation /ˌprɛpəˈreɪʃən/", vn: "sự chuẩn bị", tick: false },
+  { en: "presence /ˈprɛzəns/", vn: "sự hiện diện", tick: false },
+  { en: "pride /praɪd/", vn: "lòng kiêu hãnh / tự trọng", tick: false },
+  { en: "primary school /ˈpraɪˌmɛri skul/", vn: "trường tiểu học", tick: false },
+  { en: "principal /ˈprɪnsəpəl/", vn: "hiệu trưởng", tick: false },
+  { en: "principle /ˈprɪnsəpəl/", vn: "nguyên tắc", tick: false },
+  { en: "prison /ˈprɪzən/", vn: "nhà tù", tick: false },
+  { en: "probability /ˌprɑːbəˈbɪləti/", vn: "xác suất", tick: false },
+  { en: "procedure /prəˈsiːdʒər/", vn: "quy trình / thủ tục", tick: false },
+  { en: "programming /ˈproʊɡræmɪŋ/", vn: "việc lập trình", tick: false },
+  { en: "promotion /prəˈmoʊʃən/", vn: "sự thăng tiến / khuyến mãi", tick: false },
+  { en: "pronunciation /prəˌnʌnsiˈeɪʃən/", vn: "sự phát âm", tick: false },
+  { en: "proof /pruf/", vn: "bằng chứng", tick: false },
+  { en: "proportion /prəˈpɔːrʃən/", vn: "tỷ lệ / phần", tick: false },
+  { en: "proposal /prəˈpoʊzəl/", vn: "đề xuất", tick: false },
+  { en: "prospect /ˈprɑːspɛkt/", vn: "triển vọng", tick: false },
+  { en: "protein /ˈproʊtiːn/", vn: "đạm / protein", tick: false },
+  { en: "protester /prəˈtɛstər/", vn: "người biểu tình", tick: false },
+  { en: "psychologist /saɪˈkɑːlədʒɪst/", vn: "nhà tâm lý học", tick: false },
+  { en: "psychology /saɪˈkɑːlədʒi/", vn: "tâm lý học", tick: false },
+  { en: "publicity /pʌbˈlɪsəti/", vn: "sự công khai / quảng bá", tick: false },
+  { en: "publisher /ˈpʌblɪʃər/", vn: "nhà xuất bản", tick: false },
+  { en: "pupil /ˈpjuːpəl/", vn: "học sinh / con ngươi", tick: false },
+  { en: "purpose /ˈpɜːrpəs/", vn: "mục đích", tick: false },
+  { en: "pursuit /pərˈsuːt/", vn: "sự theo đuổi", tick: false },
+  { en: "questionnaire /ˌkwɛstʃəˈnɛr/", vn: "bảng câu hỏi khảo sát", tick: false },
+  { en: "racism /ˈreɪˌsɪzəm/", vn: "sự phân biệt chủng tộc", tick: false },
+  { en: "rack /ræk/", vn: "giá để đồ", tick: false },
+  { en: "radiation /ˌreɪdiˈeɪʃən/", vn: "phóng xạ / bức xạ", tick: false },
+  { en: "rail /reɪl/", vn: "đường ray", tick: false },
+  { en: "rainforest /ˈreɪnˌfɔːrɪst/", vn: "rừng mưa nhiệt đới", tick: false },
+  { en: "rank /ræŋk/", vn: "thứ hạng / cấp bậc", tick: false },
+  { en: "rat /ræt/", vn: "con chuột", tick: false },
+  { en: "receiver /rɪˈsiːvər/", vn: "người nhận", tick: false },
+  { en: "recession /rɪˈsɛʃən/", vn: "sự suy thoái", tick: false },
+  { en: "recognition /ˌrɛkəɡˈnɪʃən/", vn: "sự công nhận / nhận ra", tick: false },
+  { en: "recovery /rɪˈkʌvəri/", vn: "sự phục hồi", tick: false },
+  { en: "recruitment /rɪˈkruːtmənt/", vn: "việc tuyển dụng", tick: false },
+  { en: "reduction /rɪˈdʌkʃən/", vn: "sự cắt giảm", tick: false },
+  { en: "referee /ˌrɛfəˈriː/", vn: "trọng tài", tick: false },
+  { en: "refugee /ˌrɛfjuˈdʒiː/", vn: "người tị nạn", tick: false },
+  { en: "region /ˈridʒən/", vn: "vùng / miền", tick: false },
+  { en: "registration /ˌrɛdʒɪˈstreɪʃən/", vn: "sự đăng ký", tick: false },
+  { en: "regulation /ˌrɛɡjuˈleɪʃən/", vn: "quy định / sự điều tiết", tick: false },
+  { en: "reindeer /ˈreɪnˌdɪr/", vn: "con tuần lộc", tick: false }
+  ],
+  13: [
+  { en: "relationship /rɪˈleɪʃənʃɪp/", vn: "mối quan hệ", tick: false },
+  { en: "relief /rɪˈlif/", vn: "sự nhẹ nhõm / sự cứu trợ", tick: false },
+  { en: "reminder /rɪˈmaɪndər/", vn: "lời nhắc nhở", tick: false },
+  { en: "remote control /rɪˈmoʊt kənˈtroʊl/", vn: "điều khiển từ xa", tick: false },
+  { en: "reporting /rɪˈpɔːrtɪŋ/", vn: "sự báo cáo / tường thuật", tick: false },
+  { en: "reputation /ˌrɛpjəˈteɪʃən/", vn: "danh tiếng", tick: false },
+  { en: "requirement /rɪˈkwaɪərmənt/", vn: "yêu cầu / điều kiện cần thiết", tick: false },
+  { en: "resort /rɪˈzɔːrt/", vn: "khu nghỉ dưỡng", tick: false },
+  { en: "resources /ˈrisɔːrsɪz/", vn: "nguồn lực / tài nguyên", tick: false },
+  { en: "response /rɪˈspɑːns/", vn: "sự phản hồi / đáp lại", tick: false },
+  { en: "restriction /rɪˈstrɪkʃən/", vn: "sự hạn chế", tick: false },
+  { en: "retirement /rɪˈtaɪərmənt/", vn: "sự nghỉ hưu", tick: false },
+  { en: "revenue /ˈrɛvəˌnu/", vn: "doanh thu", tick: false },
+  { en: "revision /rɪˈvɪʒən/", vn: "sự ôn tập / bản sửa đổi", tick: false },
+  { en: "revolution /ˌrɛvəˈluːʃən/", vn: "cuộc cách mạng", tick: false },
+  { en: "rival /ˈraɪvəl/", vn: "đối thủ", tick: false },
+  { en: "roadmap /ˈroʊdˌmæp/", vn: "lộ trình", tick: false },
+  { en: "robbery /ˈrɑːbəri/", vn: "vụ cướp", tick: false },
+  { en: "routine /ruˈtin/", vn: "thói quen hàng ngày", tick: false },
+  { en: "rubber /ˈrʌbər/", vn: "cao su / cục tẩy", tick: false },
+  { en: "satisfaction /ˌsætəsˈfækʃən/", vn: "sự hài lòng", tick: false },
+  { en: "saving /ˈseɪvɪŋ/", vn: "tiết kiệm / tiền tiết kiệm", tick: false },
+  { en: "scandal /ˈskændəl/", vn: "bê bối", tick: false },
+  { en: "scenario /səˈnɛrioʊ/", vn: "kịch bản / tình huống giả định", tick: false },
+  { en: "climate change /ˈklaɪmət tʃeɪndʒ/", vn: "biến đổi khí hậu", tick: false },
+  { en: "enemy /ˈɛnəmi/", vn: "kẻ thù", tick: false },
+  { en: "environment /ɪnˈvaɪrənmənt/", vn: "môi trường", tick: false },
+  { en: "fake news /feɪk nuz/", vn: "tin giả", tick: false },
+  { en: "destruction /dɪˈstrʌkʃən/", vn: "sự phá hủy", tick: false },
+  { en: "anniversary /ˌænəˈvɜːrsəri/", vn: "ngày kỷ niệm", tick: false },
+  { en: "mammal /ˈmæməl/", vn: "động vật có vú", tick: false },
+  { en: "enthusiasm /ɪnˈθuziˌæzəm/", vn: "sự nhiệt tình", tick: false },
+  { en: "sector /ˈsɛktər/", vn: "lĩnh vực / mảng / ngành", tick: false },
+  { en: "limb /lɪm/", vn: "chi (tay, chân)", tick: false },
+  { en: "zodiac /ˈzoʊdiˌæk/", vn: "cung hoàng đạo", tick: false },
+  { en: "hemisphere /ˈhɛmɪˌsfɪr/", vn: "bán cầu", tick: false },
+  { en: "archipelago /ˌɑːrkəˈpɛləˌɡoʊ/", vn: "quần đảo", tick: false },
+  { en: "equator /ɪˈkweɪtər/", vn: "đường xích đạo", tick: false },
+  { en: "plain /pleɪn/", vn: "đồng bằng", tick: false },
+  { en: "plateau /plæˈtoʊ/", vn: "cao nguyên", tick: false },
+  { en: "canyon /ˈkænjən/", vn: "hẻm núi", tick: false },
+  { en: "seeker /ˈsikər/", vn: "người tìm kiếm", tick: false },
+  { en: "selection /səˈlɛkʃən/", vn: "sự lựa chọn / tuyển chọn", tick: false },
+  { en: "self /sɛlf/", vn: "bản thân", tick: false },
+  { en: "seminar /ˈsɛməˌnɑːr/", vn: "hội thảo", tick: false },
+  { en: "sequence /ˈsikwəns/", vn: "trình tự / chuỗi", tick: false },
+  { en: "scaffold /ˈskæfəld/", vn: "giàn giáo", tick: false },
+  { en: "funding /ˈfʌndɪŋ/", vn: "kinh phí / sự gây quỹ", tick: false },
+  { en: "settler /ˈsɛtlər/", vn: "người định cư", tick: false },
+  { en: "shadow /ˈʃædoʊ/", vn: "bóng râm / bóng tối", tick: false },
+  { en: "seabed /ˈsiːˌbɛd/", vn: "đáy biển", tick: false },
+  { en: "shape /ʃeɪp/", vn: "hình dạng", tick: false },
+  { en: "human nature /ˈhjuːmən ˈneɪtʃər/", vn: "nhân tính / bản chất con người", tick: false },
+  { en: "habitat /ˈhæbəˌtæt/", vn: "môi trường sống", tick: false },
+  { en: "insect /ˈɪnˌsɛkt/", vn: "côn trùng", tick: false },
+  { en: "shock /ʃɑːk/", vn: "cú sốc / sự chấn động", tick: false },
+  { en: "shooting /ˈʃuːtɪŋ/", vn: "vụ nổ súng / sự chụp hình", tick: false },
+  { en: "shooting star /ˈʃuːtɪŋ stɑːr/", vn: "sao băng", tick: false },
+  { en: "shame /ʃeɪm/", vn: "sự xấu hổ / hổ thẹn", tick: false },
+  { en: "shortage /ˈʃɔːrtədʒ/", vn: "sự thiếu hụt", tick: false },
+  { en: "shot /ʃɑːt/", vn: "phát súng / cú sút / liều thuốc", tick: false },
+  { en: "dune /dun/", vn: "cồn cát", tick: false },
+  { en: "shuttle /ˈʃʌtəl/", vn: "xe đưa đón / tàu con thoi", tick: false },
+  { en: "significance /sɪɡˈnɪfɪkəns/", vn: "tầm quan trọng / ý nghĩa", tick: false },
+  { en: "silence /ˈsaɪləns/", vn: "sự im lặng", tick: false },
+  { en: "sincerity /sɪnˈsɛrəti/", vn: "sự chân thành", tick: false },
+  { en: "skeleton /ˈskɛlətən/", vn: "bộ xương", tick: false },
+  { en: "slave /sleɪv/", vn: "nô lệ", tick: false },
+  { en: "sleigh /sleɪ/", vn: "xe trượt tuyết", tick: false },
+  { en: "slogan /ˈsloʊɡən/", vn: "khẩu hiệu", tick: false },
+  { en: "slope /sloʊp/", vn: "dốc / độ dốc", tick: false },
+  { en: "social skills /ˈsoʊʃəl skɪlz/", vn: "kỹ năng xã hội", tick: false },
+  { en: "society /səˈsaɪəti/", vn: "xã hội", tick: false },
+  { en: "solar system /ˈsoʊlər ˈsɪstəm/", vn: "hệ mặt trời", tick: false },
+  { en: "solution /səˈluːʃən/", vn: "giải pháp / dung dịch", tick: false },
+  { en: "soul /soʊl/", vn: "linh hồn", tick: false },
+  { en: "spacecraft /ˈspeɪsˌkræft/", vn: "tàu vũ trụ", tick: false },
+  { en: "spectator /ˈspɛkteɪtər/", vn: "khán giả (thể thao)", tick: false },
+  { en: "speculation /ˌspɛkjəˈleɪʃən/", vn: "sự suy đoán / đầu cơ", tick: false },
+  { en: "sphere /sfɪr/", vn: "hình cầu / phạm vi", tick: false },
+  { en: "spice /spaɪs/", vn: "gia vị", tick: false },
+  { en: "spine /spaɪn/", vn: "xương sống", tick: false },
+  { en: "spokesperson /ˈspoʊksˌpɜːrsən/", vn: "người phát ngôn", tick: false },
+  { en: "sponsorship /ˈspɑːnsərˌʃɪp/", vn: "sự tài trợ", tick: false },
+  { en: "sport /spɔːrt/", vn: "thể thao", tick: false },
+  { en: "stall /stɔːl/", vn: "gian hàng", tick: false },
+  { en: "stance /stæns/", vn: "lập trường / thái độ", tick: false },
+  { en: "statement /ˈsteɪtmənt/", vn: "tuyên bố / lời phát biểu", tick: false },
+  { en: "status /ˈstætəs/", vn: "trạng thái / địa vị", tick: false },
+  { en: "steam /stim/", vn: "hơi nước", tick: false },
+  { en: "stem /stɛm/", vn: "thân cây", tick: false },
+  { en: "step /stɛp/", vn: "bước chân / bước thực hiện", tick: false },
+  { en: "stopwatch /ˈstɑːpˌwɑːtʃ/", vn: "đồng hồ bấm giờ", tick: false },
+  { en: "storage /ˈstɔːrədʒ/", vn: "kho lưu trữ", tick: false },
+  { en: "straw /strɔː/", vn: "ống hút / rơm", tick: false },
+  { en: "stroke /stroʊk/", vn: "đột quỵ / cú đánh", tick: false },
+  { en: "stuff /stʌf/", vn: "đồ đạc / thứ", tick: false },
+  { en: "suburb /ˈsʌbɜːrb/", vn: "ngoại ô", tick: false },
+  { en: "suffering /ˈsʌfərɪŋ/", vn: "sự đau khổ", tick: false },
+  { en: "sunflower /ˈsʌnˌflaʊər/", vn: "hoa hướng dương", tick: false },
+  ],
+  14: [
+  { en: "sunlight /ˈsʌnˌlaɪt/", vn: "ánh sáng mặt trời", tick: false },
+  { en: "surgeon /ˈsɜːrdʒən/", vn: "bác sĩ phẫu thuật", tick: false },
+  { en: "survival /sərˈvaɪvəl/", vn: "sự sinh tồn", tick: false },
+  { en: "survivor /sərˈvaɪvər/", vn: "người sống sót", tick: false },
+  { en: "symbol /ˈsɪmbəl/", vn: "biểu tượng", tick: false },
+  { en: "symphony /ˈsɪmfəni/", vn: "bản giao hưởng", tick: false },
+  { en: "tailor /ˈteɪlər/", vn: "thợ may", tick: false },
+  { en: "tale /teɪl/", vn: "câu chuyện", tick: false },
+  { en: "tank /tæŋk/", vn: "xe tăng / bể chứa", tick: false },
+  { en: "task /tæsk/", vn: "nhiệm vụ", tick: false },
+  { en: "technician /tɛkˈnɪʃən/", vn: "kỹ thuật viên", tick: false },
+  { en: "teenager /ˈtinˌeɪdʒər/", vn: "thiếu niên", tick: false },
+  { en: "telescope /ˈtɛləˌskoʊp/", vn: "kính thiên văn", tick: false },
+  { en: "temperature /ˈtɛmprətʃər/", vn: "nhiệt độ", tick: false },
+  { en: "temple /ˈtɛmpəl/", vn: "đền / chùa", tick: false },
+  { en: "tendency /ˈtɛndənsi/", vn: "xu hướng", tick: false },
+  { en: "tension /ˈtɛnʃən/", vn: "sự căng thẳng", tick: false },
+  { en: "terminal /ˈtɜːrmənəl/", vn: "nhà ga / giai đoạn cuối", tick: false },
+  { en: "territory /ˈtɛrəˌtɔːri/", vn: "lãnh thổ", tick: false },
+  { en: "terror /ˈtɛrər/", vn: "sự khủng khiếp / kinh hoàng", tick: false },
+  { en: "terrorism /ˈtɛrəˌrɪzəm/", vn: "chủ nghĩa khủng bố", tick: false },
+  { en: "terrorist /ˈtɛrərɪst/", vn: "kẻ khủng bố", tick: false },
+  { en: "testing /ˈtɛstɪŋ/", vn: "việc thử nghiệm / kiểm tra", tick: false },
+  { en: "textbook /ˈtɛksˌtbʊk/", vn: "sách giáo khoa", tick: false },
+  { en: "thesis /ˈθisɪs/", vn: "luận văn", tick: false },
+  { en: "thumb /θʌm/", vn: "ngón tay cái", tick: false },
+  { en: "thunder /ˈθʌndər/", vn: "sấm sét", tick: false },
+  { en: "tide /taɪd/", vn: "thủy triều", tick: false },
+  { en: "timeline /ˈtaɪmˌlaɪn/", vn: "mốc thời gian / dòng thời gian", tick: false },
+  { en: "timing /ˈtaɪmɪŋ/", vn: "sự chọn thời điểm", tick: false },
+  { en: "tissue /ˈtɪʃu/", vn: "mô / khăn giấy", tick: false },
+  { en: "toddler /ˈtɑːdlər/", vn: "trẻ mới biết đi", tick: false },
+  { en: "togetherness /təˈɡɛðərnəs/", vn: "sự gắn bó", tick: false },
+  { en: "tone /toʊn/", vn: "tông giọng / sắc thái", tick: false },
+  { en: "torch /tɔːrtʃ/", vn: "đèn pin / ngọn đuốc", tick: false },
+  { en: "tornado /tɔːrˈneɪdoʊ/", vn: "vòi rồng / lốc xoáy", tick: false },
+  { en: "tourism /ˈtʊˌrɪzəm/", vn: "ngành du lịch", tick: false },
+  { en: "tourist /ˈtʊrɪst/", vn: "khách du lịch", tick: false },
+  { en: "trace /treɪs/", vn: "dấu vết", tick: false },
+  { en: "tragedy /ˈtrædʒədi/", vn: "bi kịch", tick: false },
+  { en: "trait /treɪt/", vn: "đặc điểm / đặc tính", tick: false },
+  { en: "transition /trænˈzɪʃən/", vn: "sự chuyển giao", tick: false },
+  { en: "transportation /ˌtrænspərˈteɪʃən/", vn: "giao thông vận tải", tick: false },
+  { en: "treasure /ˈtrɛʒər/", vn: "kho báu", tick: false },
+  { en: "trial /ˈtraɪəl/", vn: "phiên tòa xét xử / sự dùng thử", tick: false },
+  { en: "tribe /traɪb/", vn: "bộ lạc", tick: false },
+  { en: "trillion /ˈtrɪljən/", vn: "nghìn tỷ", tick: false },
+  { en: "troop /trup/", vn: "quân đội / đội quân", tick: false },
+  { en: "trunk /trʌŋk/", vn: "thân cây / vòi voi / cốp xe", tick: false },
+  { en: "tune /tun/", vn: "giai điệu", tick: false },
+  { en: "typhoon /taɪˈfun/", vn: "bão nhiệt đới", tick: false },
+  { en: "uncertainty /ʌnˈsɜːrtənti/", vn: "sự không chắc chắn", tick: false },
+  { en: "unicorn /ˈjunɪˌkɔːrn/", vn: "kỳ lân", tick: false },
+  { en: "unity /ˈjunəti/", vn: "sự đoàn kết / thống nhất", tick: false },
+  { en: "usage /ˈjusɪdʒ/", vn: "cách sử dụng", tick: false },
+  { en: "variation /ˌvɛriˈeɪʃən/", vn: "sự biến đổi", tick: false },
+  { en: "variety /vəˈraɪəti/", vn: "sự đa dạng", tick: false },
+  { en: "vendor /ˈvɛndər/", vn: "người bán hàng rong", tick: false },
+  { en: "viewpoint /ˈvjuˌpɔɪnt/", vn: "quan điểm", tick: false },
+  { en: "violence /ˈvaɪələns/", vn: "bạo lực", tick: false },
+  { en: "sea level /si ˈlɛvəl/", vn: "mực nước biển", tick: false },
+  { en: "vision /ˈvɪʒən/", vn: "tầm nhìn / thị lực", tick: false },
+  { en: "sightseeing /ˈsaɪtˌsiɪŋ/", vn: "sự tham quan", tick: false },
+  { en: "fluency /ˈfluənsi/", vn: "sự trôi chảy", tick: false },
+  { en: "volcano /vɑːlˈkeɪnoʊ/", vn: "núi lửa", tick: false },
+  { en: "volume /ˈvɑːljum/", vn: "thể tích / âm lượng", tick: false },
+  { en: "ties /taɪz/", vn: "mối liên hệ / quan hệ", tick: false },
+  { en: "warming /ˈwɔːrmɪŋ/", vn: "sự ấm lên", tick: false },
+  { en: "wastage /ˈweɪstɪdʒ/", vn: "sự lãng phí", tick: false },
+  { en: "waterfall /ˈwɔːrtərˌfɔːl/", vn: "thác nước", tick: false },
+  { en: "wealth /wɛlθ/", vn: "sự giàu có", tick: false },
+  { en: "cosmos /ˈkɑːzmoʊs/", vn: "vũ trụ", tick: false },
+  { en: "courier /ˈkʊriər/", vn: "người chuyển phát nhanh", tick: false },
+  { en: "gem /dʒɛm/", vn: "viên ngọc", tick: false },
+  { en: "skyscraper /ˈskaɪˌskreɪpər/", vn: "tòa nhà chọc trời", tick: false },
+  { en: "belief /bɪˈlif/", vn: "niềm tin / đức tin", tick: false },
+  { en: "weed /wid/", vn: "cỏ dại", tick: false },
+  { en: "comet /ˈkɑːmət/", vn: "sao chổi", tick: false },
+  { en: "welfare /ˈwɛlˌfɛr/", vn: "phúc lợi", tick: false },
+  { en: "mineral /ˈmɪnərəl/", vn: "khoáng sản", tick: false },
+  { en: "whale /weɪl/", vn: "cá voi", tick: false },
+  { en: "wheat /wit/", vn: "lúa mì", tick: false },
+  { en: "wheel /wil/", vn: "bánh xe", tick: false },
+  { en: "wildflower /ˈwaɪldˌflaʊər/", vn: "hoa dại", tick: false },
+  { en: "wildlife /ˈwaɪldˌlaɪf/", vn: "động vật hoang dã", tick: false },
+  { en: "wire /ˈwaɪər/", vn: "dây điện", tick: false },
+  { en: "wireless connection /ˈwaɪrləs kəˈnɛkʃən/", vn: "kết nối không dây", tick: false },
+  { en: "wisdom /ˈwɪzdəm/", vn: "sự khôn ngoan", tick: false },
+  { en: "witch /wɪtʃ/", vn: "phù thủy", tick: false },
+  { en: "workload /ˈwɜːrkˌloʊd/", vn: "khối lượng công việc", tick: false },
+  { en: "workshop /ˈwɜːrkˌʃɑːp/", vn: "hội thảo / xưởng", tick: false },
+  { en: "worm /wɜːrm/", vn: "con giun", tick: false },
+  { en: "wound /wund/", vn: "vết thương", tick: false },
+  { en: "wrist /rɪst/", vn: "cổ tay", tick: false },
+  { en: "zone /zoʊn/", vn: "khu vực / đới", tick: false },
+  { en: "depth /dɛpθ/", vn: "độ sâu", tick: false },
+  { en: "district /ˈdɪstrɪkt/", vn: "quận / huyện", tick: false },
+  { en: "document /ˈdɑːkjəmənt/", vn: "tài liệu", tick: false },
+  { en: "edition /ɪˈdɪʃən/", vn: "phiên bản / ấn bản", tick: false },
+  { en: "feedback /ˈfidˌbæk/", vn: "phản hồi", tick: false },
+  ],
+
+  15: [
+  { en: "fellow /ˈfɛloʊ/", vn: "đồng chí / đồng nghiệp", tick: false },
+  { en: "figure /ˈfɪɡjər/", vn: "con số / nhân vật / hình dáng", tick: false },
+  { en: "estate /ɪˈsteɪt/", vn: "bất động sản / tài sản", tick: false },
+  { en: "examination /ɪɡˌzæməˈneɪʃən/", vn: "kỳ thi / sự kiểm tra", tick: false },
+  { en: "expense /ɪkˈspɛns/", vn: "chi phí", tick: false },
+  { en: "faith /feɪθ/", vn: "niềm tin / sự trung thành", tick: false },
+  { en: "fault /fɔːlt/", vn: "lỗi lầm", tick: false },
+  { en: "flame /fleɪm/", vn: "ngọn lửa", tick: false },
+  { en: "freedom /ˈfridəm/", vn: "sự tự do", tick: false },
+  { en: "heaven /ˈhɛvən/", vn: "thiên đường", tick: false },
+  { en: "heel /hil/", vn: "gót chân", tick: false },
+  { en: "inquiry /ɪnˈkwaɪəri/", vn: "sự thẩm vấn / yêu cầu thông tin", tick: false },
+  { en: "model /ˈmɑːdəl/", vn: "mô hình / người mẫu", tick: false },
+  { en: "nightmare /ˈnaɪtˌmɛr/", vn: "ác mộng", tick: false },
+  { en: "organ /ˈɔːrɡən/", vn: "cơ quan (cơ thể) / đàn phong cầm", tick: false },
+  { en: "package /ˈpækɪdʒ/", vn: "bưu kiện / gói", tick: false },
+  { en: "passage /ˈpæsɪdʒ/", vn: "đoạn văn / lối đi", tick: false },
+  { en: "sample /ˈsæmpəl/", vn: "mẫu thử", tick: false },
+  { en: "schedule /ˈskɛdʒuːl/", vn: "lịch trình", tick: false },
+  { en: "steel /stil/", vn: "thép", tick: false },
+  { en: "silk /sɪlk/", vn: "lụa", tick: false },
+  { en: "speed /spid/", vn: "tốc độ", tick: false },
+  { en: "spring /sprɪŋ/", vn: "mùa xuân / lò xo", tick: false },
+  { en: "subject /ˈsʌbdʒɪkt/", vn: "môn học / chủ đề", tick: false },
+  { en: "target /ˈtɑːrɡət/", vn: "mục tiêu", tick: false },
+  { en: "term /tɜːrm/", vn: "thuật ngữ / học kỳ / thời hạn", tick: false },
+  { en: "title /ˈtaɪtəl/", vn: "tiêu đề / danh hiệu", tick: false },
+  { en: "tunnel /ˈtʌnəl/", vn: "đường hầm", tick: false },
+  { en: "certificate /sərˈtɪfɪkət/", vn: "chứng chỉ", tick: false },
+  { en: "championship /ˈtʃæmpiənˌʃɪp/", vn: "chức vô địch", tick: false },
+  { en: "cave /keɪv/", vn: "hang động", tick: false },
+  { en: "circuit /ˈsɜːrkət/", vn: "mạch điện / chu vi", tick: false },
+  { en: "civilisation /ˌsɪvəlɪˈzeɪʃən/", vn: "nền văn minh", tick: false },
+  { en: "coincidence /koʊˈɪnsɪdəns/", vn: "sự trùng hợp", tick: false },
+  { en: "colony /ˈkɑːləni/", vn: "thuộc địa", tick: false },
+  { en: "collector /kəˈlɛktər/", vn: "người sưu tầm", tick: false },
+  { en: "commander /kəˈmændər/", vn: "người chỉ huy", tick: false },
+  { en: "confusion /kənˈfjuːʒən/", vn: "sự bối rối", tick: false },
+  { en: "conservation /ˌkɑːnsərˈveɪʃən/", vn: "sự bảo tồn", tick: false },
+  { en: "elbow /ˈɛlˌboʊ/", vn: "khuỷu tay", tick: false },
+  { en: "firefighter /ˈfaɪərˌfaɪtər/", vn: "lính cứu hỏa", tick: false },
+  { en: "firework /ˈfaɪərˌwɜːrk/", vn: "pháo hoa", tick: false },
+  { en: "gender /ˈdʒɛndər/", vn: "giới tính", tick: false },
+  { en: "healthcare /ˈhɛlθˌkɛr/", vn: "dịch vụ y tế / chăm sóc sức khỏe", tick: false },
+  { en: "helmet /ˈhɛlmət/", vn: "mũ bảo hiểm", tick: false },
+  { en: "ladder /ˈlædər/", vn: "cái thang", tick: false },
+  { en: "lane /leɪn/", vn: "làn đường / ngõ nhỏ", tick: false },
+  { en: "litter /ˈlɪtər/", vn: "rác thải", tick: false },
+  { en: "medal /ˈmɛdəl/", vn: "huy chương", tick: false },
+  { en: "resolution /ˌrɛzəˈluːʃən/", vn: "nghị quyết / độ phân giải", tick: false },
+  { en: "notebook /ˈnoʊtˌbʊk/", vn: "vở / sổ tay", tick: false },
+  { en: "novelist /ˈnɑːvəlɪst/", vn: "tiểu thuyết gia", tick: false },
+  { en: "orchestra /ˈɔːrkəstrə/", vn: "dàn nhạc giao hưởng", tick: false },
+  { en: "oxygen /ˈɑːksɪdʒən/", vn: "khí oxy", tick: false },
+  { en: "palm /pɑːm/", vn: "lòng bàn tay / cây cọ", tick: false },
+  { en: "patience /ˈpeɪʃəns/", vn: "sự kiên nhẫn", tick: false },
+  { en: "tournament /ˈtʊrnəmənt/", vn: "giải đấu", tick: false },
+  { en: "signature /ˈsɪɡnətʃər/", vn: "chữ ký", tick: false },
+  { en: "tsunami /tsuˈnɑːmi/", vn: "sóng thần", tick: false },
+  { en: "workplace /ˈwɜːrkˌpleɪs/", vn: "nơi làm việc", tick: false },
+  { en: "acquaintance /əˈkweɪntəns/", vn: "người quen", tick: false },
+  { en: "core /kɔːr/", vn: "lõi / cốt lõi", tick: false },
+  { en: "criminal /ˈkrɪmənəl/", vn: "tội phạm", tick: false },
+  { en: "liquid /ˈlɪkwɪd/", vn: "chất lỏng", tick: false },
+  { en: "luxury /ˈlʌɡʒəri/", vn: "sự xa xỉ", tick: false },
+  { en: "magic /ˈmædʒɪk/", vn: "ma thuật / ảo thuật", tick: false },
+  { en: "narrative /ˈnærətɪv/", vn: "chuyện kể / bài tường thuật", tick: false },
+  { en: "relative /ˈrɛlətɪv/", vn: "họ hàng / người thân", tick: false },
+  { en: "representative /ˌrɛprɪˈzɛntətɪv/", vn: "người đại diện", tick: false },
+  { en: "mine /maɪn/", vn: "mỏ / quả mìn / của tôi", tick: false },
+  { en: "contract /ˈkɑːntrækt/", vn: "hợp đồng", tick: false },
+  { en: "contrast /ˈkɑːntræst/", vn: "sự tương phản", tick: false },
+  { en: "craft /kræft/", vn: "nghề thủ công", tick: false },
+  { en: "crash /kræʃ/", vn: "vụ va chạm / sụp đổ (máy tính)", tick: false },
+  { en: "credit /ˈkrɛdət/", vn: "tín dụng / danh tiếng", tick: false },
+  { en: "cure /kjʊr/", vn: "cách chữa trị", tick: false },
+  { en: "damage /ˈdæmədʒ/", vn: "sự thiệt hại", tick: false },
+  { en: "deal /dil/", vn: "thỏa thuận / giao dịch", tick: false },
+  { en: "decline /dɪˈklaɪn/", vn: "sự suy giảm", tick: false },
+  { en: "desert /ˈdɛzərt/", vn: "sa mạc", tick: false },
+  { en: "discipline /ˈdɪsəplən/", vn: "kỷ luật", tick: false },
+  { en: "display /dɪˈspleɪ/", vn: "sự trưng bày / màn hình", tick: false },
+  { en: "drop /drɑːp/", vn: "giọt nước / sự sụt giảm", tick: false },
+  { en: "shelter /ˈʃɛltər/", vn: "nơi trú ẩn", tick: false },
+  { en: "escape /ɪˈskeɪp/", vn: "sự trốn thoát", tick: false },
+  { en: "exchange /ɪksˈtʃeɪndʒ/", vn: "sự trao đổi", tick: false },
+  { en: "experience /ɪkˈspɪriəns/", vn: "kinh nghiệm / trải nghiệm", tick: false },
+  { en: "experiment /ɪkˈspɛrəmənt/", vn: "thí nghiệm", tick: false },
+  { en: "flood /flʌd/", vn: "lũ lụt", tick: false },
+  { en: "frame /freɪm/", vn: "khung ảnh / cấu trúc", tick: false },
+  { en: "grade /ɡreɪd/", vn: "điểm số / lớp học / cấp bậc", tick: false },
+  { en: "graduate /ˈɡrædʒuət/", vn: "người đã tốt nghiệp", tick: false },
+  { en: "guard /ɡɑːrd/", vn: "bảo vệ / người canh gác", tick: false },
+  { en: "head /hɛd/", vn: "cái đầu / người đứng đầu", tick: false },
+  { en: "hunt /hʌnt/", vn: "cuộc săn bắn", tick: false },
+  { en: "hurry /ˈhɜːri/", vn: "sự vội vã", tick: false },
+  { en: "impact /ˈɪmpækt/", vn: "tác động / sự va chạm", tick: false },
+  { en: "import /ˈɪmpɔːrt/", vn: "hàng nhập khẩu", tick: false },
+  { en: "influence /ˈɪnfluəns/", vn: "sự ảnh hưởng", tick: false },
+  { en: "judge /dʒʌdʒ/", vn: "thẩm phán / giám khảo", tick: false }
+  ],
+
+  16: [
+  { en: "lack /læk/", vn: "sự thiếu hụt / thiếu thốn", tick: false },
+  { en: "launch /lɔːntʃ/", vn: "phóng (tên lửa) / khai trương / hạ thủy", tick: false },
+  { en: "measure /ˈmɛʒər/", vn: "đo lường / biện pháp", tick: false },
+  { en: "mess /mɛs/", vn: "tình trạng bừa bộn / hỗn độn", tick: false },
+  { en: "mistake /mɪˈsteɪk/", vn: "lỗi lầm / sai lầm", tick: false },
+  { en: "pin /pɪn/", vn: "đinh ghim / cặp tóc", tick: false },
+  { en: "press /prɛs/", vn: "nhấn / ấn / báo chí", tick: false },
+  { en: "profit /ˈprɑːfɪt/", vn: "lợi nhuận", tick: false },
+  { en: "progress /ˈprɑːɡrɛs/", vn: "sự tiến bộ / tiến triển", tick: false },
+  { en: "protest /ˈproʊtɛst/", vn: "sự phản đối / cuộc biểu tình", tick: false },
+  { en: "queue /kjuː/", vn: "hàng đợi / xếp hàng", tick: false },
+  { en: "quote /kwoʊt/", vn: "trích dẫn / báo giá", tick: false },
+  { en: "rate /reɪt/", vn: "tỷ lệ / tốc độ / đánh giá", tick: false },
+  { en: "reference /ˈrɛfərəns/", vn: "sự tham khảo / tài liệu tham khảo", tick: false },
+  { en: "regret /rɪˈɡrɛt/", vn: "hối tiếc", tick: false },
+  { en: "release /rɪˈlis/", vn: "giải phóng / phát hành", tick: false },
+  { en: "repair /rɪˈpɛr/", vn: "sửa chữa", tick: false },
+  { en: "request /rɪˈkwɛst/", vn: "yêu cầu", tick: false },
+  { en: "respect /rɪˈspɛkt/", vn: "sự tôn trọng", tick: false },
+  { en: "ring /rɪŋ/", vn: "nhẫn / rung chuông", tick: false },
+  { en: "rise /raɪz/", vn: "sự tăng lên / mọc lên", tick: false },
+  { en: "risk /rɪsk/", vn: "rủi ro / mạo hiểm", tick: false },
+  { en: "roll /roʊl/", vn: "cuộn / lăn", tick: false },
+  { en: "scale /skeɪl/", vn: "quy mô / cái cân / vảy cá", tick: false },
+  { en: "sense /sɛns/", vn: "giác quan / ý thức", tick: false },
+  { en: "shift /ʃɪft/", vn: "ca làm việc / sự chuyển dịch", tick: false },
+  { en: "structure /ˈstrʌktʃər/", vn: "cấu trúc", tick: false },
+  { en: "suit /sut/", vn: "bộ com-lê / phù hợp", tick: false },
+  { en: "transport /ˈtrænspɔːrt/", vn: "vận chuyển / giao thông", tick: false },
+  { en: "attempt /əˈtɛmpt/", vn: "sự cố gắng / nỗ lực", tick: false },
+  { en: "block /blɑːk/", vn: "khối / chặn / phong tỏa", tick: false },
+  { en: "counter /ˈkaʊntər/", vn: "quầy hàng / phản đối", tick: false },
+  { en: "demand /dɪˈmænd/", vn: "nhu cầu / yêu cầu", tick: false },
+  { en: "deposit /dɪˈpɑːzɪt/", vn: "tiền đặt cọc / tiền gửi", tick: false },
+  { en: "design /dɪˈzaɪn/", vn: "thiết kế", tick: false },
+  { en: "desire /dɪˈzaɪər/", vn: "khao khát / mong muốn", tick: false },
+  { en: "divorce /dɪˈvɔːrs/", vn: "ly hôn", tick: false },
+  { en: "export /ˈɛkspɔːrt/", vn: "xuất khẩu", tick: false },
+  { en: "force /fɔːrs/", vn: "lực lượng / ép buộc", tick: false },
+  { en: "forecast /ˈfɔːrˌkæst/", vn: "dự báo", tick: false },
+  { en: "format /ˈfɔːrmæt/", vn: "định dạng", tick: false },
+  { en: "fund /fʌnd/", vn: "quỹ / tài trợ", tick: false },
+  { en: "trap /træp/", vn: "bẫy", tick: false },
+  { en: "harvest /ˈhɑːrvɪst/", vn: "thu hoạch", tick: false },
+  { en: "interview /ˈɪntərvjuː/", vn: "phỏng vấn", tick: false },
+  { en: "object /ˈɑːbdʒɪkt/", vn: "đối tượng / vật thể / phản đối", tick: false },
+  { en: "pitch /pɪtʃ/", vn: "sân cỏ / cường độ giọng / chào hàng", tick: false },
+  { en: "content /ˈkɑːntɛnt/", vn: "nội dung / hài lòng", tick: false },
+  { en: "romance /roʊˈmæns/", vn: "sự lãng mạn / chuyện tình", tick: false },
+  { en: "patient /ˈpeɪʃənt/", vn: "bệnh nhân / kiên nhẫn", tick: false },
+  { en: "attendant /əˈtɛndənt/", vn: "người phục vụ", tick: false },
+  { en: "chair /tʃɛr/", vn: "ghế / chủ tọa", tick: false },
+  { en: "challenge /ˈtʃælɪndʒ/", vn: "thử thách", tick: false },
+  { en: "charge /tʃɑːrdʒ/", vn: "phí / sạc pin / buộc tội", tick: false },
+  { en: "concern /kənˈsɜːrn/", vn: "sự lo ngại / liên quan", tick: false },
+  { en: "conflict /ˈkɑːnflɪkt/", vn: "xung đột", tick: false },
+  { en: "present /ˈprɛzənt/", vn: "món quà / hiện tại / trình bày", tick: false },
+  { en: "remark /rɪˈmɑːrk/", vn: "lời nhận xét", tick: false },
+  { en: "review /rɪˈvjuː/", vn: "đánh giá / xem lại", tick: false },
+  { en: "sketch /skɛtʃ/", vn: "bản phác thảo", tick: false },
+  { en: "scratch /skrætʃ/", vn: "vết trầy xước / gãi", tick: false },
+  { en: "puzzle /ˈpʌzəl/", vn: "câu đố / làm bối rối", tick: false },
+  { en: "seal /sil/", vn: "hải cẩu / niêm phong", tick: false },
+  { en: "spot /spɑːt/", vn: "địa điểm / vết đốm", tick: false },
+  { en: "stack /stæk/", vn: "chồng / đống", tick: false },
+  { en: "strike /straɪk/", vn: "cuộc đình công / đánh", tick: false },
+  { en: "survey /ˈsɜːrveɪ/", vn: "cuộc khảo sát", tick: false },
+  { en: "switch /swɪtʃ/", vn: "công tắc / chuyển đổi", tick: false },
+  { en: "tag /tæɡ/", vn: "nhãn dán / thẻ", tick: false },
+  { en: "tap /tæp/", vn: "vòi nước / gõ nhẹ", tick: false },
+  { en: "taste /teɪst/", vn: "vị / nếm", tick: false },
+  { en: "value /ˈvæljuː/", vn: "giá trị", tick: false },
+  { en: "signal /ˈsɪɡnəl/", vn: "tín hiệu", tick: false },
+  { en: "witness /ˈwɪtnəs/", vn: "nhân chứng / chứng kiến", tick: false },
+  { en: "fortnight /ˈfɔːrtˌnaɪt/", vn: "nửa tháng (hai tuần)", tick: false },
+  { en: "greenhouse effect /ˈɡrinhaʊs ɪˈfɛkt/", vn: "hiệu ứng nhà kính", tick: false },
+  { en: "social system /ˈsoʊʃəl ˈsɪstəm/", vn: "hệ thống xã hội", tick: false },
+  { en: "space shuttle /speɪs ˈʃʌtəl/", vn: "tàu con thoi", tick: false },
+  { en: "space station /speɪs ˈsteɪʃən/", vn: "trạm vũ trụ", tick: false },
+  { en: "supply chain /səˈplaɪ tʃeɪn/", vn: "chuỗi cung ứng", tick: false },
+  { en: "cope with /koʊp wɪð/", vn: "đương đầu / đối phó với", tick: false },
+  { en: "deal with /dil wɪð/", vn: "giải quyết / xử lý", tick: false },
+  { en: "find out /faɪnd aʊt/", vn: "tìm ra / phát hiện ra", tick: false },
+  { en: "make up /meɪk ʌp/", vn: "trang điểm / bịa chuyện / làm hòa", tick: false },
+  { en: "except /ɪkˈsɛpt/", vn: "ngoại trừ", tick: false },
+  { en: "plus /plʌs/", vn: "cộng với / ưu điểm", tick: false },
+  { en: "via /ˈvaɪə/", vn: "thông qua", tick: false },
+  { en: "fortunate /ˈfɔːrtʃənət/", vn: "may mắn", tick: false },
+  { en: "acquire /əˈkwaɪər/", vn: "đạt được / thâu tóm", tick: false },
+  { en: "analyse /ˈænəlaɪz/", vn: "phân tích", tick: false },
+  { en: "appreciate /əˈpriʃiˌeɪt/", vn: "trân trọng / cảm kích", tick: false },
+  { en: "attract /əˈtrækt/", vn: "thu hút", tick: false },
+  { en: "combine /kəmˈbaɪn/", vn: "kết hợp", tick: false },
+  { en: "commit /kəˈmɪt/", vn: "cam kết / phạm (lỗi, tội)", tick: false },
+  { en: "concentrate /ˈkɑːnsənˌtreɪt/", vn: "tập trung", tick: false },
+  { en: "conclude /kənˈklud/", vn: "kết luận", tick: false },
+  { en: "confirm /kənˈfɜːrm/", vn: "xác nhận", tick: false },
+  { en: "consist /kənˈsɪst/", vn: "bao gồm", tick: false },
+  ],
+  17: [
+  { en: "construct /kənˈstrʌkt/", vn: "xây dựng", tick: false },
+  { en: "consume /kənˈsum/", vn: "tiêu thụ", tick: false },
+  { en: "contribute /kənˈtrɪbjut/", vn: "đóng góp", tick: false },
+  { en: "convert /kənˈvɜːrt/", vn: "chuyển đổi", tick: false },
+  { en: "convince /kənˈvɪns/", vn: "thuyết phục", tick: false },
+  { en: "calculate /ˈkælkjəˌleɪt/", vn: "tính toán", tick: false },
+  { en: "declare /dɪˈklɛr/", vn: "tuyên bố", tick: false },
+  { en: "decorate /ˈdɛkəˌreɪt/", vn: "trang trí", tick: false },
+  { en: "deliver /dɪˈlɪvər/", vn: "giao hàng", tick: false },
+  { en: "determine /dɪˈtɜːrmɪn/", vn: "xác định / quyết tâm", tick: false },
+  { en: "divide /dɪˈvaɪd/", vn: "chia nhỏ", tick: false },
+  { en: "fasten /ˈfæsən/", vn: "thắt / cài chặt", tick: false },
+  { en: "donate /ˈdoʊneɪt/", vn: "quyên góp", tick: false },
+  { en: "educate /ˈɛdʒəˌkeɪt/", vn: "giáo dục", tick: false },
+  { en: "employ /ɪmˈplɔɪ/", vn: "thuê làm việc", tick: false },
+  { en: "encourage /ɪnˈkɜːrɪdʒ/", vn: "khuyến khích", tick: false },
+  { en: "entertain /ˌɛntərˈteɪn/", vn: "giải trí", tick: false },
+  { en: "equip /ɪˈkwɪp/", vn: "trang bị", tick: false },
+  { en: "examine /ɪɡˈzæmɪn/", vn: "kiểm tra / khám xét", tick: false },
+  { en: "gather /ˈɡæðər/", vn: "tụ họp / thu thập", tick: false },
+  { en: "highlight /ˈhaɪˌlaɪt/", vn: "làm nổi bật", tick: false },
+  { en: "ignore /ɪɡˈnɔːr/", vn: "phớt lờ", tick: false },
+  { en: "indicate /ˈɪndɪˌkeɪt/", vn: "chỉ ra", tick: false },
+  { en: "inform /ɪnˈfɔːrm/", vn: "thông báo", tick: false },
+  { en: "injure /ˈɪndʒər/", vn: "làm bị thương", tick: false },
+  { en: "inspire /ɪnˈspaɪər/", vn: "truyền cảm hứng", tick: false },
+  { en: "intend /ɪnˈtɛnd/", vn: "dự định", tick: false },
+  { en: "interact /ˌɪntərˈækt/", vn: "tương tác", tick: false },
+  { en: "invest /ɪnˈvɛst/", vn: "đầu tư", tick: false },
+  { en: "investigate /ɪnˈvɛstəˌɡeɪt/", vn: "điều tra", tick: false },
+  { en: "enclose /ɪnˈkloʊz/", vn: "đính kèm / bao quanh", tick: false },
+  { en: "locate /ˈloʊkeɪt/", vn: "xác định vị trí", tick: false },
+  { en: "drift /drɪft/", vn: "trôi dạt", tick: false },
+  { en: "mention /ˈmɛnʃən/", vn: "đề cập", tick: false },
+  { en: "occur /əˈkɜːr/", vn: "xảy ra", tick: false },
+  { en: "operate /ˈɑːpəˌreɪt/", vn: "vận hành / phẫu thuật", tick: false },
+  { en: "organise /ˈɔːrɡəˌnaɪz/", vn: "tổ chức", tick: false },
+  { en: "pack /pæk/", vn: "đóng gói", tick: false },
+  { en: "participate /pɑːrˈtɪsəˌpeɪt/", vn: "tham gia", tick: false },
+  { en: "persuade /pərˈsweɪd/", vn: "thuyết phục", tick: false },
+  { en: "pray /preɪ/", vn: "cầu nguyện", tick: false },
+  { en: "preserve /prɪˈzɜːrv/", vn: "bảo tồn", tick: false },
+  { en: "pretend /prɪˈtɛnd/", vn: "giả vờ", tick: false },
+  { en: "prove /pruv/", vn: "chứng minh", tick: false },
+  { en: "punish /ˈpʌnɪʃ/", vn: "trừng phạt", tick: false },
+  { en: "qualify /ˈkwɑːləˌfaɪ/", vn: "đủ điều kiện", tick: false },
+  { en: "quit /kwɪt/", vn: "từ bỏ / nghỉ việc", tick: false },
+  { en: "reflect /rəˈflɛkt/", vn: "phản chiếu / suy ngẫm", tick: false },
+  { en: "reject /rɪˈdʒɛkt/", vn: "từ chối", tick: false },
+  { en: "relate /rɪˈleɪt/", vn: "liên quan / kể lại", tick: false },
+  { en: "remain /rɪˈmeɪn/", vn: "còn lại / duy trì", tick: false },
+  { en: "remind /riˈmaɪnd/", vn: "nhắc nhở", tick: false },
+  { en: "represent /ˌrɛprɪˈzɛnt/", vn: "đại diện", tick: false },
+  { en: "require /rɪˈkwaɪər/", vn: "yêu cầu", tick: false },
+  { en: "retire /rɪˈtaɪər/", vn: "nghỉ hưu", tick: false },
+  { en: "revise /rɪˈvaɪz/", vn: "ôn tập / chỉnh sửa", tick: false },
+  { en: "satisfy /ˈsætəsˌfaɪ/", vn: "làm hài lòng", tick: false },
+  { en: "shine /ʃaɪn/", vn: "tỏa sáng", tick: false },
+  { en: "sink /sɪŋk/", vn: "chìm / bồn rửa", tick: false },
+  { en: "suffer /ˈsʌfər/", vn: "chịu đựng", tick: false },
+  { en: "summarize /ˈsʌməˌraɪz/", vn: "tóm tắt", tick: false },
+  { en: "survive /sərˈvaɪv/", vn: "sống sót", tick: false },
+  { en: "threaten /ˈθrɛtən/", vn: "đe dọa", tick: false },
+  { en: "transform /trænsˈfɔːrm/", vn: "biến đổi", tick: false },
+  { en: "treat /trit/", vn: "đối xử / điều trị", tick: false },
+  { en: "vary /ˈvɛri/", vn: "thay đổi / làm cho khác nhau", tick: false },
+  { en: "warn /wɔːrn/", vn: "cảnh báo", tick: false },
+  { en: "wonder /ˈwʌndər/", vn: "tự hỏi / kỳ quan", tick: false },
+  { en: "abandon /əˈbændən/", vn: "từ bỏ / bỏ rơi", tick: false },
+  { en: "absorb /əbˈzɔːrb/", vn: "hấp thụ", tick: false },
+  { en: "accommodate /əˈkɑːməˌdeɪt/", vn: "cung cấp chỗ ở", tick: false },
+  { en: "accompany /əˈkʌmpəni/", vn: "đi cùng / hộ tống", tick: false },
+  { en: "accuse /əˈkjuz/", vn: "buộc tội", tick: false },
+  { en: "achieve /əˈtʃiv/", vn: "đạt được", tick: false },
+  { en: "acknowledge /ækˈnɑːlɪdʒ/", vn: "công nhận / thừa nhận", tick: false },
+  { en: "activate /ˈæktəˌveɪt/", vn: "kích hoạt", tick: false },
+  { en: "adapt /əˈdæpt/", vn: "thích nghi", tick: false },
+  { en: "address /əˈdrɛs/", vn: "địa chỉ / giải quyết (vấn đề)", tick: false },
+  { en: "adjust /əˈdʒʌst/", vn: "điều chỉnh", tick: false },
+  { en: "admire /ədˈmaɪər/", vn: "ngưỡng mộ", tick: false },
+  { en: "admit /ədˈmɪt/", vn: "thừa nhận", tick: false },
+  { en: "adopt /əˈdɑːpt/", vn: "nhận nuôi / áp dụng", tick: false },
+  { en: "advance /ədˈvæns/", vn: "tiến bộ", tick: false },
+  { en: "advise /ədˈvaɪz/", vn: "khuyên bảo", tick: false },
+  { en: "affect /əˈfɛkt/", vn: "ảnh hưởng đến", tick: false },
+  { en: "afford /əˈfɔːrd/", vn: "đủ khả năng chi trả", tick: false },
+  { en: "alter /ˈɔːltər/", vn: "thay đổi", tick: false },
+  { en: "announce /əˈnaʊns/", vn: "thông báo", tick: false },
+  { en: "annoy /əˈnɔɪ/", vn: "làm phiền", tick: false },
+  { en: "anticipate /ænˈtɪsəˌpeɪt/", vn: "dự đoán / mong đợi", tick: false },
+  { en: "apologize /əˈpɑːləˌdʒaɪz/", vn: "xin lỗi", tick: false },
+  { en: "appeal /əˈpil/", vn: "kháng cáo / kêu gọi / thu hút", tick: false },
+  { en: "approve /əˈpruv/", vn: "tán thành", tick: false },
+  { en: "argue /ˈɑːrɡju/", vn: "tranh luận", tick: false },
+  { en: "arise /əˈraɪz/", vn: "phát sinh", tick: false },
+  { en: "arrest /əˈrɛst/", vn: "bắt giữ", tick: false },
+  { en: "assess /əˈsɛs/", vn: "đánh giá", tick: false },
+  { en: "assign /əˈsaɪn/", vn: "phân công", tick: false },
+  { en: "associate /əˈsoʊʃiˌeɪt/", vn: "liên kết", tick: false },
+  { en: "assure /əˈʃʊr/", vn: "đảm bảo", tick: false },
+  { en: "attach /əˈtætʃ/", vn: "đính kèm", tick: false },
+  ],
+  18: [
+  { en: "avoid /əˈvɔɪd/", vn: "tránh né", tick: false },
+  { en: "ban /bæn/", vn: "cấm", tick: false },
+  { en: "beg /bɛɡ/", vn: "cầu xin", tick: false },
+  { en: "emphasise /ˈɛmfəˌsaɪz/", vn: "nhấn mạnh", tick: false },
+  { en: "define /dɪˈfaɪn/", vn: "định nghĩa", tick: false },
+  { en: "demonstrate /ˈdɛmənˌstreɪt/", vn: "chứng minh / biểu diễn", tick: false },
+  { en: "blame /bleɪm/", vn: "đổ lỗi", tick: false },
+  { en: "blend /blɛnd/", vn: "pha trộn", tick: false },
+  { en: "blow /bloʊ/", vn: "thổi", tick: false },
+  { en: "book /bʊk/", vn: "đặt chỗ / quyển sách", tick: false },
+  { en: "boost /bust/", vn: "thúc đẩy", tick: false },
+  { en: "bury /ˈbɛri/", vn: "chôn cất", tick: false },
+  { en: "consult /kənˈsʌlt/", vn: "tư vấn", tick: false },
+  { en: "convey /kənˈveɪ/", vn: "truyền tải (thông điệp)", tick: false },
+  { en: "criticise /ˈkrɪtɪˌsaɪz/", vn: "phê bình", tick: false },
+  { en: "dare /dɛr/", vn: "dám", tick: false },
+  { en: "decrease /dɪˈkris/", vn: "giảm xuống", tick: false },
+  { en: "defeat /dɪˈfit/", vn: "đánh bại", tick: false },
+  { en: "celebrate /ˈsɛləˌbreɪt/", vn: "ăn mừng / kỷ niệm", tick: false },
+  { en: "defend /dɪˈfɛnd/", vn: "phòng thủ / bảo vệ", tick: false },
+  { en: "delete /dɪˈlit/", vn: "xóa bỏ", tick: false },
+  { en: "deny /dɪˈnaɪ/", vn: "phủ nhận", tick: false },
+  { en: "depart /dɪˈpɑːrt/", vn: "khởi hành", tick: false },
+  { en: "derive /dəˈraɪ/", vn: "nguồn gốc từ / thu được từ", tick: false },
+  { en: "deserve /dɪˈzɜːrv/", vn: "xứng đáng", tick: false },
+  { en: "detect /dɪˈtɛkt/", vn: "phát hiện", tick: false },
+  { en: "develop /dɪˈvɛləp/", vn: "phát triển", tick: false },
+  { en: "devote /dɪˈvoʊt/", vn: "cống hiến", tick: false },
+  { en: "differ /ˈdɪfər/", vn: "khác nhau", tick: false },
+  { en: "dig /dɪɡ/", vn: "đào bới", tick: false },
+  { en: "disappoint /ˌdɪsəˈpɔɪnt/", vn: "làm thất vọng", tick: false },
+  { en: "discourage /dɪˈskɜːrɪdʒ/", vn: "làm nản lòng", tick: false },
+  { en: "discover /dɪˈskʌvər/", vn: "khám phá", tick: false },
+  { en: "dismiss /dɪˈsmɪs/", vn: "sa thải / gạt bỏ", tick: false },
+  { en: "distinguish /dɪˈstɪŋɡwɪʃ/", vn: "phân biệt", tick: false },
+  { en: "distract /dɪˈstrækt/", vn: "làm xao nhãng", tick: false },
+  { en: "distribute /dɪˈstrɪbjut/", vn: "phân phối", tick: false },
+  { en: "disturb /dɪˈstɜːrb/", vn: "làm phiền", tick: false },
+  { en: "dive /daɪv/", vn: "lặn", tick: false },
+  { en: "dominate /ˈdɑːməˌneɪt/", vn: "thống trị", tick: false },
+  { en: "drag /dræɡ/", vn: "kéo lê", tick: false },
+  { en: "notify /ˈnoʊtəˌfaɪ/", vn: "thông báo", tick: false },
+  { en: "dump /dʌmp/", vn: "đổ bỏ / vứt bỏ", tick: false },
+  { en: "elect /ɪˈlɛkt/", vn: "bầu chọn", tick: false },
+  { en: "emerge /ɪˈmɜːrdʒ/", vn: "nổi lên / xuất hiện", tick: false },
+  { en: "enable /ɪˈneɪbəl/", vn: "cho phép / làm cho có thể", tick: false },
+  { en: "encounter /ɪnˈkaʊntər/", vn: "chạm trán / bắt gặp", tick: false },
+  { en: "engage /ɪnˈɡeɪdʒ/", vn: "tham gia / thuê mướn", tick: false },
+  { en: "enhance /ɪnˈhæns/", vn: "nâng cao / cải thiện", tick: false },
+  { en: "ensure /ɪnˈʃʊr/", vn: "đảm bảo", tick: false },
+  { en: "translate /trænzˈleɪt/", vn: "dịch thuật", tick: false },
+  { en: "erupt /ɪˈrʌpt/", vn: "phun trào (núi lửa)", tick: false },
+  { en: "evolve /ɪˈvɑːlv/", vn: "tiến hóa", tick: false },
+  { en: "exceed /ɪkˈsid/", vn: "vượt quá", tick: false },
+  { en: "exclude /ɪkˈsklud/", vn: "loại trừ", tick: false },
+  { en: "exhibit /ɪɡˈzɪbɪt/", vn: "trưng bày / triển lãm", tick: false },
+  { en: "exist /ɪɡˈzɪst/", vn: "tồn tại", tick: false },
+  { en: "expand /ɪkˈspænd/", vn: "mở rộng", tick: false },
+  { en: "explode /ɪkˈsploʊd/", vn: "phát nổ", tick: false },
+  { en: "exploit /ɪkˈsplɔɪt/", vn: "khai thác / bóc lột", tick: false },
+  { en: "explore /ɪkˈsplɔːr/", vn: "khám phá / thám hiểm", tick: false },
+  { en: "expose /ɪkˈspoʊz/", vn: "phơi bày / tiếp xúc", tick: false },
+  { en: "express /ɪkˈsprɛs/", vn: "bày tỏ / nhanh", tick: false },
+  { en: "extract /ˈɛkstrækt/", vn: "chiết xuất / rút ra", tick: false },
+  { en: "fold /foʊld/", vn: "gấp lại", tick: false },
+  { en: "forbid /fərˈbɪd/", vn: "cấm", tick: false },
+  { en: "freeze /friz/", vn: "đông cứng", tick: false },
+  { en: "fulfil /fʊlˈfɪl/", vn: "hoàn thành / đáp ứng", tick: false },
+  { en: "gain /ɡeɪn/", vn: "thu được / tăng lên", tick: false },
+  { en: "generate /ˈdʒɛnəˌreɪt/", vn: "tạo ra", tick: false },
+  { en: "accomplish /əˈkɑːmplɪʃ/", vn: "hoàn thành / đạt được", tick: false },
+  { en: "renovate /ˈrɛnəˌveɪt/", vn: "cải tạo / làm mới", tick: false },
+  { en: "govern /ˈɡʌvərn/", vn: "cai trị / quản lý", tick: false },
+  { en: "grab /ɡræb/", vn: "vồ lấy / túm lấy", tick: false },
+  { en: "grant /ɡrænt/", vn: "ban cho / cấp cho", tick: false },
+  { en: "guarantee /ˌɡɛrənˈti/", vn: "bảo hành / đảm bảo", tick: false },
+  { en: "handle /ˈhændəl/", vn: "xử lý / tay cầm", tick: false },
+  { en: "harm /hɑːrm/", vn: "gây hại", tick: false },
+  { en: "hatch /hætʃ/", vn: "nở (trứng)", tick: false },
+  { en: "heal /hil/", vn: "chữa lành", tick: false },
+  { en: "hesitate /ˈhɛzəˌteɪt/", vn: "do dự", tick: false },
+  { en: "hire /ˈhaɪər/", vn: "thuê", tick: false },
+  { en: "hold /hoʊld/", vn: "cầm / nắm / tổ chức", tick: false },
+  { en: "hurt /hɜːrt/", vn: "làm đau", tick: false },
+  { en: "illustrate /ˈɪləˌstreɪt/", vn: "minh họa", tick: false },
+  { en: "imagine /ɪˈmædʒən/", vn: "tưởng tượng", tick: false },
+  { en: "implement /ˈɪmpləˌmɛnt/", vn: "thực hiện / thi hành", tick: false },
+  { en: "imply /ɪmˈplaɪ/", vn: "ngụ ý", tick: false },
+  { en: "impose /ɪmˈpoʊz/", vn: "áp đặt", tick: false },
+  { en: "improve /ɪmˈpruv/", vn: "cải thiện", tick: false },
+  { en: "incorporate /ɪnˈkɔːrpəˌreɪt/", vn: "sáp nhập / kết hợp", tick: false },
+  { en: "infer /ɪnˈfɜːr/", vn: "suy luận", tick: false },
+  { en: "inherit /ɪnˈhɛrət/", vn: "thừa kế", tick: false },
+  { en: "insert /ɪnˈsɜːrt/", vn: "chèn vào", tick: false },
+  { en: "insist /ɪnˈsɪst/", vn: "khăng khăng / nài nỉ", tick: false },
+  { en: "install /ɪnˈstɔːl/", vn: "lắp đặt / cài đặt", tick: false },
+  { en: "integrate /ˈɪntəˌɡreɪt/", vn: "tích hợp / hòa nhập", tick: false },
+  { en: "interpret /ɪnˈtɜːrprət/", vn: "giải thích / thông dịch", tick: false }
+  ],
+  19: [
+  { en: "interrupt /ˌɪntəˈrʌpt/", vn: "làm gián đoạn", tick: false },
+  { en: "invade /ɪnˈveɪd/", vn: "xâm lược", tick: false },
+  { en: "involve /ɪnˈvɑːlv/", vn: "liên quan / dính líu", tick: false },
+  { en: "isolate /ˈaɪsəˌleɪt/", vn: "cô lập", tick: false },
+  { en: "justify /ˈdʒʌstəˌfaɪ/", vn: "biện minh / bào chữa", tick: false },
+  { en: "lead /lid/", vn: "dẫn dắt", tick: false },
+  { en: "load /loʊd/", vn: "tải / chất hàng", tick: false },
+  { en: "manufacture /ˌmænjəˈfæktʃər/", vn: "sản xuất (công nghiệp)", tick: false },
+  { en: "melt /mɛlt/", vn: "tan chảy", tick: false },
+  { en: "modify /ˈmɑːdəˌfaɪ/", vn: "điều chỉnh / sửa đổi", tick: false },
+  { en: "motivate /ˈmoʊtəˌveɪt/", vn: "tạo động lực", tick: false },
+  { en: "mount /maʊnt/", vn: "leo / gắn / lắp ráp", tick: false },
+  { en: "multiply /ˈmʌltəˌplaɪ/", vn: "nhân lên / làm tăng lên", tick: false },
+  { en: "negotiate /nəˈɡoʊʃiˌeɪt/", vn: "đàm phán", tick: false },
+  { en: "obey /oʊˈbeɪ/", vn: "tuân theo / vâng lời", tick: false },
+  { en: "observe /əbˈzɜːrv/", vn: "quan sát / tuân thủ", tick: false },
+  { en: "obtain /əbˈteɪn/", vn: "đạt được", tick: false },
+  { en: "occupy /ˈɑːkjəˌpaɪ/", vn: "chiếm giữ", tick: false },
+  { en: "offend /əˈfɛnd/", vn: "xúc phạm", tick: false },
+  { en: "oppose /əˈpoʊz/", vn: "phản đối", tick: false },
+  { en: "overcome /ˌoʊvərˈkʌm/", vn: "vượt qua", tick: false },
+  { en: "overeat /ˌoʊvərˈit/", vn: "ăn quá nhiều", tick: false },
+  { en: "owe /oʊ/", vn: "nợ", tick: false },
+  { en: "perceive /pərˈsiv/", vn: "nhận thức / cảm nhận", tick: false },
+  { en: "permit /pərˈmɪt/", vn: "cho phép", tick: false },
+  { en: "pose /poʊz/", vn: "đặt ra (vấn đề) / tạo dáng", tick: false },
+  { en: "possess /pəˈzɛs/", vn: "sở hữu", tick: false },
+  { en: "postpone /poʊstˈpoʊn/", vn: "hoãn lại", tick: false },
+  { en: "praise /preɪz/", vn: "khen ngợi", tick: false },
+  { en: "precede /prɪˈsid/", vn: "đi trước", tick: false },
+  { en: "prevent /prɪˈvɛnt/", vn: "ngăn chặn", tick: false },
+  { en: "proceed /proʊˈsid/", vn: "tiến hành", tick: false },
+  { en: "produce /prəˈdus/", vn: "sản xuất / tạo ra", tick: false },
+  { en: "prohibit /proʊˈhɪbət/", vn: "cấm", tick: false },
+  { en: "promote /prəˈmoʊt/", vn: "quảng bá / thăng chức", tick: false },
+  { en: "propose /prəˈpoʊz/", vn: "đề xuất", tick: false },
+  { en: "publish /ˈpʌblɪʃ/", vn: "xuất bản", tick: false },
+  { en: "purchase /ˈpɜːrtʃəs/", vn: "mua", tick: false },
+  { en: "pursue /pərˈsu/", vn: "theo đuổi", tick: false },
+  { en: "rebuild /ˌriˈbɪld/", vn: "xây dựng lại", tick: false },
+  { en: "recall /ˈriˌkɔːl/", vn: "nhớ lại / thu hồi", tick: false },
+  { en: "reckon /ˈrɛkən/", vn: "cho rằng / tính toán", tick: false },
+  { en: "recommend /ˌrɛkəˈmɛnd/", vn: "khuyên / đề xuất", tick: false },
+  { en: "recover /rɪˈkʌvər/", vn: "hồi phục", tick: false },
+  { en: "recruit /rəˈkrut/", vn: "tuyển dụng", tick: false },
+  { en: "reduce /rəˈdus/", vn: "giảm", tick: false },
+  { en: "regard /rəˈɡɑːrd/", vn: "xem xét / coi như", tick: false },
+  { en: "register /ˈrɛdʒɪstər/", vn: "đăng ký", tick: false },
+  { en: "regulate /ˈrɛɡjəˌleɪt/", vn: "điều chỉnh / quy định", tick: false },
+  { en: "reinforce /ˌriɪnˈfɔːrs/", vn: "tăng cường / củng cố", tick: false },
+  { en: "relieve /rɪˈliv/", vn: "làm dịu / nhẹ bớt", tick: false },
+  { en: "rely /rɪˈlaɪ/", vn: "dựa vào", tick: false },
+  { en: "rescue /ˈrɛskju/", vn: "giải cứu", tick: false },
+  { en: "resist /rɪˈzɪst/", vn: "chống lại", tick: false },
+  { en: "resolve /rɪˈzɑːlv/", vn: "giải quyết", tick: false },
+  { en: "restore /rɪˈstɔːr/", vn: "khôi phục", tick: false },
+  { en: "restrict /rɪˈstrɪkt/", vn: "hạn chế", tick: false },
+  { en: "retain /rɪˈteɪn/", vn: "giữ lại", tick: false },
+  { en: "reveal /rɪˈvil/", vn: "tiết lộ", tick: false },
+  { en: "rid /rɪd/", vn: "loại bỏ", tick: false },
+  { en: "rob /rɑːb/", vn: "cướp", tick: false },
+  { en: "rub /rʌb/", vn: "chà xát", tick: false },
+  { en: "ruin /ˈruɪn/", vn: "phá hủy", tick: false },
+  { en: "scare /skɛr/", vn: "làm sợ hãi", tick: false },
+  { en: "dedicate /ˈdɛdəˌkeɪt/", vn: "cống hiến", tick: false },
+  { en: "scroll /skroʊl/", vn: "cuộn / lướt (màn hình)", tick: false },
+  { en: "adore /əˈdɔːr/", vn: "yêu mến / sùng bái", tick: false },
+  { en: "seek /sik/", vn: "tìm kiếm", tick: false },
+  { en: "settle /ˈsɛtəl/", vn: "ổn định / định cư / giải quyết", tick: false },
+  { en: "surround /səˈraʊnd/", vn: "bao quanh", tick: false },
+  { en: "skip /skɪp/", vn: "bỏ qua", tick: false },
+  { en: "slide /slaɪd/", vn: "trượt", tick: false },
+  { en: "slip /slɪp/", vn: "trượt ngã", tick: false },
+  { en: "solve /sɑːlv/", vn: "giải quyết", tick: false },
+  { en: "specialise /ˈspɛʃəˌlaɪz/", vn: "chuyên môn hóa", tick: false },
+  { en: "specify /ˈspɛsəˌfaɪ/", vn: "chỉ rõ", tick: false },
+  { en: "speculate /ˈspɛkjəˌleɪt/", vn: "suy đoán / đầu cơ", tick: false },
+  { en: "spill /spɪl/", vn: "làm đổ (chất lỏng)", tick: false },
+  { en: "split /splɪt/", vn: "chia tách", tick: false },
+  { en: "spoil /spɔɪl/", vn: "làm hỏng", tick: false },
+  { en: "sponsor /ˈspɑːnsər/", vn: "tài trợ", tick: false },
+  { en: "spread /sprɛd/", vn: "lan rộng", tick: false },
+  { en: "stand /stænd/", vn: "đứng / chịu đựng", tick: false },
+  { en: "stare /stɛr/", vn: "nhìn chằm chằm", tick: false },
+  { en: "starve /stɑːrv/", vn: "chết đói / bỏ đói", tick: false },
+  { en: "stick /stɪk/", vn: "dính / gậy", tick: false },
+  { en: "stimulate /ˈstɪmjəˌleɪt/", vn: "kích thích", tick: false },
+  { en: "strengthen /ˈstrɛŋθən/", vn: "tăng cường", tick: false },
+  { en: "stretch /strɛtʃ/", vn: "kéo giãn", tick: false },
+  { en: "submit /səbˈmɪt/", vn: "nộp / đệ trình", tick: false },
+  { en: "suspend /səˈspɛnd/", vn: "đình chỉ / treo", tick: false },
+  { en: "swallow /ˈswɑːloʊ/", vn: "nuốt", tick: false },
+  { en: "swear /swɛr/", vn: "thề / chửi thề", tick: false },
+  { en: "sweep /swip/", vn: "quét dọn", tick: false },
+  { en: "tackle /ˈtækəl/", vn: "giải quyết / đối phó", tick: false },
+  { en: "tear /tɛr/", vn: "xé / nước mắt", tick: false },
+  { en: "terrify /ˈtɛrəˌfaɪ/", vn: "làm khiếp sợ", tick: false },
+  { en: "track /træk/", vn: "theo dõi / đường ray", tick: false },
+  { en: "transfer /trænsˈfɜːr/", vn: "chuyển giao", tick: false },
+  { en: "transmit /trænzˈmɪt/", vn: "truyền tải", tick: false },
+  ],
+  20: [
+  { en: "trigger /ˈtrɪɡər/", vn: "kích hoạt / gây ra", tick: false },
+  { en: "undergo /ˌʌndərˈɡoʊ/", vn: "trải qua", tick: false },
+  { en: "undertake /ˌʌndərˈteɪk/", vn: "đảm nhận / thực hiện", tick: false },
+  { en: "unfold /ənˈfoʊld/", vn: "mở ra / phơi bày", tick: false },
+  { en: "unite /juˈnaɪt/", vn: "đoàn kết", tick: false },
+  { en: "urge /ɜːrdʒ/", vn: "thúc giục", tick: false },
+  { en: "frighten /ˈfraɪtən/", vn: "làm sợ hãi", tick: false },
+  { en: "vote /voʊt/", vn: "bầu / bỏ phiếu", tick: false },
+  { en: "wander /ˈwɑːndər/", vn: "lang thang", tick: false },
+  { en: "invent /ɪnˈvɛnt/", vn: "phát minh", tick: false },
+  { en: "maintain /meɪnˈteɪn/", vn: "duy trì / bảo trì", tick: false },
+  { en: "assume /əˈsum/", vn: "giả định / đảm nhận", tick: false },
+  { en: "bend /bɛnd/", vn: "uốn cong", tick: false },
+  { en: "bother /ˈbɑːðər/", vn: "làm phiền", tick: false },
+  { en: "resign /rɪˈzaɪn/", vn: "từ chức", tick: false },
+  { en: "whisper /ˈwɪspər/", vn: "thì thầm", tick: false },
+  { en: "withdraw /wɪðˈdrɔː/", vn: "rút lui / rút tiền", tick: false },
+  { en: "wrap /ræp/", vn: "quấn / bọc", tick: false },
+  { en: "feed /fid/", vn: "cho ăn", tick: false },
+  { en: "establish /ɪˈstæblɪʃ/", vn: "thiết lập / thành lập", tick: false },
+  { en: "evaluate /ɪˈvæljuˌeɪt/", vn: "đánh giá", tick: false },
+  { en: "extend /ɪkˈstɛnd/", vn: "mở rộng / kéo dài", tick: false },
+  { en: "float /floʊt/", vn: "nổi / thả nổi", tick: false },
+  { en: "forgive /fərˈɡɪv/", vn: "tha thứ", tick: false },
+  { en: "clarify /ˈklɛrəˌfaɪ/", vn: "làm rõ", tick: false },
+  { en: "classify /ˈklæsəˌfaɪ/", vn: "phân loại", tick: false },
+  { en: "compose /kəmˈpoʊz/", vn: "sáng tác / cấu thành", tick: false },
+  { en: "comprise /kəmˈpraɪz/", vn: "bao gồm / cấu thành", tick: false },
+  { en: "confess /kənˈfɛs/", vn: "thú nhận", tick: false },
+  { en: "acquaint /əˈkweɪnt/", vn: "làm quen / cho biết", tick: false },
+  { en: "upset /əpˈsɛt/", vn: "buồn bực / làm xáo trộn", tick: false },
+  { en: "update /ˌʌpˈdeɪt/", vn: "cập nhật", tick: false },
+  { en: "bet /bɛt/", vn: "đặt cược", tick: false },
+  { en: "bid /bɪd/", vn: "đấu thầu / trả giá", tick: false },
+  { en: "volunteer /ˌvɑːlənˈtɪr/", vn: "tình nguyện", tick: false },
+  { en: "delay /dɪˈleɪ/", vn: "trì hoãn", tick: false },
+  { en: "estimate /ˈɛstəˌmeɪt/", vn: "ước tính", tick: false },
+  { en: "broadcast /ˈbrɔːdˌkæst/", vn: "phát sóng", tick: false },
+  { en: "cast /kæst/", vn: "ném / phân vai", tick: false },
+  { en: "cheat /tʃit/", vn: "gian lận", tick: false },
+  { en: "claim /kleɪm/", vn: "khẳng định / yêu cầu", tick: false },
+  { en: "collapse /kəˈlæps/", vn: "sụp đổ", tick: false },
+  { en: "command /kəˈmænd/", vn: "ra lệnh / chỉ huy", tick: false },
+  { en: "comment /ˈkɑːmɛnt/", vn: "bình luận", tick: false },
+  { en: "conduct /kənˈdʌkt/", vn: "tiến hành / điều khiển", tick: false },
+  { en: "judge /dʒʌdʒ/", vn: "đánh giá / thẩm phán", tick: false },
+  { en: "defeat /dɪˈfit/", vn: "đánh bại", tick: false },
+  { en: "resume /rɪˈzum/", vn: "tiếp tục / sơ yếu lý lịch", tick: false },
+  { en: "reserve /rɪˈzɜːrv/", vn: "dự trữ / giữ gìn", tick: false },
+  { en: "rush /rʌʃ/", vn: "vội vã", tick: false },
+  { en: "scream /skrim/", vn: "la hét", tick: false },
+  { en: "struggle /ˈstrʌɡəl/", vn: "đấu tranh / vật lộn", tick: false },
+  { en: "support /səˈpɔːrt/", vn: "ủng hộ / hỗ trợ", tick: false },
+  { en: "suspect /səˈspɛkt/", vn: "nghi ngờ", tick: false },
+  { en: "compound /ˈkɑːmpaʊnd/", vn: "làm phức tạp / hợp chất", tick: false },
+  { en: "battlefield /ˈbætəlˌfild/", vn: "chiến trường", tick: false },
+  { en: "cure /kjʊr/", vn: "chữa khỏi / phương thuốc", tick: false },
+  { en: "construction /kənˈstrʌkʃən/", vn: "sự xây dựng", tick: false },
+  { en: "entrepreneur /ˌɑːntrəprəˈnɜːr/", vn: "doanh nhân", tick: false },
+  { en: "depart /dɪˈpɑːrt/", vn: "khởi hành", tick: false },
+  { en: "wildlife /ˈwaɪldˌlaɪf/", vn: "động vật hoang dã", tick: false },
+  { en: "bushfire /ˈbʊʃˌfaɪər/", vn: "cháy rừng", tick: false },
+  { en: "Milky Way /ˈmɪlki weɪ/", vn: "Ngân hà", tick: false },
+  { en: "animation /ˌænəˈmeɪʃən/", vn: "hoạt hình / sự hào hứng", tick: false },
+  { en: "association /əˌsoʊsiˈeɪʃən/", vn: "sự liên kết / hiệp hội", tick: false },
+  { en: "gadget /ˈɡædʒət/", vn: "tiện ích / dụng cụ", tick: false },
+  { en: "explosion /ɪkˈsploʊʒən/", vn: "vụ nổ", tick: false },
+  { en: "underground /ˈʌndərˌɡraʊnd/", vn: "dưới lòng đất", tick: false },
+  { en: "sensor /ˈsɛnsər/", vn: "cảm biến", tick: false },
+  { en: "deputy /ˈdɛpjəti/", vn: "cấp phó", tick: false },
+  { en: "recipient /rɪˈsɪpiənt/", vn: "người nhận", tick: false },
+  { en: "statistics /stəˈtɪstɪks/", vn: "số liệu thống kê", tick: false },
+  { en: "soften /ˈsɔːfən/", vn: "làm mềm", tick: false },
+  { en: "outdated /ˌaʊtˈdeɪtəd/", vn: "lỗi thời", tick: false },
+  { en: "qualification /ˌkwɑːləfəˈkeɪʃən/", vn: "bằng cấp / trình độ", tick: false },
+  { en: "epoch /ˈɛpək/", vn: "thời kỳ / kỷ nguyên", tick: false },
+  { en: "monitor /ˈmɑːnɪtər/", vn: "giám sát / màn hình", tick: false },
+  { en: "victim /ˈvɪktəm/", vn: "nạn nhân", tick: false },
+  { en: "shade /ʃeɪd/", vn: "bóng râm / che mát", tick: false },
+  { en: "supervisor /ˈsupərˌvaɪzər/", vn: "giám sát viên", tick: false },
+  { en: "stationery /ˈsteɪʃəˌnɛri/", vn: "văn phòng phẩm", tick: false }
+  ],
+};
+const exercises = {
+  1: [
+{
+    q: "The company is looking for a _________ person to handle their financial accounts.",
+    options: ["reliable", "imaginary", "poisonous", "curved"],
+    correct: "A",
+    explain: "reliable (đáng tin cậy) là phẩm chất cần thiết nhất khi làm việc với tài chính."
+  },
+  {
+    q: "It was an _________ moment when he forgot his boss's name during the introduction.",
+    options: ["educational", "embarrassing", "automotive", "consistent"],
+    correct: "B",
+    explain: "embarrassing (gây xấu hổ/lúng túng) dùng để mô tả tình huống quên tên sếp."
+  },
+  {
+    q: "The government is trying to improve the _________ situation of the country.",
+    options: ["economic", "cheerful", "blind", "pale"],
+    correct: "A",
+    explain: "economic situation (tình hình kinh tế) là cụm từ phổ biến trong quản lý nhà nước."
+  },
+  {
+    q: "The detective found a _________ box in the attic that no one could open.",
+    options: ["mysterious", "educational", "civil", "unmanned"],
+    correct: "A",
+    explain: "mysterious (bí ẩn) phù hợp để mô tả một chiếc hộp kỳ lạ không thể mở được."
+  },
+  {
+    q: "After years of hard work, she is finally _________ and enjoys traveling the world.",
+    options: ["poisonous", "retired", "conservative", "aerial"],
+    correct: "B",
+    explain: "retired (đã nghỉ hưu) giải thích lý do tại sao cô ấy có thời gian đi du lịch."
+  },
+  {
+    q: "Eating healthy food and exercising daily are _________ for maintaining good health.",
+    options: ["essential", "random", "old-fashioned", "brief"],
+    correct: "A",
+    explain: "essential (thiết yếu/cốt yếu) nhấn mạnh tầm quan trọng của lối sống lành mạnh."
+  },
+  {
+    q: "The drone is an _________ aircraft that can be controlled from a distance.",
+    options: ["unmanned", "romantic", "painful", "religious"],
+    correct: "A",
+    explain: "unmanned (không người lái) là thuật ngữ kỹ thuật chính xác cho máy bay không người lái (drone)."
+  },
+  {
+    q: "She felt _________ when she had to give a speech in front of a thousand people.",
+    options: ["frightened", "commercial", "sticky", "native"],
+    correct: "A",
+    explain: "frightened (hoảng sợ/sợ hãi) mô tả cảm xúc lo lắng khi đứng trước đám đông."
+  },
+  {
+    q: "The museum displays many _________ artifacts from the ancient Roman Empire.",
+    options: ["historical", "competitive", "conscious", "convenient"],
+    correct: "A",
+    explain: "historical (thuộc về lịch sử) dùng để mô tả các cổ vật hoặc vật phẩm từ quá khứ."
+  },
+  {
+    q: "They are looking for a _________ solution that can be applied to everyday life.",
+    options: ["practical", "complicated", "academic", "negative"],
+    correct: "A",
+    explain: "practical (thực tế/thực tiễn) chỉ những giải pháp có ích và áp dụng được ngay vào cuộc sống."
+  },
+  {
+    q: "The instruction manual was so _________ that I had to read it three times to understand.",
+    options: ["brief", "complicated", "cheerful", "unmanned"],
+    correct: "B",
+    explain: "complicated (phức tạp) mô tả cuốn sách hướng dẫn khó hiểu, cần đọc lại nhiều lần."
+  },
+  {
+    q: "The scientist was _________ that her theory was correct after seeing the experimental results.",
+    options: ["convinced", "blind", "sticky", "embarrassed"],
+    correct: "A",
+    explain: "convinced (tin chắc/bị thuyết phục) thể hiện sự tin tưởng tuyệt đối vào giả thuyết."
+  },
+  {
+    q: "In many _________ cultures, it is custom to remove your shoes before entering a house.",
+    options: ["eastern", "automotive", "unmanned", "continuous"],
+    correct: "A",
+    explain: "eastern (thuộc phương Đông) chỉ các nền văn hóa Á Đông với phong tục bỏ giày ngoài cửa."
+  },
+  {
+    q: "You must be _________ for your own actions; don't blame others for your mistakes.",
+    options: ["qualified", "responsible", "poisonous", "mysterious"],
+    correct: "B",
+    explain: "responsible (có trách nhiệm) đi với giới từ 'for', chỉ việc tự chịu trách nhiệm về hành động cá nhân."
+  },
+  {
+    q: "The view from the plane provided a spectacular _________ perspective of the mountains.",
+    options: ["curved", "aerial", "nuclear", "mental"],
+    correct: "B",
+    explain: "aerial (trên không/từ trên cao) dùng để mô tả góc nhìn từ máy bay xuống mặt đất."
+  },
+  {
+    q: "He is a very _________ man; he donated a large sum of money to the local orphanage.",
+    options: ["generous", "cruel", "academic", "conservative"],
+    correct: "A",
+    explain: "generous (hào phóng) mô tả người sẵn lòng quyên góp nhiều tiền cho từ thiện."
+  },
+  {
+    q: "The movie was so _________ that the children sat still for two hours without moving.",
+    options: ["frightened", "entertaining", "negative", "painful"],
+    correct: "B",
+    explain: "entertaining (thú vị/mang tính giải trí) là lý do khiến trẻ em bị cuốn hút vào bộ phim."
+  },
+  {
+    q: "Driving without a license is _________ and can lead to a heavy fine.",
+    options: ["legal", "illegal", "civil", "commercial"],
+    correct: "B",
+    explain: "illegal (bất hợp pháp) là hành vi lái xe khi không có bằng lái."
+  },
+  {
+    q: "The patient is still _________ and can answer the doctor's questions.",
+    options: ["conscious", "pale", "curved", "imaginary"],
+    correct: "A",
+    explain: "conscious (tỉnh táo/có ý thức) chỉ trạng thái người bệnh vẫn nhận thức và giao tiếp được."
+  },
+  {
+    q: "They live in a _________ village, far away from any big city or shopping mall.",
+    options: ["remote", "corporate", "contemporary", "immediate"],
+    correct: "A",
+    explain: "remote (xa xôi/hẻo lánh) mô tả vị trí địa lý của ngôi làng cách xa trung tâm."
+  },
+  {
+    q: "<b>Reading Practice:</b> In the contemporary world, technology is changing our lives at a continuous pace. Many corporate giants are investing in unmanned vehicles, which could make transportation more convenient and effective. However, some conservative people are still convinced that traditional driving is safer. From an aerial view, our cities look like complex networks of lights and movements. Architects are now using curved designs to create impressive buildings that are more practical for the environment. While these academic theories sound great, the actual implementation can be complicated due to economic challenges. Despite these changes, it is essential to remain conscious of our environment. We must be responsible for the waste we produce to ensure a positive future for the next generation. Transitioning to green energy is a crucial step that requires determined efforts from every civil member of society.", 
+    a: "Bản dịch: Trong thế giới đương đại, công nghệ đang thay đổi cuộc sống của chúng ta với một tốc độ liên tục. Nhiều tập đoàn lớn đang đầu tư vào các phương tiện không người lái, điều này có thể giúp việc vận chuyển trở nên tiện lợi và hiệu quả hơn. Tuy nhiên, một số người có tư tưởng bảo thủ vẫn tin chắc rằng việc lái xe truyền thống thì an toàn hơn. Nhìn từ góc độ trên không, các thành phố của chúng ta trông như một mạng lưới phức tạp của ánh sáng và sự chuyển động. Các kiến trúc sư hiện đang sử dụng các thiết kế cong để tạo ra những tòa nhà ấn tượng và có tính thực tiễn cao hơn cho môi trường. Mặc dù những lý thuyết học thuật này nghe có vẻ tuyệt vời, nhưng việc triển khai thực tế có thể rất phức tạp do những thách thức về kinh tế. Bất chấp những thay đổi này, việc luôn giữ ý thức về môi trường là điều thiết yếu. Chúng ta phải có trách nhiệm với lượng rác thải mình tạo ra để đảm bảo một tương lai tích cực cho thế hệ mai sau. Chuyển đổi sang năng lượng sạch là một bước đi cốt yếu, đòi hỏi những nỗ lực quyết tâm từ mỗi thành viên dân sự trong xã hội."
+  },
+  ],
+
+  2: [
+{
+    q: "The company is looking for a _________ person to handle their financial accounts.",
+    options: ["reliable", "imaginary", "poisonous", "curved"],
+    correct: "A",
+    explain: "reliable (đáng tin cậy) là phẩm chất cần thiết nhất khi làm việc với tài chính."
+  },
+
+  {
+    q: "<b>Reading Practice:</b> In the contemporary world, technology is changing our lives at a continuous pace. Many corporate giants are investing in unmanned vehicles, which could make transportation more convenient and effective. However, some conservative people are still convinced that traditional driving is safer. From an aerial view, our cities look like complex networks of lights and movements. Architects are now using curved designs to create impressive buildings that are more practical for the environment. While these academic theories sound great, the actual implementation can be complicated due to economic challenges. Despite these changes, it is essential to remain conscious of our environment. We must be responsible for the waste we produce to ensure a positive future for the next generation. Transitioning to green energy is a crucial step that requires determined efforts from every civil member of society.", 
+    a: "Bản dịch: Trong thế giới đương đại, công nghệ đang thay đổi cuộc sống của chúng ta với một tốc độ liên tục. Nhiều tập đoàn lớn đang đầu tư vào các phương tiện không người lái, điều này có thể giúp việc vận chuyển trở nên tiện lợi và hiệu quả hơn. Tuy nhiên, một số người có tư tưởng bảo thủ vẫn tin chắc rằng việc lái xe truyền thống thì an toàn hơn. Nhìn từ góc độ trên không, các thành phố của chúng ta trông như một mạng lưới phức tạp của ánh sáng và sự chuyển động. Các kiến trúc sư hiện đang sử dụng các thiết kế cong để tạo ra những tòa nhà ấn tượng và có tính thực tiễn cao hơn cho môi trường. Mặc dù những lý thuyết học thuật này nghe có vẻ tuyệt vời, nhưng việc triển khai thực tế có thể rất phức tạp do những thách thức về kinh tế. Bất chấp những thay đổi này, việc luôn giữ ý thức về môi trường là điều thiết yếu. Chúng ta phải có trách nhiệm với lượng rác thải mình tạo ra để đảm bảo một tương lai tích cực cho thế hệ mai sau. Chuyển đổi sang năng lượng sạch là một bước đi cốt yếu, đòi hỏi những nỗ lực quyết tâm từ mỗi thành viên dân sự trong xã hội."
+  },
+  ],
+
+};
+
+
+let currList = 1, listCopy=[], index=0;
+
+let totalWords = 0;
+let knownCount = 0;
+
+/********** LOAD LIST **********/
+function loadList(){
+  currList = document.getElementById("wordList").value;
+  listCopy = [...data[currList]];
+  totalWords = listCopy.length;
+  knownCount = 0;
+
+  updateCounter();
+  renderWords();
+  index=-1;
+  nextWord();
+  loadExercises();
+}
+
+function updateCounter(){
+  document.getElementById("progressCounter").innerText =
+    `Đã biết ${knownCount} / ${totalWords}`;
+}
+
+
+document.getElementById("wordList").onchange = loadList;
+loadList();
+
+/********** RENDER & SORT **********/
+function renderWords(){
+  const box=document.getElementById("wordContainer");
+  box.innerHTML="";
+
+  let sorted=[...data[currList]].sort((a,b)=>b.tick - a.tick);
+
+  sorted.forEach(item=>{
+    let realIndex = data[currList].indexOf(item);
+    box.innerHTML+=`
+      <div class="word-row">
+        <span>${item.en}: ${item.vn}</span>
+        <input type="checkbox" ${item.tick?"checked":""} onclick="toggleTick(${realIndex})">
+      </div>`;
+  });
+}
+
+/********** TICK UPDATE **********/
+function toggleTick(realIndex){
+  data[currList][realIndex].tick = !data[currList][realIndex].tick;
+  renderWords();
+}
+
+/********** REVIEW **********/
+function nextWord(){
+  document.getElementById("answer").innerHTML="";
+  if(listCopy.length===0){
+    document.getElementById("vietWord").innerHTML="🎉 Bạn đã học xong hết!";
+    return;
+  }
+  index=Math.floor(Math.random()*listCopy.length);
+  document.getElementById("vietWord").innerHTML=listCopy[index].vn;
+}
+
+function know(){
+  firework();
+  knownCount++;
+  listCopy.splice(index,1);
+  updateCounter();
+  nextWord();
+}
+
+function dontKnow(){
+  document.getElementById("answer").innerHTML=listCopy[index].en;
+}
+
+/********** EXERCISES **********/
+function loadExercises(){
+  const box=document.getElementById("exercise");
+  box.innerHTML="";
+
+  exercises[currList].forEach((item,i)=>{
+
+    // TRẮC NGHIỆM
+    if(item.options){
+      box.innerHTML+=`
+      <div style="margin:15px 0;">
+        <b>${i+1}. ${item.q}</b><br>
+
+        ${item.options.map((op, idx)=>`
+          <label class="mcq-option">
+            <input type="radio" name="q${i}" value="${String.fromCharCode(65+idx)}">
+            ${String.fromCharCode(65+idx)}. ${op}
+          </label><br>
+        `).join("")}
+
+        <button onclick="checkMCQ(${i})">Check</button>
+        <span id="res${i}" class="result"></span>
+        <div id="exp${i}" class="explain-box"></div>
+      </div>`;
+    }
+
+    // ĐIỀN TỪ
+    else {
+      box.innerHTML+=`
+      <div style="margin:15px 0;">
+        ${i+1}. ${item.q}
+        <input id="ex${i}">
+        <button onclick="checkEx(${i})">Check</button>
+        <span id="res${i}" class="result"></span>
+      </div>`;
+    }
+  });
+}
+
+function checkEx(i){
+  const user = document.getElementById("ex"+i).value.trim().toLowerCase();
+  const ans = exercises[currList][i].a.toLowerCase();
+  const box = document.getElementById("res"+i);
+
+  if(user === ans) {
+    box.innerHTML = "✔ Correct";
+    box.style.color = "#28a745"; // chữ Correct màu xanh lá
+    firework(); // gọi pháo hoa
+  } else {
+    box.innerHTML = "✘ " + exercises[currList][i].a;
+    box.style.color = "#D02752"; // chữ sai màu đỏ
+  }
+}
+
+
+function checkMCQ(i){
+  const radios = document.querySelectorAll(`input[name="q${i}"]`);
+  let choice = "";
+
+  radios.forEach(r => {
+    if(r.checked) choice = r.value;
+  });
+
+  const correct = exercises[currList][i].correct;
+  const box = document.getElementById("res"+i);
+  const expBox = document.getElementById("exp"+i);
+
+  if(choice === ""){
+    box.innerHTML = "⚠ Hãy chọn đáp án";
+    box.style.color = "#ff9800";
+    return;
+  }
+
+  if(choice === correct){
+    box.innerHTML = "✔ Correct";
+    box.style.color = "#28a745";
+    firework();
+  } else {
+    box.innerHTML = "✘ Correct answer: " + correct;
+    box.style.color = "#D02752";
+  }
+
+  // hiển thị explain
+  if(exercises[currList][i].explain){
+    expBox.innerHTML = "Giải thích: " + exercises[currList][i].explain;
+  }
+}
+
+/********** FIREWORK **********/
+function firework(){
+  for(let i=0;i<25;i++){
+    const c=document.createElement("div");
+    c.className="confetti";
+    c.style.setProperty("--x",(Math.random()-.5)*600+"px");
+    c.style.setProperty("--y",(Math.random()-.5)*600+"px");
+    c.style.backgroundColor=`hsl(${Math.random()*360},90%,60%)`;
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),900);
+  }
+}
+</script>
+
+</body>
+</html>

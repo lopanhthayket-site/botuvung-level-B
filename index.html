@@ -2634,9 +2634,17 @@ function nextWord(){
 
 function know(){
   firework();
+
+  // tìm index thật của từ đang học trong data gốc
+  let realIndex = data[currList].indexOf(listCopy[index]);
+  if(realIndex !== -1){
+    data[currList][realIndex].tick = true; // auto tick
+  }
+
   knownCount++;
   listCopy.splice(index,1);
   updateCounter();
+  renderWords(); // cập nhật lại danh sách trên
   nextWord();
 }
 
